@@ -1,0 +1,34 @@
+@import url("https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css");
+
+
+$small: 321px;
+$medium: 641px;
+$large: 1008px;
+
+@mixin respond-to($media) {
+  @if $media == handhelds {
+    @media only screen and (max-width: $medium - 1) { @content; }
+  }
+  @else if $media == medium-screens {
+    @media only screen and (min-width: $medium) and (max-width: $large - 1) { @content; }
+  }
+  @else if $media == wide-screens {
+    @media only screen and (min-width: $large) { @content; }
+  }
+}
+
+@import "./_common.scss";
+@import "./_gallery.scss";
+
+#content
+{
+	width:100%;
+	height:100%;
+	overflow-y:auto;
+  	@include respond-to(handhelds) {
+  	padding: 0px;}
+  	@include respond-to(medium-screens) { 
+	/*padding:0px 10px;*/ }
+  	@include respond-to(wide-screens) {
+	/*padding:0px 10px;*/ }
+}
