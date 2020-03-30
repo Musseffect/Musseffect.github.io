@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from "react-redux";
 import { NavLink, Route, Switch } from 'react-router-dom';
 import { withRouter } from 'react-router';
-import THREE from 'three';
+import * as THREE from 'three';
 
 const mapStateToProps=function(state)
 {
@@ -11,9 +11,9 @@ const mapStateToProps=function(state)
 
 const mapDispatchToProps=function(dispatch)
 {
-  return ({
+  return {
     //switchLanguage:function(){dispatch(switchLanguage());}
-  });
+  };
 };
 
 const gridShader={
@@ -83,16 +83,18 @@ class StereoImagePage extends Component {
       this.start = this.start.bind(this);
       this.stop = this.stop.bind(this);
       this.update = this.update.bind(this);
+      this.loop=this.loop.bind(this);
       this.draw = this.draw.bind(this);
       this.onMouseMove = this.onMouseMove.bind(this);
-      document.addEventListener('mousemove',onMouseMove,false)
+      this.mouse={x:0,y:0}
+      document.addEventListener('mousemove',this.onMouseMove,false);
 
       this.state = {drawGrid:false,gridDimension:100};
   }
   componentDidMount()
   {
-    const width=this.screenRef.clientWidth;
-    const height = this.screenRef.clientHeight;
+    const width=this.screenRef.current.clientWidth;
+    const height = this.screenRef.current.clientHeight;
     this.glprops=
     {
         camera:new THREE.PerspectiveCamera(70,width/height,0.1,100.0),
@@ -128,7 +130,7 @@ class StereoImagePage extends Component {
     };
     this.glprops.renderer.setClearColor("#000000");
     this.glprops.renderer.setSize(width,height);
-    this.screenRef.appendChild(this.glprops.renderer.domElement);
+    this.screenRef.current.appendChild(this.glprops.renderer.domElement);
 
   }
   loop()
@@ -179,7 +181,7 @@ class StereoImagePage extends Component {
   }
   update()
   {
-    this.camera.updateProjectionMatrix();
+    this.glprops.camera.updateProjectionMatrix();
   }
   draw()
   {
@@ -212,6 +214,7 @@ class StereoImagePage extends Component {
   {
     this.stop();
     this.screenRef.removeChild(this.renderer.domElement);
+    document.removeEventListener('mousemove',this.onMouseMove,false);
   }
   dimensionChange(e)
   {

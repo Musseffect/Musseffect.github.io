@@ -19,6 +19,11 @@ $large: 1008px;
 
 @import "./_common.scss";
 @import "./_gallery.scss";
+@import "./_controls.scss";
+@import "./_blog.scss";
+@import "./_about.scss";
+@import "./_links.scss";
+@import "./_projects.scss";
 
 #content
 {
@@ -31,4 +36,412 @@ $large: 1008px;
 	/*padding:0px 10px;*/ }
   	@include respond-to(wide-screens) {
 	/*padding:0px 10px;*/ }
+}
+
+#footer
+{
+  height:auto;
+  display:flex;
+  flex-direction:row;
+  width:100%;
+  height:70px;
+  position:relative;
+  justify-content:center;
+  flex-wrap:nowrap;
+  padding:0px 10%;
+}
+
+#menuButtons
+{
+  @include respond-to(handhelds) {
+  flex-direction:column;
+}
+  @include respond-to(medium-screens) { 
+    flex-direction:row;
+ }
+  @include respond-to(wide-screens) { 
+    flex-direction:row;
+}
+}
+
+
+.pageContainer
+{
+  display:flex;
+  margin:auto;
+  @include respond-to(handhelds) {
+    width:100%;
+}
+  @include respond-to(medium-screens) { 
+    width:100%;
+ }
+  @include respond-to(wide-screens) {
+    width:1000px;
+}
+overflow-x:hidden;
+}
+#routeContent
+{
+	overflow-x:hidden;
+}
+
+.header
+{
+	width:100%;
+	height:70px;
+	display:flex;
+	flex-wrap:nowrap;
+	color:black;
+	background-color:white;
+	padding:0px 10%;
+	border-bottom:1px solid black;
+}
+.headerTitleText
+{
+	font-size:25px;
+	color:black;
+}
+.headerPageTitle
+{
+	height:auto;
+	width:auto;
+	display:flex;
+	flex-direction:column;
+	align-items:center;
+	justify-content:center;
+	background-color:white;
+	@include respond-to(handhelds) {
+		flex-basis:100%;
+  }
+	@include respond-to(medium-screens) { 
+		flex-basis:33%;
+   }
+	@include respond-to(wide-screens) {
+		flex-basis:33%;
+  }
+}
+.headerButtonBlock
+{
+	display:flex;
+	flex-direction:row;
+	flex-basis:33%;
+	justify-content: center;
+	//padding:0px 10px;
+}
+.footerButtonBlock
+{
+	display:flex;
+	flex-direction:row;
+	flex-basis:100%;
+	justify-content: center;
+}
+.headerMainButton
+{
+	height:auto;
+	width:auto;
+	display:flex;
+	flex-direction:column;
+	justify-content:center;
+	background-color:white;
+	flex-basis:33%;
+	//cursor:pointer;
+}
+/*.headerMainButton:hover
+{
+	box-shadow:inset 0px -4px 0px 0px gray;
+	transition: box-shadow 1s;
+}*/
+
+.footer
+{
+	display:block;
+	width:100%;
+	min-height:auto;
+	background-color:yellow;
+	opacity:1.0;
+}
+.headerButton:hover
+{
+	box-shadow:inset 0px -4px 0px 0px gray;
+	transition: box-shadow 1s;
+}
+.footerButton:hover
+{
+	box-shadow:inset 0px 0px 8px 4px grey;
+	transition: box-shadow 1s;
+}
+.headerButton>a,.footerButton>a
+{
+	color:black;
+}
+.headerButton>a:hover,.footerButton>a:hover
+{
+	color:blue;
+}
+.headerButton,.footerButton
+{
+	padding:0px 7px;
+	width:auto;
+	height:auto;
+	display:flex;
+	flex-direction:column;
+	align-items:center;
+	justify-content:center;
+	background-color:white;
+	cursor:pointer;
+}
+
+//New
+.tagCircle
+{
+    background-color:white;
+    width:10px;
+    height:10px;
+    align-self: center;
+    margin-right:5px;
+    border-radius:5px;
+}
+.tag
+{
+	user-select: none;
+	cursor: pointer;
+    display:flex;
+    flex-direction:row;
+    font-weight:600;
+    padding:3px 7px;
+    margin:3px 3px;
+    border-radius:2px;
+    background-color:rgb(128, 128, 128);
+}
+.tag.active
+{
+    background-color:rgb(37, 115, 216);
+}
+.tagName
+{
+    color:white;
+}
+.postHeaderLink
+{
+    padding:5px;
+    color:black;
+    font-size:22px;
+    text-overflow:ellipsis;
+	white-space:nowrap;
+	word-wrap: normal;
+}
+.postPreviewTags
+{
+	display:flex;
+	padding:0px 10%;
+	width:100%;
+	flex-wrap:wrap;
+	justify-content:center;
+}
+.postPreviewContainer
+{
+	@include respond-to(handhelds) {
+	  width:100%;
+  }
+	@include respond-to(medium-screens) { 
+	  width:33.3333%;
+   }
+	@include respond-to(wide-screens) {
+	  width:20%;
+  }
+	display:flex;
+	flex-direction:column;
+	align-items: center;
+	padding:5px;
+}
+.postThumbnail
+{
+	//max-width:400px;
+	width:100%;
+	height:0;
+	padding-bottom:100%;
+	position:relative;
+	@include respond-to(handhelds) {
+		height:100%;
+		padding-bottom:0;
+		max-width:300px;
+	}
+}
+.postThumbnailImage
+{
+	/*height:200px;
+	width:200px;
+	margin:10px;*/
+	position:absolute;
+	left:0;
+	top:0;
+	width:100%;
+	height:100%;
+	//padding:10px;
+	//border:1px solid black;
+	object-fit:contain;
+	object-position:center;
+	@include respond-to(handhelds) {
+		position:relative;
+	}
+}
+
+.postsContainer
+{
+	display:flex;
+	flex-direction:column;
+}
+.globalTagsContainer
+{
+	display:flex;
+	padding:0px 10%;
+	width:100%;
+	flex-wrap:wrap;
+	justify-content:center;
+}
+.posts
+{
+	display:flex;
+	flex-direction:row;
+	flex-wrap:wrap;
+	//justify-content: space-between;
+}
+
+
+//Post
+.postContent
+{
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    padding-top:20px;
+}
+.postMainImg
+{
+	@include respond-to(handhelds) {
+		width:100%;
+		max-height:400px;
+	}
+	@include respond-to(medium-screens) { 
+		width:600px;
+		max-height:600px;
+	}
+	@include respond-to(wide-screens) { 
+		width:600px;
+		max-height:600px;
+	}
+	object-fit:contain;
+	object-position:center;
+}
+.postName
+{
+
+}
+.postTags
+{
+    display:flex;
+    flex-direction:row;
+    margin:0px 0px;
+}
+.postDescription
+{
+
+}
+.postImages
+{
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+}
+.postImg
+{
+	@include respond-to(handhelds) {
+		height:100px;
+		width:100px;
+		margin:4px;
+	}
+	@include respond-to(medium-screens) { 
+		height:200px;
+		width:200px;
+		margin:4px;
+	}
+	@include respond-to(wide-screens) { 
+		height:300px;
+		width:300px;
+		margin:10px;
+	}
+	border: 1px gray solid;
+    background-color:gray;
+	object-fit:cover;
+	object-position:center;
+}
+
+
+@mixin imageContainer($imgPerRow,$margin)
+{
+	$marginTotal:($margin * ($imgPerRow - 1));
+	flex-basis:calc((100% - #{$marginTotal}) / #{$imgPerRow});
+	margin-right:#{$margin};
+}
+
+.postImages2
+{
+	display:flex;
+	flex-direction:row;
+	flex-wrap:wrap;
+	width:100%;
+}
+.postImgContainer
+{
+	@include respond-to(handhelds) {
+		@include imageContainer(3,2px);
+		margin-bottom:2px;
+	}
+	@include respond-to(medium-screens) { 
+		@include imageContainer(4,10px);
+		margin-bottom:10px;
+	}
+	@include respond-to(wide-screens) { 
+		@include imageContainer(5,25px);
+		margin-bottom:25px;
+	}
+    display:block;
+    flex-grow:0;
+    flex-shrink:0;
+	position: relative;
+}
+
+@include respond-to(handhelds) {
+	.postImgContainer:nth-child(3n)
+	{
+		margin-right:0px;
+	}
+}
+@include respond-to(medium-screens) { 
+	.postImgContainer:nth-child(4n)
+	{
+		margin-right:0px;
+	}
+}
+@include respond-to(wide-screens) { 
+	.postImgContainer:nth-child(5n)
+	{
+		margin-right:0px;
+	}
+}
+.postImgFrame
+{
+    padding-bottom:100%;
+    position:relative;
+}
+.postImg2
+{
+    position:absolute;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    object-position:center;
 }

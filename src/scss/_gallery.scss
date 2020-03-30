@@ -1,6 +1,7 @@
+
 .galleryContainer
 {
-    display:flex;
+    padding-top:20px;
     flex-direction:row;
     flex-wrap:wrap;
     justify-content:center;
@@ -9,7 +10,7 @@
 .galleryPreviewContainer{
     margin:10px;
     display:flex;
-    flex-direction:row;
+    flex-direction:column;
     justify-items: center;
     align-items: center;
     justify-content: center;
@@ -19,11 +20,128 @@
 .galleryPreviewImg
 {
     width:300px;
-    height:170px;
+    height:300px;
     object-fit:cover;
 }
 .galleryPreviewImg:hover{
     z-index:1;
     transform:scale(1.4);
     transition:transform 0.3s ease-in-out 0.0s;
+}
+.galleryPreviewName
+{
+
+}
+
+.galleryPostContainer
+{
+    padding-top:20px;
+    flex-direction:column;
+}
+
+.galleryPostName
+{
+    font-size: x-large;
+    text-align: center;
+    border-bottom:1px solid black;
+}
+
+.galleryImg
+{
+    object-fit:contain;
+    padding:10px;
+    max-width:100%;
+}
+
+.galleryPostImgs
+{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+.galleryPostDesc
+{
+    margin:0px 20px;
+}
+
+
+.galleryModal
+{
+    display:flex;
+    position:fixed;
+    flex-direction:column;
+    justify-content: center;
+    align-items:center;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    z-index:10;
+    background-color:rgba(39, 39, 39, 0.459);
+}
+
+.galleryModalWindow
+{
+    display:block;
+    position:relative;
+    z-index:10;
+    background-color:white;
+}
+
+.gmLeft, .gmRight
+{
+    display:block;
+    width:80px;
+    flex-shrink: 0;
+    height:80px;
+    background-color:green;
+}
+.gmImage
+{
+    flex-shrink: 0;
+    display:block;
+    width:400px;
+    height:400px;
+    object-fit:scale-down;
+}
+.gmBottom
+{
+    flex-shrink: 0;
+    height:150px;
+    width:100%;
+    display:block;
+    overflow-y:auto;
+    overflow-x:hidden;
+    overflow-wrap:break-word;
+    word-break:break-word;
+    padding:20px;
+    background-color:white;
+}
+
+.gmCloseButton
+{
+    display:block;
+    background-color:red;
+    position:fixed;
+    z-index:11;
+    top:0;
+    right:0;
+    width:50px;
+    height:50px;
+}
+
+.gmTop
+{
+    flex-shrink: 0;
+    display:flex;
+    flex-direction:row;
+    background-color:black;
+    align-items:center;
+}
+.galleryModalContent
+{
+    display:flex;
+    flex-direction:column;
+
 }

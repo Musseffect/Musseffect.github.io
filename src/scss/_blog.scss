@@ -1,0 +1,61 @@
+.postPreviewContainer
+{
+    display:flex;
+    margin-bottom:20px;
+    @include respond-to(handhelds) {
+        flex-direction:column;
+        align-items:center;
+    }
+    @include respond-to(medium-screens) { 
+        flex-direction:row;
+    }
+    @include respond-to(wide-screens) {
+        flex-direction:row;
+    }
+}
+.postContainer
+{
+    padding-top:20px;
+}
+.postDescription
+{
+    padding:5px;
+    word-break:break-word;
+}
+
+.postPreviewImg
+{
+    width:200px;
+    height:150px;
+    object-fit: contain;
+    /*border:1px solid black;*/
+}
+
+.postPreviewInner
+{
+    display:flex;
+    border:1px solid black;
+    flex-direction:column;
+    overflow:hidden;
+    @include respond-to(handhelds) {
+        width:100%;
+    }
+    @include respond-to(medium-screens) { 
+        width:100%;
+    }
+    @include respond-to(wide-screens) {
+        width:100%;
+    }
+}
+
+.blogContainer
+{
+    padding-top:20px;
+}
+
+.blogPreviewList
+{
+    width:100%;
+    display:flex;
+    flex-direction:column;
+}

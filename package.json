@@ -24,6 +24,7 @@
     "jshint-loader": "^0.8.4",
     "node-sass": "^4.9.0",
     "plotly.js": "^1.38.3",
+    "raw-loader": "^3.1.0",
     "react": "^16.4.1",
     "react-compound-slider": "^0.12.0",
     "react-dom": "^16.4.1",
@@ -43,7 +44,7 @@
   "scripts": {
     "test": "\"\"",
     "watch:dev": "webpack --watch --mode development --config webpackdev.config.js",
-    "start": "webpack-dev-server --mode development",
+    "start": "webpack-dev-server --mode development --host 0.0.0.0",
     "start:prod": "webpack-dev-server --mode production --config prodserv.config.js",
     "build:dev": "webpack --mode development --config webpackdev.config.js",
     "build:prod": "webpack --mode production --config prod.config.js",

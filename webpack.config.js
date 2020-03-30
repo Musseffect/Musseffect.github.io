@@ -42,7 +42,12 @@ module.exports = {
 		      use:{
 		        loader: "babel-loader"
 		      }
-		    },
+        },
+        {
+          test: /\.tsx?$/,
+		      exclude: /node_modules/,
+          loader: 'babel-loader',
+        },
         {
           test: /\.scss$/,
           use: ExtractTextPlugin.extract({
@@ -51,7 +56,13 @@ module.exports = {
           })
         },
         {
+          test: /\.frag?$|\.vert$|\.glsl$/,
+          exclude: /node_modules/,
+          use: 'raw-loader'
+        },
+        {
           test: /\.woff2?$|\.ttf$|\.eot$|\.svg$|\.otf$/,
+          exclude: /node_modules/,
           use: [
             {
               loader: 'file-loader',
@@ -64,6 +75,7 @@ module.exports = {
         },
         {
           test: /\.png?$|\.jpg$|\.gif$/,
+          exclude: /node_modules/,
           use: [
             {
               loader: 'file-loader',
