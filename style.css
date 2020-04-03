@@ -7,119 +7,6 @@
   /* IE 10+ */
   user-select: none; }
 
-.galleryContainer {
-  padding-top: 20px;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center; }
-
-.galleryPreviewContainer {
-  margin: 10px;
-  display: flex;
-  flex-direction: column;
-  justify-items: center;
-  align-items: center;
-  justify-content: center;
-  align-content: center; }
-
-.galleryPreviewImg {
-  width: 300px;
-  height: 300px;
-  object-fit: cover; }
-
-.galleryPreviewImg:hover {
-  z-index: 1;
-  transform: scale(1.4);
-  transition: transform 0.3s ease-in-out 0.0s; }
-
-.galleryPostContainer {
-  padding-top: 20px;
-  flex-direction: column; }
-
-.galleryPostName {
-  font-size: x-large;
-  text-align: center;
-  border-bottom: 1px solid black; }
-
-.galleryImg {
-  object-fit: contain;
-  padding: 10px;
-  max-width: 100%; }
-
-.galleryPostImgs {
-  display: flex;
-  flex-direction: column;
-  align-items: center; }
-
-.galleryPostDesc {
-  margin: 0px 20px; }
-
-.galleryModal {
-  display: flex;
-  position: fixed;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 10;
-  background-color: rgba(39, 39, 39, 0.459); }
-
-.galleryModalWindow {
-  display: block;
-  position: relative;
-  z-index: 10;
-  background-color: white; }
-
-.gmLeft, .gmRight {
-  display: block;
-  width: 80px;
-  flex-shrink: 0;
-  height: 80px;
-  background-color: green; }
-
-.gmImage {
-  flex-shrink: 0;
-  display: block;
-  width: 400px;
-  height: 400px;
-  object-fit: scale-down; }
-
-.gmBottom {
-  flex-shrink: 0;
-  height: 150px;
-  width: 100%;
-  display: block;
-  overflow-y: auto;
-  overflow-x: hidden;
-  overflow-wrap: break-word;
-  word-break: break-word;
-  padding: 20px;
-  background-color: white; }
-
-.gmCloseButton {
-  display: block;
-  background-color: red;
-  position: fixed;
-  z-index: 11;
-  top: 0;
-  right: 0;
-  width: 50px;
-  height: 50px; }
-
-.gmTop {
-  flex-shrink: 0;
-  display: flex;
-  flex-direction: row;
-  background-color: black;
-  align-items: center; }
-
-.galleryModalContent {
-  display: flex;
-  flex-direction: column; }
-
 .comboboxControl {
   border: 1px solid black;
   margin: 5px;
@@ -233,64 +120,71 @@
   border-left: 2px solid gray;
   border-right: 2px solid gray; }
 
-.postPreviewContainer {
-  display: flex;
-  margin-bottom: 20px; }
-  @media only screen and (max-width: 640px) {
-    .postPreviewContainer {
-      flex-direction: column;
-      align-items: center; } }
-  @media only screen and (min-width: 641px) and (max-width: 1007px) {
-    .postPreviewContainer {
-      flex-direction: row; } }
-  @media only screen and (min-width: 1008px) {
-    .postPreviewContainer {
-      flex-direction: row; } }
-
-.postContainer {
-  padding-top: 20px; }
-
-.postDescription {
-  padding: 5px;
-  word-break: break-word; }
-
-.postPreviewImg {
-  width: 200px;
-  height: 150px;
-  object-fit: contain;
-  /*border:1px solid black;*/ }
-
-.postPreviewInner {
-  display: flex;
-  border: 1px solid black;
-  flex-direction: column;
-  overflow: hidden; }
-  @media only screen and (max-width: 640px) {
-    .postPreviewInner {
-      width: 100%; } }
-  @media only screen and (min-width: 641px) and (max-width: 1007px) {
-    .postPreviewInner {
-      width: 100%; } }
-  @media only screen and (min-width: 1008px) {
-    .postPreviewInner {
-      width: 100%; } }
-
-.blogContainer {
-  padding-top: 20px; }
-
-.blogPreviewList {
-  width: 100%;
-  display: flex;
-  flex-direction: column; }
-
 .aboutContainer {
   padding-top: 20px; }
 
 .linksContainer {
   padding-top: 20px; }
 
-.projectsContainer {
-  padding-top: 20px; }
+.modalBackground {
+  z-index: 1000;
+  position: fixed;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0.2;
+  justify-content: center;
+  align-items: center; }
+
+.modalWindow {
+  border: 1px solid gray;
+  background-color: white;
+  z-index: 100;
+  border-radius: 2px;
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  max-height: 100%;
+  position: relative; }
+
+.modalHeader {
+  padding: 10px;
+  display: block;
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid gray;
+  position: relative;
+  flex-grow: 0;
+  flex-shrink: 0; }
+
+.modalCloseButton {
+  position: absolute;
+  z-index: 10;
+  right: 0;
+  top: 0;
+  width: 20px;
+  height: 20px; }
+
+.modalBody {
+  padding: 10px;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  flex-grow: 1;
+  flex-shrink: 1;
+  overflow-y: auto; }
+
+.modalFooter {
+  border-top: 1px solid gray;
+  padding: 10px;
+  justify-content: right;
+  display: flex;
+  width: 100%;
+  height: 20px;
+  flex-grow: 0;
+  flex-shrink: 0; }
 
 #content {
   width: 100%;
@@ -480,7 +374,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 5px; }
+  padding: 5px;
+  opacity: 1.0; }
   @media only screen and (max-width: 640px) {
     .postPreviewContainer {
       width: 100%; } }
@@ -490,6 +385,9 @@
   @media only screen and (min-width: 1008px) {
     .postPreviewContainer {
       width: 20%; } }
+
+.postPreviewContainer.disabled {
+  opacity: 0.2; }
 
 .postThumbnail {
   width: 100%;
@@ -631,6 +529,7 @@
   position: relative; }
 
 .postImg2 {
+  cursor: pointer;
   position: absolute;
   left: 0;
   top: 0;
@@ -638,5 +537,153 @@
   height: 100%;
   object-fit: contain;
   object-position: center; }
+
+.modalImageViewerContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0; }
+
+.modalImageViewerBackground {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  opacity: 0.75;
+  z-index: 1000;
+  position: fixed;
+  width: 100%;
+  height: 100%; }
+
+.modalImageViewerWindow {
+  user-select: none;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  position: relative;
+  width: 90%;
+  height: 80%; }
+
+.modalImageViewerHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  position: relative;
+  height: 0px;
+  width: 100%; }
+
+.modalImageViewerCloseButton {
+  border: none;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  z-index: 3000;
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  cursor: pointer;
+  opacity: 0.25;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 35px; }
+
+.modalImageViewerCloseButton:hover {
+  opacity: 1.0; }
+
+.modalImageViewerCloseButton::before {
+  content: '\D7'; }
+
+.postModalImg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: relative;
+  object-fit: contain;
+  object-position: center; }
+
+.modalImageViewerLeftButton, .modalImageViewerRightButton {
+  display: flex;
+  z-index: 1000;
+  /*justify-content: center;*/
+  align-items: center;
+  opacity: 0.25;
+  color: white;
+  font-size: 40px;
+  width: 100%;
+  height: 100%; }
+
+.modalImageViewerLeftButton {
+  justify-content: flex-start;
+  padding-left: 20px;
+  top: 0px;
+  bottom: 0px;
+  left: 0px; }
+
+.modalImageViewerRightButton {
+  justify-content: flex-end;
+  padding-right: 20px;
+  top: 0px;
+  bottom: 0px;
+  right: 0px; }
+
+.modalImageViewerLeftButton.active, .modalImageViewerRightButton.active {
+  cursor: pointer; }
+
+.modalImageViewerLeftButton.active:hover, .modalImageViewerRightButton.active:hover {
+  opacity: 1; }
+
+.modalImageViewerLeftButton::before {
+  content: "<"; }
+
+.modalImageViewerRightButton::before {
+  content: ">"; }
+
+.modalImageViewerBody {
+  padding: 40px;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  width: 100%;
+  height: auto;
+  flex-grow: 1;
+  flex-shrink: 1; }
+
+.modalImageViewerFooter {
+  display: flex;
+  position: relative;
+  width: 100%;
+  flex-grow: 0;
+  flex-shrink: 0; }
+
+.modalImageViewerButtons {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%; }
+
+.modalImageViewerOpenOriginal {
+  margin: 20px;
+  color: gray; }
+
+.modalImageViewerOpenOriginal:visited {
+  color: gray; }
+
+.modalImageViewerOpenOriginal:hover {
+  color: white;
+  text-decoration: none; }
 
 /*# sourceMappingURL=style.css.map*/
