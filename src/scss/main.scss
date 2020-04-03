@@ -18,12 +18,10 @@ $large: 1008px;
 }
 
 @import "./_common.scss";
-@import "./_gallery.scss";
 @import "./_controls.scss";
-@import "./_blog.scss";
 @import "./_about.scss";
 @import "./_links.scss";
-@import "./_projects.scss";
+@import "./_modal.scss";
 
 #content
 {
@@ -253,6 +251,11 @@ overflow-x:hidden;
 	flex-direction:column;
 	align-items: center;
 	padding:5px;
+	opacity:1.0;
+}
+.postPreviewContainer.disabled
+{
+	opacity:0.2;
 }
 .postThumbnail
 {
@@ -437,6 +440,7 @@ overflow-x:hidden;
 }
 .postImg2
 {
+	cursor:pointer;
     position:absolute;
     left:0;
     top:0;
@@ -444,4 +448,175 @@ overflow-x:hidden;
     height:100%;
     object-fit:contain;
     object-position:center;
+}
+.modalImageViewerContainer
+{
+	display:flex;
+	flex-direction:row;
+	justify-content: center;
+	align-items: center;
+	z-index:1000;
+	position:fixed;
+	left:0;
+	right:0;
+	top:0;
+	bottom:0;
+}
+.modalImageViewerBackground
+{
+	display:flex;
+	flex-direction:row;
+	justify-content: center;
+	align-items: center;
+	background-color:black;
+	opacity:0.75;
+	z-index:1000;
+	position:fixed;
+	width:100%;
+	height:100%;
+}
+.modalImageViewerWindow
+{
+	user-select: none;
+	z-index:1000;
+	display:flex;
+	flex-direction:column;
+	background-color:black;
+	position:relative;
+	width:90%;
+	height:80%;
+}
+.modalImageViewerHeader
+{
+	display:flex;
+	flex-direction:row;
+	justify-content: end;
+	position:relative;
+	height:0px;
+	width:100%;
+}
+.modalImageViewerCloseButton
+{
+	border:none;
+	position:absolute;
+	top:0px;
+	right:0px;
+	z-index:3000;
+	width:40px;
+	height:40px;
+	background-color:transparent;
+	cursor:pointer;
+	opacity:0.25;
+	color:white;
+	display:flex;
+	justify-content: center;
+	align-items:center;
+	font-size: 35px;
+}
+.modalImageViewerCloseButton:hover
+{
+	opacity:1.0;
+}
+.modalImageViewerCloseButton::before
+{
+	content:'\00d7';
+}
+.postModalImg
+{
+	
+	width:100%;
+	height:100%;
+	display:block;
+	position:relative;
+	object-fit:contain;
+	object-position:center;
+}
+.modalImageViewerLeftButton, .modalImageViewerRightButton
+{
+	display:flex;
+	z-index:1000;
+	/*justify-content: center;*/
+	align-items:center;
+	opacity:0.25;
+	color:rgba(255, 255, 255, 1);
+	font-size:40px;
+	width:100%;
+	height:100%;
+}
+.modalImageViewerLeftButton
+{
+	justify-content: flex-start;
+	padding-left:20px;
+	top:0px;
+	bottom:0px;
+	left:0px;
+}
+.modalImageViewerRightButton
+{
+	justify-content: flex-end;
+	padding-right:20px;
+	top:0px;
+	bottom:0px;
+	right:0px;
+}
+.modalImageViewerLeftButton.active,.modalImageViewerRightButton.active
+{
+	cursor: pointer;
+}
+.modalImageViewerLeftButton.active:hover,.modalImageViewerRightButton.active:hover
+{
+	opacity:1;
+}
+.modalImageViewerLeftButton::before
+{
+	content:"\003c";
+}
+.modalImageViewerRightButton::before
+{
+	content:"\003e";
+}
+.modalImageViewerBody
+{
+	padding:40px;
+	position:relative;
+	display:flex;
+	flex-direction:row;
+	overflow:hidden;
+	width:100%;
+	height:auto;
+	flex-grow:1;
+	flex-shrink:1;
+}
+.modalImageViewerFooter
+{
+	display:flex;
+	position:relative;
+	width:100%;
+	flex-grow:0;
+	flex-shrink:0;
+}
+.modalImageViewerButtons
+{
+	display:flex;
+	flex-direction:row;
+	position:absolute;
+	left:0;
+	top:0;
+	width:100%;
+	height:100%;
+}
+
+.modalImageViewerOpenOriginal
+{
+	margin:20px;
+	color:gray;
+}
+.modalImageViewerOpenOriginal:visited
+{
+	color:gray;
+}
+.modalImageViewerOpenOriginal:hover
+{
+	color:white;
+	text-decoration:none;
 }

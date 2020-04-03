@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
-import { NavLink, Route, Switch ,
-  useParams} from 'react-router-dom';
 import Tag from "../components/tag.jsx";
 import { withRouter } from 'react-router';
+import ReactMarkdown from "react-markdown";
 
 const mapStateToProps=function(state,ownProps)
 {
@@ -17,11 +16,16 @@ const mapDispatchToProps=function(dispatch)
     //switchLanguage:function(){dispatch(switchLanguage());}
   });
 };
-//TODO:add React-markdown
+
+
 class PostPage extends Component {
   constructor(props)
   {
       super(props);
+      this.state = {
+        showImage:false,
+        currentImage:0
+      }
   }
   render() {
     let {
@@ -31,22 +35,11 @@ class PostPage extends Component {
       images,
       mainImg
     } = this.props;
-    /*let rows = [];
-    for(let i=0;i<images.length;i+=3)
-    {
-      let elements = [];
-      for(let j=0;j<3;j++)
-      {
-        let index = i+j;
-        let value = images[i+j];
-        elements.push(<div key={index+"_container"} class="imgContainer">
-          <div key={index+"_frame"} class="imgFrame">
-            <img src={value} key={index+"_img"} ></img>
-            </div>
-        </div>);
-      }
-      rows.push(<div ke={i} class="imgRow">{elements}</div>);
-    }*/
+    let {
+      showImage,
+      currentImage
+    } = this.state;
+    let self = this;
     return (
       <div className='postContainer pageContainer'>
         <div className='postContent'>
@@ -62,23 +55,52 @@ class PostPage extends Component {
               })
             }
           </div>
-            <div className="postDescription">
-              {description}
-            </div>
-            <div className="postImages2">
-              {
-              images.map(function(value,index)
-              {
-                return (
-                <div key={index+'_container'} className='postImgContainer'>
-                <div key={index+'_frame'} className='postImgFrame'>
-                  <img key={index} className="postImg2" src={value}></img>
+          <ReactMarkdown source = {description} className = {'postDescription'}/>
+          <div className="postImages2">
+            {
+            images.map(function(value,index)
+            {
+              return (
+              <div key={index+'_container'} className='postImgContainer'>
+              <div key={index+'_frame'} className='postImgFrame'>
+                <img 
+                  key={index} 
+                  className="postImg2" 
+                  src={value.thumbnail} 
+                  onClick={()=>{self.setState({currentImage:index,showImage:true})}}
+                ></img>
+              </div>
+              </div>
+                );
+            })
+            }
+          </div>
+        </div>
+        <div className="modalImageViewerContainer"  style={this.state.showImage?{}:{display:'none'}}>
+          <div className="modalImageViewerBackground"></div>
+          <div className="modalImageViewerCloseButton"
+            onClick={()=>this.setState({showImage:false})}
+          ></div>
+          <div className="modalImageViewerWindow ">
+              <div className="modalImageViewerHeader">
+              </div>
+              <div className="modalImageViewerBody">
+                <div className="modalImageViewerButtons">
+                <div 
+                  className="modalImageViewerLeftButton active"
+                  onClick={()=>this.setState({currentImage:(currentImage+images.length-1)%images.length})}
+                ></div>
+                <div 
+                  className="modalImageViewerRightButton active"
+                  onClick={()=>this.setState({currentImage:(currentImage+1)%images.length})}
+                ></div>
                 </div>
-                </div>
-                  );
-              })
-              }
+                <img className="postModalImg" src={images[currentImage].full}></img>
+              </div>
+            <div className="modalImageViewerFooter">
+              <a className="modalImageViewerOpenOriginal" target="_blank" href={images[this.state.currentImage].original}>Open original</a>
             </div>
+          </div>
         </div>
       </div>
     )

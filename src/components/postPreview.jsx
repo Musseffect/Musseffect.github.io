@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import { NavLink, Route, Switch } from 'react-router-dom';
+import { NavLink} from 'react-router-dom';
 import Tag from "./tag.jsx";
-
 
 class PostPreview extends Component {
   constructor(props)
@@ -11,7 +10,7 @@ class PostPreview extends Component {
   render() {
     let {name,tags,link,thumbnail,active,clickOnTag} = this.props;
     return (
-      <div className='postPreviewContainer' style={active?{opacity:1.0}:{opacity:0.2}}>
+      <div className={'postPreviewContainer'+(active?'':' disabled')}>
         <div className='postThumbnail'>
           <img className='postThumbnailImage' src={thumbnail}/>
         </div>

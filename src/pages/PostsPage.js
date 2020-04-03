@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
-import { NavLink, Route, Switch } from 'react-router-dom';
 import { withRouter } from 'react-router';
 import PostPreview from '../components/postPreview.jsx';
 import Tag from "../components/tag.jsx";
 import {switchLanguage, setTitle,clickOnTag} from "../actions/actions.js";
+
 
 const mapStateToProps=function(state)
 {

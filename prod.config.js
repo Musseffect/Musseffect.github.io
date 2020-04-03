@@ -4,13 +4,18 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const {BundleAnalyzerPlugin} = require('webpack-bundle-analyzer');
 /*https://tproger.ru/translations/webpack-basics/*/
 const MinifyPlugin = require("babel-minify-webpack-plugin");
-/*const UglifyJSPlugin = require('uglifyjs-webpack-plugin');*/
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
   entry: {app: './src/index.js'},
   devtool: 'source-map',//'source-map' for production
+  optimization:{
+minimizer:[
+new UglifyJSPlugin()
+]
+  },
   plugins:
-  [/*new MinifyPlugin({mangle:false,evaluate:false}, {exclude:'/node_modules/'}),*/
+  [//new MinifyPlugin({mangle:false,evaluate:false}, {exclude:'/node_modules/'}),
  new webpack.HotModuleReplacementPlugin(),
   new ExtractTextPlugin('style.css'),
   new webpack.DefinePlugin({
