@@ -187,6 +187,7 @@
   flex-shrink: 0; }
 
 #content {
+  position: relative;
   width: 100%;
   height: 100%;
   overflow-y: auto; }
@@ -201,7 +202,7 @@
       /*padding:0px 10px;*/ } }
 
 #footer {
-  height: auto;
+  flex-shrink: 0;
   display: flex;
   flex-direction: row;
   width: 100%;
@@ -209,7 +210,8 @@
   position: relative;
   justify-content: center;
   flex-wrap: nowrap;
-  padding: 0px 10%; }
+  padding: 0px 10%;
+  box-shadow: 0px -2px 4px 0px rgba(0, 0, 0, 0.3); }
 
 @media only screen and (max-width: 640px) {
   #menuButtons {
@@ -241,6 +243,7 @@
   overflow-x: hidden; }
 
 .header {
+  flex-shrink: 0;
   width: 100%;
   height: 70px;
   display: flex;
@@ -248,7 +251,8 @@
   color: black;
   background-color: white;
   padding: 0px 10%;
-  border-bottom: 1px solid black; }
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.3);
+  /*border-bottom:1px solid black;*/ }
 
 .headerTitleText {
   font-size: 25px;
@@ -336,7 +340,8 @@
   height: 10px;
   align-self: center;
   margin-right: 5px;
-  border-radius: 5px; }
+  border-radius: 5px;
+  flex-shrink: 0; }
 
 .tag {
   user-select: none;
@@ -347,13 +352,16 @@
   padding: 3px 7px;
   margin: 3px 3px;
   border-radius: 2px;
-  background-color: gray; }
+  background-color: gray;
+  max-width: 100%; }
 
 .tag.active {
   background-color: #2573d8; }
 
 .tagName {
-  color: white; }
+  color: white;
+  overflow: hidden;
+  text-overflow: ellipsis; }
 
 .postHeaderLink {
   padding: 5px;
@@ -375,7 +383,9 @@
   flex-direction: column;
   align-items: center;
   padding: 5px;
-  opacity: 1.0; }
+  opacity: 1.0;
+  flex-grow: 0;
+  flex-shrink: 0; }
   @media only screen and (max-width: 640px) {
     .postPreviewContainer {
       width: 100%; } }
@@ -387,18 +397,29 @@
       width: 20%; } }
 
 .postPreviewContainer.disabled {
-  opacity: 0.2; }
+  display: none; }
 
 .postThumbnail {
   width: 100%;
   height: 0;
   padding-bottom: 100%;
-  position: relative; }
+  position: relative;
+  cursor: pointer; }
   @media only screen and (max-width: 640px) {
     .postThumbnail {
       height: 100%;
       padding-bottom: 0;
       max-width: 300px; } }
+
+.postThumbnailLink {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%; }
+  @media only screen and (max-width: 640px) {
+    .postThumbnailLink {
+      position: relative; } }
 
 .postThumbnailImage {
   /*height:200px;
@@ -435,8 +456,7 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding-top: 20px; }
+  align-items: center; }
 
 .postMainImg {
   object-fit: contain;
@@ -454,10 +474,29 @@
       width: 600px;
       max-height: 600px; } }
 
+html, body {
+  height: 100%; }
+
+#root, #rootLayout, .containerMain {
+  height: 100%; }
+
+#rootLayout {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%; }
+
+.content {
+  flex: 1 0 auto;
+  position: relative;
+  padding: 10px 0px; }
+
 .postTags {
   display: flex;
   flex-direction: row;
-  margin: 0px 0px; }
+  margin: 5px 0px;
+  flex-wrap: wrap;
+  justify-content: center; }
 
 .postImages {
   display: flex;
@@ -568,9 +607,21 @@
   display: flex;
   flex-direction: column;
   background-color: black;
-  position: relative;
-  width: 90%;
-  height: 80%; }
+  position: relative; }
+  @media only screen and (max-width: 640px) {
+    .modalImageViewerWindow {
+      width: 100%;
+      height: 100%; } }
+  @media only screen and (min-width: 641px) and (max-width: 1007px) {
+    .modalImageViewerWindow {
+      width: 90%;
+      height: 90%; } }
+  @media only screen and (min-width: 1008px) {
+    .modalImageViewerWindow {
+      max-width: 90%;
+      max-height: 90%;
+      width: 1000px;
+      height: 1000px; } }
 
 .modalImageViewerHeader {
   display: flex;
@@ -581,6 +632,7 @@
   width: 100%; }
 
 .modalImageViewerCloseButton {
+  filter: drop-shadow(0px 0px 4px black);
   border: none;
   position: absolute;
   top: 0px;
@@ -605,13 +657,14 @@
 
 .postModalImg {
   width: 100%;
-  height: 100%;
+  height: auto;
   display: block;
   position: relative;
   object-fit: contain;
   object-position: center; }
 
 .modalImageViewerLeftButton, .modalImageViewerRightButton {
+  filter: drop-shadow(0px 0px 4px black);
   display: flex;
   z-index: 1000;
   /*justify-content: center;*/
@@ -649,7 +702,6 @@
   content: ">"; }
 
 .modalImageViewerBody {
-  padding: 40px;
   position: relative;
   display: flex;
   flex-direction: row;
@@ -658,6 +710,15 @@
   height: auto;
   flex-grow: 1;
   flex-shrink: 1; }
+  @media only screen and (max-width: 640px) {
+    .modalImageViewerBody {
+      padding: 0px; } }
+  @media only screen and (min-width: 641px) and (max-width: 1007px) {
+    .modalImageViewerBody {
+      padding: 20px; } }
+  @media only screen and (min-width: 1008px) {
+    .modalImageViewerBody {
+      padding: 40px; } }
 
 .modalImageViewerFooter {
   display: flex;
@@ -685,5 +746,3 @@
 .modalImageViewerOpenOriginal:hover {
   color: white;
   text-decoration: none; }
-
-/*# sourceMappingURL=style.css.map*/
