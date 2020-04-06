@@ -1,6 +1,7 @@
-import { createStore } from "redux"; 
+import { createStore, applyMiddleware } from "redux"; 
 import rootReducer from "../reducers/rootReducer.js";
-
+import thunkMiddleware from 'redux-thunk';
+import {fetchPosts} from '../actions/actions.js';
 
 const initialState=(function(){
 		let state={};
@@ -11,7 +12,17 @@ const initialState=(function(){
 		state.about=about;
 		state.title="";
 		state.language = "ru";
-		state.posts = [
+		state.isFetching = false;
+		state.hasError = false;
+		state.tags = {};
+		state.posts = [];
+		/*
+		
+		
+		
+		
+		*/
+		/*state.posts = [
 			{
 				name:'Light in 2D',
 				description:'',
@@ -179,6 +190,50 @@ const initialState=(function(){
 					}
 				],
 				tags:['3d','graphics','processing','glsl','openframeworks']
+			},
+			{
+				name:'Lines',
+				description:'',
+				thumbnail:'https://live.staticflickr.com/65535/49742552207_01c05e25fc_m.jpg',//200px
+				mainImg:'https://live.staticflickr.com/65535/49742552207_01c05e25fc_b.jpg',//400px
+				images:[
+					{
+						thumbnail: 'https://live.staticflickr.com/65535/49742552207_01c05e25fc_n.jpg',
+						full: 'https://live.staticflickr.com/65535/49742552207_01c05e25fc_b.jpg',
+						original:'https://live.staticflickr.com/65535/49742552207_081981ca8c_o.png'
+					},
+					{
+						thumbnail: 'https://live.staticflickr.com/65535/49741679373_e0c9781729_n.jpg',
+						full: 'https://live.staticflickr.com/65535/49741679373_e0c9781729_b.jpg',
+						original:'https://live.staticflickr.com/65535/49741679373_d64222abc9_o.png'
+					},
+					{
+						thumbnail: 'https://live.staticflickr.com/65535/49742228746_304f93101d_n.jpg',
+						full: 'https://live.staticflickr.com/65535/49742228746_304f93101d_b.jpg',
+						original:'https://live.staticflickr.com/65535/49742228746_980c96ef49_o.png'
+					},
+					{
+						thumbnail: 'https://live.staticflickr.com/65535/49742228691_c4bbe2a3aa_n.jpg',
+						full: 'https://live.staticflickr.com/65535/49742228691_c4bbe2a3aa_b.jpg',
+						original:'https://live.staticflickr.com/65535/49742228691_bf7d82f7b4_o.png'
+					},
+					{
+						thumbnail: 'https://live.staticflickr.com/65535/49741679008_a1cb8c42f8_n.jpg',
+						full: 'https://live.staticflickr.com/65535/49741679008_a1cb8c42f8_b.jpg',
+						original:'https://live.staticflickr.com/65535/49741679008_1556c02e09_o.png'
+					},
+					{
+						thumbnail: 'https://live.staticflickr.com/65535/49742228356_512eb097a7_n.jpg',
+						full: 'https://live.staticflickr.com/65535/49742228356_512eb097a7_b.jpg',
+						original:'https://live.staticflickr.com/65535/49742228356_42def4fc40_o.png'
+					},
+					{
+						thumbnail: 'https://live.staticflickr.com/65535/49741678678_9597c57a82_n.jpg',
+						full: 'https://live.staticflickr.com/65535/49741678678_9597c57a82_b.jpg',
+						original:'https://live.staticflickr.com/65535/49741678678_7b7bfe016c_o.png'
+					}
+				],
+				tags:['2d','processing','generative','openframeworks']
 			}
 		];
 		state.tags = {};
@@ -186,7 +241,7 @@ const initialState=(function(){
 		{
 			value.tags.forEach(function(value)
 			{
-				state.tags[value]=true;
+				state.tags[value]=false;
 			});
 		});
 		if(localStorage)
@@ -204,13 +259,14 @@ const initialState=(function(){
 			{
 				localStorage.setItem("tags", JSON.stringify(state.tags));
 			}
-		}
+		}*/
 		return state;
 })();
 
 
-const store = createStore(rootReducer,initialState
+const store = createStore(rootReducer,initialState,applyMiddleware(thunkMiddleware)
 	,window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());  
 
+store.dispatch(fetchPosts());
 
 export default store;

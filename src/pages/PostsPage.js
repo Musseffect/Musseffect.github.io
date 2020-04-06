@@ -61,6 +61,7 @@ class PostsPage extends Component {
             {
               let tagActive = activeTags.includes(value);
               active|=tagActive;
+              activeTags.length==0?active=true:null;
               return {active:tagActive,name:value};
             });
             return (<PostPreview key={index} name={value.name} link={index} thumbnail={value.thumbnail} tags={tags} active={active} clickOnTag={clickOnTag}/>);

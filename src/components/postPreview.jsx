@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { NavLink} from 'react-router-dom';
+import { Link} from 'react-router-dom';
 import Tag from "./tag.jsx";
 
 class PostPreview extends Component {
@@ -12,9 +12,12 @@ class PostPreview extends Component {
     return (
       <div className={'postPreviewContainer'+(active?'':' disabled')}>
         <div className='postThumbnail'>
+          
+        <Link key="link_1" to={'/posts/'+link} className="postThumbnailLink">
           <img className='postThumbnailImage' src={thumbnail}/>
+        </Link>
         </div>
-        <NavLink key="link_1" exact to={'/posts/'+link} className="postHeaderLink h6">{name}</NavLink>
+        <Link key="link_1" to={'/posts/'+link} className="postHeaderLink h6">{name}</Link>
         <div className='postPreviewTags'>
             {
             tags.map(function(value,index)

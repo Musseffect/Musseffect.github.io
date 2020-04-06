@@ -8,22 +8,18 @@ const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
   entry: {app: './src/index.js'},
-  devtool: 'source-map',//'source-map' for production
-  optimization:{
-minimizer:[
-new UglifyJSPlugin()
-]
+  devtool: '',//'source-map' for production
+  optimization: {
+    minimize: true
   },
   plugins:
-  [//new MinifyPlugin({mangle:false,evaluate:false}, {exclude:'/node_modules/'}),
- new webpack.HotModuleReplacementPlugin(),
+  [
+    //new MinifyPlugin({mangle:true,evaluate:false}, {exclude:'/node_modules/'}),
+  new webpack.HotModuleReplacementPlugin(),
   new ExtractTextPlugin('style.css'),
   new webpack.DefinePlugin({
     'process.env.NODE_ENV': JSON.stringify('production')
-    }),
-  /*new UglifyJSPlugin({
-       sourceMap: true
-     }),*/
+    })
   /*new BundleAnalyzerPlugin({
             analyzerMode: 'static'
         })*/
