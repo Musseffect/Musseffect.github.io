@@ -18,24 +18,23 @@ const mapDispatchToProps=function(dispatch)
   });
 };
 
-class MainPage extends Component {
+class NoMatchPage extends Component {
   constructor(props)
   {
       super(props);
   }
   componentDidMount()
   {
-    this.props.setTitle("Main");
+    this.props.setTitle("Page 404");
   }
   render() {
     let {} = this.props;
     return (
-      <div className='mainPageContainer pageContainer'>
-        this is a main page
+      <div className='page404'>
+        Page 404
       </div>
     )
   }
 }
 
-
-export default withRouter(connect(mapStateToProps,mapDispatchToProps)(MainPage));
+export default withRouter(connect(mapStateToProps,mapDispatchToProps)(NoMatchPage));

@@ -27,19 +27,39 @@ class LinksPage extends Component {
   render() {
     let {links} = this.props;
     let elements=[];
-    for(var i=0;i<links.length;i++)
+    links.forEach(function(item,index)
+    {
+      let childs = item.links.map(function(value,childIndex)
+      {
+        return (
+          <div key = {childIndex} className = "linkContainer">
+            <a className='linkItem' href={value.link}>{value.link}</a>
+            {value.description!=undefined&&
+              <div className='linkDescription'>
+              {" - "+ value.description}
+              </div>}
+          </div>)
+      });
+      elements.push(
+        <div key={index} className = "linksGroup">
+          <div key={index} className = "linksHeader">{item.groupName}</div>
+          <div className='linksList'>
+            {childs}
+          </div>
+        </div>);
+
+    });
+    /*for(var i=0;i<links.length;i++)
     {
       let linkItem=links[i];
       elements.push(<div key={i} className='linkContainer'>
-        <a className='linkItem' href={linkItem.link}>{linkItem.link}
-        </a>
+        <a className='linkItem' href={linkItem.link}>{linkItem.link}</a>
         {linkItem.description!=undefined&&<div className='linkDescription'>
-          {linkItem.description}
+          {" - "+ linkItem.description}
           </div>}
         </div>);
-    }
-    return (
-      <div className='linksContainer pageContainer'>
+    }*/
+    /*
         <div className = 'linksGroup'>
           <div className='linksHeader'>Ray tracing</div>
           <ul className='linksList'>
@@ -48,7 +68,10 @@ class LinksPage extends Component {
             <li>item 3</li>
             <li>item 4</li>
           </ul>
-        </div>
+        </div> */
+    return (
+      <div className='linksContainer pageContainer'>
+        {elements}
       </div>
     )
   }

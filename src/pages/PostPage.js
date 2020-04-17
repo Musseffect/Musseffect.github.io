@@ -1,19 +1,21 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
 import Tag from "../components/tag.jsx";
-import { withRouter } from 'react-router';
+import { withRouter,Redirect} from 'react-router';
 import ReactMarkdown from "react-markdown";
+import {switchLanguage, setTitle} from "../actions/actions.js";
 
 const mapStateToProps=function(state,ownProps)
 {
   const { id } = ownProps.match.params;
-  return state.posts[id];
+  return {post:state.posts[id]};
 };
 
 const mapDispatchToProps=function(dispatch)
 {
   return ({
-    //switchLanguage:function(){dispatch(switchLanguage());}
+    //switchLanguage:function(){dispatch(switchLanguage());},
+    setTitle:function(title){dispatch(setTitle(title));}
   });
 };
 
@@ -27,14 +29,25 @@ class PostPage extends Component {
         currentImage:0
       }
   }
+  componentDidMount()
+  {
+    this.props.setTitle(this.props.name);
+  }
   render() {
     let {
+      post
+    } = this.props;
+    if(post == undefined)
+    {
+      return <Redirect to='/' />
+    }
+    const {
       name,
       description,
       tags,
       images,
       mainImg
-    } = this.props;
+    } = post;
     let {
       showImage,
       currentImage
@@ -107,21 +120,5 @@ class PostPage extends Component {
   }
 }
 
-PostPage.defaultProps={
-  name:'Name',
-  description:`Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-   Donec interdum eget tellus eu sagittis. Mauris sagittis erat a risus gravida convallis. 
-   Sed fringilla varius neque, vel porta lorem porttitor in. Fusce placerat libero sapien, ut efficitur augue iaculis in. 
-   Donec mollis varius ornare. Morbi a tortor tempus, malesuada nisl sed, elementum neque. Pellentesque nec pulvinar tortor. 
-   Praesent ut dapibus purus, et luctus nisi. Aliquam pharetra sed magna at lobortis. 
-   Duis vitae nisl dignissim dolor facilisis finibus. Suspendisse aliquam, ante et tincidunt pellentesque, lectus ipsum lacinia nibh, at vestibulum libero sapien sit amet leo. Donec eget quam non elit pulvinar elementum eget sed purus.
-   Duis interdum neque non est interdum scelerisque. Proin at ligula eu tortor finibus luctus ac malesuada eros. Sed lobortis risus ac pellentesque iaculis. Quisque convallis accumsan erat vel facilisis. 
-   Suspendisse vel justo sit amet tellus suscipit vestibulum porta non massa. Suspendisse sit amet eros quis diam tincidunt malesuada ut eu lectus. Sed elementum mauris ac varius tincidunt. Curabitur efficitur sapien et est faucibus, et auctor eros ornare.
-   Phasellus faucibus lorem sit amet lacinia accumsan. Aliquam ac dignissim nulla. Ut nibh elit, pulvinar vel odio et, volutpat pretium velit. Proin et leo tempus, tristique lectus nec, ultrices felis. Maecenas scelerisque tortor nec dui porttitor porta non et mauris.
-   Phasellus tempus tincidunt dui sit amet egestas. Cras mattis congue elit, sed sagittis lectus egestas nec.`,
-  tags:['huj','pizda','jigurda'],
-  images:[],
-  mainImg:''
-};
 
 export default withRouter(connect(mapStateToProps,mapDispatchToProps)(PostPage));

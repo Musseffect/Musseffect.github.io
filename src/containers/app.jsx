@@ -8,6 +8,7 @@ import AboutPage from '../pages/AboutPage.js';
 import LinksPage from '../pages/LinksPage.js';
 import PostsPage from '../pages/PostsPage.js';
 import PostPage from '../pages/PostPage.js';
+import NoMatchPage from '../pages/NoMatchPage.js';
 import {smallMedium,mediumLarge} from "../windowSizes.js";
 
 const mapStateToProps=function(state)
@@ -93,28 +94,25 @@ class App extends Component {
           </div>
         </div>
           {isFetching&&(
-            <div style={
-              {
-                position:"absolute",
-                top:0,
-                left:0,
-                width:"100%",
-                height:"100%",
-                backgroundColor:"rgba(255,255,255,0.5)",
-                zIndex:1000
-                }}>
+            <div className="loaderBackground">
+                <div className="loader">
+                  <div></div><div></div><div></div>
+                </div>
             </div>
           )}
           {hasError?
           <div id="errorMessage">
             Im sorry, you've got a fucking error, man
-          </div>:
+          </div>:!isFetching&&
           <div id="routeContent">
-            <Route exact path='/main' render={(props)=><MainPage {...props}/>} />
+            <Switch>
+            <Route path='/main' render={(props)=><MainPage {...props}/>} />
             <Route exact path='/' render={(props)=><PostsPage {...props}/>} />
-            <Route exact path='/about' render={(props)=><AboutPage {...props}/>} />
-            <Route exact path='/links' render={(props)=><LinksPage {...props}/>} />
+            <Route path='/about' render={(props)=><AboutPage {...props}/>} />
+            <Route path='/links' render={(props)=><LinksPage {...props}/>} />
             <Route path="/posts/:id" component={PostPage} />
+            <Route path="*" component={NoMatchPage} />
+            </Switch>
           </div>
           }
       </div>

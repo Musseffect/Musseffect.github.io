@@ -30,7 +30,7 @@ class PostsPage extends Component {
   }
   componentDidMount()
   {
-    this.props.setTitle("Posts");
+    this.props.setTitle("Musseffect");
   }
   render() {
     let {posts,tags,clickOnTag} = this.props;
