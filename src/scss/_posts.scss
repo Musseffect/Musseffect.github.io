@@ -1,0 +1,314 @@
+
+//New
+.tagCircle
+{
+    background-color:white;
+    width:10px;
+    height:10px;
+    align-self: center;
+    margin-right:5px;
+	border-radius:5px;
+	flex-shrink:0;
+}
+.tag
+{
+	user-select: none;
+	cursor: pointer;
+    display:flex;
+    flex-direction:row;
+    font-weight:600;
+    padding:3px 7px;
+    margin:3px 3px;
+    border-radius:2px;
+	background-color:rgb(128, 128, 128);
+	max-width:100%;
+}
+.tag:hover{
+	background-color:#595959;
+}
+.tag.active
+{
+    background-color:rgb(37, 115, 216);
+}
+.tag.active:hover{
+	background-color:#23599e;
+}
+.tagName
+{
+	color:white;
+	overflow:hidden;
+	text-overflow:ellipsis;
+}
+.postHeaderLink
+{
+    padding:5px;
+    color:black;
+    font-size:22px;
+    text-overflow:ellipsis;
+	white-space:nowrap;
+	word-wrap: normal;
+}
+.postPreviewTags
+{
+	display:flex;
+	padding:0px 10%;
+	width:100%;
+	flex-wrap:wrap;
+	justify-content:center;
+	flex-shrink:0;
+	flex-grow:0;
+}
+.postPreviewContainer
+{
+	@include respond-to(handhelds) {
+	  width:100%;
+  	}
+	@include respond-to(medium-screens) { 
+	  width:33.3333%;
+   	}
+	@include respond-to(wide-screens) {
+	  width:25%;
+  	}
+	display:flex;
+	flex-direction:column;
+	align-items: center;
+	padding:5px;
+	opacity:1.0;
+	flex-grow:0;
+	flex-shrink:0;
+	/*height:100%;*/
+	position:relative;
+	overflow:hidden;
+}
+.postPreviewContainer.disabled
+{
+	display:none;
+}
+.postThumbnail
+{
+	//max-width:400px;
+	width:100%;
+	height:0;
+	padding-bottom:100%;
+	position:relative;
+	@include respond-to(handhelds) {
+		height:100%;
+		padding-bottom:0;
+		max-width:300px;
+	}
+	cursor:pointer;
+}
+.postThumbnailLink
+{
+	position:absolute;
+	left:0;
+	top:0;
+	width:100%;
+	height:100%;
+	@include respond-to(handhelds) {
+		position:relative;
+		width:100%;
+		height:100%;
+	}
+}
+.postThumbnailImage
+{
+	/*height:200px;
+	width:200px;
+	margin:10px;*/
+	position:absolute;
+	left:0;
+	top:0;
+	width:100%;
+	height:100%;
+	//padding:10px;
+	//border:1px solid black;
+	object-fit:contain;
+	object-position:center;
+	@include respond-to(handhelds) {
+		position:relative;
+		height:auto;
+		max-height:250px;
+	}
+}
+
+.postsContainer
+{
+	display:flex;
+	flex-direction:column;
+}
+.globalTagsContainer
+{
+	display:flex;
+	padding:0px 10%;
+	width:100%;
+	flex-wrap:wrap;
+	justify-content:center;
+}
+.posts
+{
+	display:flex;
+	position:relative;
+	flex-direction:row;
+	flex-wrap:wrap;
+	//justify-content: space-between;
+}
+
+
+//Post
+.postContent
+{
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+.postMainImg
+{
+	margin-bottom:5px;
+	@include respond-to(handhelds) {
+		width:100%;
+		max-height:400px;
+	}
+	@include respond-to(medium-screens) { 
+		width:600px;
+		max-height:600px;
+	}
+	@include respond-to(wide-screens) { 
+		width:600px;
+		max-height:600px;
+	}
+	object-fit:contain;
+	object-position:center;
+}
+.postTags
+{
+    display:flex;
+    flex-direction:row;
+	/*margin:5px 0px;*/
+	flex-wrap:wrap;
+	justify-content:center;
+}
+.postDescription
+{
+
+	@include respond-to(handhelds) {
+		padding:5px;
+	}
+	@include respond-to(medium-screens) { 
+		padding:0px;
+	}
+	@include respond-to(wide-screens) { 
+		padding:0px;
+	}
+}
+.postImages
+{
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+}
+.postImg
+{
+	@include respond-to(handhelds) {
+		height:100px;
+		width:100px;
+		margin:4px;
+	}
+	@include respond-to(medium-screens) { 
+		height:200px;
+		width:200px;
+		margin:4px;
+	}
+	@include respond-to(wide-screens) { 
+		height:300px;
+		width:300px;
+		margin:10px;
+	}
+	border: 1px gray solid;
+    background-color:gray;
+	object-fit:cover;
+	object-position:center;
+}
+
+
+@mixin imageContainer($imgPerRow,$margin)
+{
+	$marginTotal:($margin * ($imgPerRow - 1));
+	flex-basis:calc((100% - #{$marginTotal}) / #{$imgPerRow});
+	margin-right:#{$margin};
+}
+
+.postImages2
+{
+	display:flex;
+	flex-direction:row;
+	flex-wrap:wrap;
+	width:100%;
+}
+.postImgContainer
+{
+	@include respond-to(handhelds) {
+		@include imageContainer(3,2px);
+		margin-top:2px;
+	}
+	@include respond-to(medium-screens) { 
+		@include imageContainer(4,10px);
+		margin-top:10px;
+	}
+	@include respond-to(wide-screens) { 
+		@include imageContainer(5,25px);
+		margin-top:25px;
+	}
+    display:block;
+    flex-grow:0;
+    flex-shrink:0;
+	position: relative;
+}
+
+@include respond-to(handhelds) {
+	.postImgContainer:nth-child(3n)
+	{
+		margin-right:0px;
+	}
+	.postImgContainer:nth-child(-n+3)
+	{
+		margin-top:0px;
+	}
+}
+@include respond-to(medium-screens) { 
+	.postImgContainer:nth-child(4n)
+	{
+		margin-right:0px;
+	}
+	.postImgContainer:nth-child(-n+4)
+	{
+		margin-top:0px;
+	}
+}
+@include respond-to(wide-screens) { 
+	.postImgContainer:nth-child(5n)
+	{
+		margin-right:0px;
+	}
+	.postImgContainer:nth-child(-n+5)
+	{
+		margin-top:0px;
+	}
+}
+.postImgFrame
+{
+    padding-bottom:100%;
+    position:relative;
+}
+.postImg2
+{
+	cursor:pointer;
+    position:absolute;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    object-position:center;
+}

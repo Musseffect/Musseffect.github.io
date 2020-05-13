@@ -1,26 +1,37 @@
 import React, { Component } from 'react';
-import { NavLink, Route, Switch } from 'react-router-dom';
 
 
 export class Modal extends Component {
   constructor(props)
   {
       super(props);
-      this.onClose = this.onClose.bind(this);
   }
   render() {
-    let {show,windowStyle,onHide} = this.props;
-    let children = this.props.children.map(function(child)
+    let {show,windowStyle,containerStyle,backgroundStyle} = this.props;
+    let children = this.props.children;
+    /*let children = this.props.children.map(function(child)
     {
       if(child.type === ModalHeader)
       {
-          return React.cloneElement(child,{onCloseButton:onHide});
+          return React.cloneElement(child,{onCloseButton:onCloseButton});
       }
       return child;
-    });
+    });*/
     return (
-      <div className="modalBackground">
-        <div className={windowStyle} style={show?{display:"block"}:{display:"none"}}>
+      <div className={containerStyle} style={
+        show?{
+          /*display:"flex",
+          flexDirection:"column",
+          justifyContent:"center",
+          alignItems:"center",
+          position:"fixed",
+          left:"0",
+          top:"0",
+          width:"100%",
+          height:"100%"*/
+          }:{display:"none"}}>
+          <div className={backgroundStyle}></div>
+        <div className={windowStyle}>
           {children}
         </div>
       </div>
@@ -35,13 +46,10 @@ export class ModalHeader extends Component
       super(props);
   }
   render() {
-    let {closeButton,headerStyle,onCloseButton} = this.props;
+    let {headerStyle} = this.props;
     return (
       <div className={headerStyle}>
           {this.props.children}
-          {closeButton?
-          (<div className="modalCloseButton" onClick={onCloseButton}></div>):null
-          }
       </div>
     )
   }
@@ -54,7 +62,7 @@ export class ModalBody extends Component
   }
   render()
   {
-    let {bodyStyle} = props;
+    let {bodyStyle} = this.props;
     return (
       <div className={bodyStyle}>
           {this.props.children}
@@ -70,7 +78,7 @@ export class ModalFooter extends Component
   }
   render()
   {
-    let {footerStyle} = props;
+    let {footerStyle} = this.props;
     return (
       <div className={footerStyle}>
           {this.props.children}
@@ -81,17 +89,18 @@ export class ModalFooter extends Component
 
 ModalFooter.defaultProps=
 {
-  footerStyle="modalFooter"
+  footerStyle:"modalFooter"
 };
 ModalHeader.defaultProps=
 {
-  headerStyle="modalHeader"
+  headerStyle:"modalHeader"
 };
 Modal.defaultProps=
 {
-  windowStyle="modalWindow"
+  windowStyle:"modalWindow",
+  backgroundStyle:"modalBackground"
 };
 ModalBody.defaultProps=
 {
-  bodyStyle="modalBody"
+  bodyStyle:"modalBody"
 };

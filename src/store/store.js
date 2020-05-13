@@ -45,6 +45,7 @@ const initialState=(function(){
 		state.hasError = false;
 		state.tags = {};
 		state.posts = [];
+		state.notes = [];
 		/*
 		state.tags = {};
 		state.posts.forEach(function(value)

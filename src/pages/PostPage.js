@@ -4,7 +4,7 @@ import Tag from "../components/tag.jsx";
 import { withRouter,Redirect} from 'react-router';
 import ReactMarkdown from "react-markdown";
 import {switchLanguage, setTitle} from "../actions/actions.js";
-
+import ImageViewer from '../components/imageViewer.jsx';
 const mapStateToProps=function(state,ownProps)
 {
   const { id } = ownProps.match.params;
@@ -31,10 +31,11 @@ class PostPage extends Component {
   }
   componentDidMount()
   {
-    this.props.setTitle(this.props.name);
+    if(this.props.post!==undefined)
+      this.props.setTitle(this.props.post.name);
   }
   render() {
-    let {
+    const {
       post
     } = this.props;
     if(post == undefined)
@@ -53,6 +54,8 @@ class PostPage extends Component {
       currentImage
     } = this.state;
     let self = this;
+    let isValid = (currentImage>=0&&currentImage<images.length);
+    showImage=showImage&&isValid;
     return (
       <div className='postContainer pageContainer'>
         <div className='postContent'>
@@ -71,30 +74,44 @@ class PostPage extends Component {
           <ReactMarkdown source = {description} className = {'postDescription'}/>
           <div className="postImages2">
             {
-            images.map(function(value,index)
-            {
-              return (
-              <div key={index+'_container'} className='postImgContainer'>
-              <div key={index+'_frame'} className='postImgFrame'>
-                <img 
-                  key={index} 
-                  className="postImg2" 
-                  src={value.thumbnail} 
-                  onClick={()=>{self.setState({currentImage:index,showImage:true})}}
-                ></img>
-              </div>
-              </div>
-                );
-            })
+              images.map(function(value,index)
+              {
+                return (
+                <div key={index+'_container'} className='postImgContainer'>
+                <div key={index+'_frame'} className='postImgFrame'>
+                  <img 
+                    key={index} 
+                    className="postImg2" 
+                    src={value.thumbnail} 
+                    onClick={()=>{self.setState({currentImage:index,showImage:true})}}
+                  ></img>
+                </div>
+                </div>
+                  );
+              })
             }
           </div>
         </div>
+        <ImageViewer 
+        show={showImage} 
+        originalHref= {images[currentImage].original}
+        onClose={()=>this.setState({showImage:false})}
+        onLeft={()=>this.setState({currentImage:(currentImage+images.length-1)%images.length})}
+        onRight={()=>this.setState({currentImage:(currentImage+1)%images.length})}
+        imageSrc={images[currentImage].full}
+        />
+      </div>
+    )
+  }
+}
+/*
+
         <div className="modalImageViewerContainer"  style={this.state.showImage?{}:{display:'none'}}>
           <div className="modalImageViewerBackground"></div>
           <div className="modalImageViewerCloseButton"
             onClick={()=>this.setState({showImage:false})}
           ></div>
-          <div className="modalImageViewerWindow ">
+          <div className="modalImageViewerWindow">
               <div className="modalImageViewerHeader">
               </div>
               <div className="modalImageViewerBody">
@@ -115,10 +132,6 @@ class PostPage extends Component {
             </div>
           </div>
         </div>
-      </div>
-    )
-  }
-}
-
+*/
 
 export default withRouter(connect(mapStateToProps,mapDispatchToProps)(PostPage));

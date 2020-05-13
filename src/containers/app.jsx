@@ -8,8 +8,11 @@ import AboutPage from '../pages/AboutPage.js';
 import LinksPage from '../pages/LinksPage.js';
 import PostsPage from '../pages/PostsPage.js';
 import PostPage from '../pages/PostPage.js';
+import NotesPage from '../pages/NotesPage.js';
+import NotePage from '../pages/NotePage.js';
 import NoMatchPage from '../pages/NoMatchPage.js';
 import {smallMedium,mediumLarge} from "../windowSizes.js";
+import GalleryPage from '../pages/GalleryPage.js';
 
 const mapStateToProps=function(state)
 {
@@ -39,10 +42,9 @@ class App extends Component {
     }=this.props;
 
     let links=[];
-    links.push(<NavLink key="link_1" exact to='/main' className="nav-link nav-item link" activeClassName="active" onClick={this.closeMenu}>{"Main"}</NavLink>); 
-    links.push(<NavLink key="link_5" exact to='/links' className="nav-link nav-item link" activeClassName="active" onClick={this.closeMenu}>{"Links"}</NavLink>);  
-    links.push(<NavLink key="link_6" exact to='/about' className="nav-link nav-item link" activeClassName="active" onClick={this.closeMenu}>{"About"}</NavLink>);  
-    links.push(<NavLink key="link_7" exact to='/' className="nav-link nav-item link" activeClassName="active" onClick={this.closeMenu}>{"Blog"}</NavLink>);  
+    links.push(<NavLink key="link_1" exact to='/posts' className="link" activeClassName="active" onClick={this.closeMenu}>{"Projects"}</NavLink>); 
+    links.push(<NavLink key="link_2" exact to='/notes' className="link" activeClassName="active" onClick={this.closeMenu}>{"Notes"}</NavLink>);  
+    links.push(<NavLink key="link_3" exact to='/about' className="link" activeClassName="active" onClick={this.closeMenu}>{"About"}</NavLink>);  
 
     /*<div className="headerMainButton">
     <a href = "https://musseffect.github.io/">
@@ -54,11 +56,12 @@ class App extends Component {
     <div id="rootLayout">
       <header className = "header">
       <MediaQuery minWidth={smallMedium+1}>
-        <div className="headerMainButton">
+        <div className="headerMainLinks">
+          {links}
         </div>
       </MediaQuery>
         <div className="headerPageTitle">
-          <NavLink  key="link_1" exact to='/' className="nav-link nav-item link headerTitleText" activeClassName="active" onClick={this.closeMenu}>
+          <NavLink  key="link_1" exact to='/' className="headerTitleText" activeClassName="active" onClick={this.closeMenu}>
           {'Musseffect'}
           </NavLink>
         </div>
@@ -87,6 +90,11 @@ class App extends Component {
         </div>
       </MediaQuery>
       </header>
+      <MediaQuery maxWidth = {smallMedium}>
+        <div className="linksSmallContainer">
+          {links}
+        </div>
+      </MediaQuery>
       <div className="content">
         <div id="menu" className="navbar navbar-expand navbar-dark bg-primary" style={{width:"100%",display:"none",flexDirection:"row"}} >
           <div id="menuButtons" className="navbar-nav mr-auto" style={{margin:'auto'}}>
@@ -106,12 +114,15 @@ class App extends Component {
           </div>:!isFetching&&
           <div id="routeContent">
             <Switch>
-            <Route path='/main' render={(props)=><MainPage {...props}/>} />
-            <Route exact path='/' render={(props)=><PostsPage {...props}/>} />
-            <Route path='/about' render={(props)=><AboutPage {...props}/>} />
-            <Route path='/links' render={(props)=><LinksPage {...props}/>} />
-            <Route path="/posts/:id" component={PostPage} />
-            <Route path="*" component={NoMatchPage} />
+              <Route exact path='/' render={(props)=><GalleryPage {...props}/>} />
+              <Route path='/about' render={(props)=><AboutPage {...props}/>} />
+              <Route exact path='/posts' render={(props)=><PostsPage {...props}/>} />
+              <Route exact path='/notes' render={(props)=><NotesPage {...props}/>} />
+              <Route path='/links' render={(props)=><LinksPage {...props}/>} />
+              {/*<Route path='/gallery' render={(props)=><GalleryPage {...props}/>} />*/}
+              <Route path='/notes/:id' component={NotePage} />
+              <Route path="/posts/:id" component={PostPage} />
+              <Route path="*" component={NoMatchPage} />
             </Switch>
           </div>
           }

@@ -35,6 +35,7 @@ var rootReducer=function(state, action)
 			let tags = {};
 			action.posts.forEach(function(value)
 			{
+				value.tags.sort();
 				value.tags.forEach(function(value)
 				{
 					tags[value]=false;
@@ -56,7 +57,19 @@ var rootReducer=function(state, action)
 					localStorage.setItem("tags", JSON.stringify(tags));
 				}
 			}
-			return Object.assign({},state,{posts:action.posts,tags:tags,isFetching:false});
+			let sortedNotes = action.notes.map(function(value)
+			{
+				let content = value.content.reduce(function(acc,cur)
+				{
+					return acc + cur;
+				},"");
+				value.content = content;
+				return Object.assign({date:new Date(value.datetime)},value);
+			}).sort(function(a,b)
+			{
+				return +b.date - +a.date;
+			});
+			return Object.assign({},state,{posts:action.posts,tags:tags,notes:sortedNotes,isFetching:false});
 		default:
 			return state;
 	}

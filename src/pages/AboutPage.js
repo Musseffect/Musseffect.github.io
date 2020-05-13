@@ -25,13 +25,15 @@ class AboutPage extends Component {
   }
   componentDidMount()
   {
-    this.props.setTitle("About");
+    this.props.setTitle("About. About what?");
   }
   render() {
     let {} = this.props;
     return (
       <div className='aboutContainer pageContainer'>
-        this is about page
+        <div className="h2" style={{width:"100%",textAlign:"center",}}>
+          Not great, not terrible.
+          </div>
       </div>
     )
   }

@@ -9,7 +9,7 @@ module.exports = {
   devtool: 'inline-source-map',//'source-map' for production
   devServer: {
      	contentBase: './dist',
- 		hot: true,
+ 		  hot: true,
      historyApiFallback: true
   },
   plugins:

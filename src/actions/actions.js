@@ -43,5 +43,6 @@ export var receivePosts = function(json)
     return {
         type:RECEIVE_POSTS,
         posts:json.posts,
+        notes:json.notes
     }
 }

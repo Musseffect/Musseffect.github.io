@@ -1,0 +1,108 @@
+
+.noteImage
+{
+    display:block;
+    margin:auto;
+    object-fit:contain;
+    object-position:center;
+	@include respond-to(handhelds) {
+	  width:100%;
+  	}
+	@include respond-to(medium-screens) { 
+	  width:60%;
+   	}
+	@include respond-to(wide-screens) {
+	  width:60%;
+  	}
+}
+.notesContainer
+{
+    flex-direction: column;
+    display:flex;
+}
+.noteContainer
+{
+    flex-direction: column;
+    display:flex;
+}
+.notes
+{
+    display:flex;
+    flex-direction:column;
+}
+.notePreview
+{
+    display:flex;
+    width:100%;
+    flex-grow:0;
+    flex-shrink:0;
+    overflow:hidden;
+    flex-wrap:nowrap;
+    padding:0px 5px;
+    @include respond-to(handhelds) {
+        flex-direction:column;
+    }
+	@include respond-to(medium-screens) { 
+        flex-direction:row;
+        align-items:center;
+   	}
+	@include respond-to(wide-screens) {
+        flex-direction:row;
+        align-items:center;
+  	}
+
+}
+.notePreviewDate
+{
+    color:gray;
+    margin-right:5px;
+    white-space:nowrap;
+}
+.notePreviewName{
+    overflow:hidden;
+}
+.noteHeaderLink
+{
+    text-decoration: none;
+    color:black;
+    font-size:20px;
+    text-overflow:ellipsis;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    display:block;
+    @include respond-to(handhelds) {
+        white-space:normal;
+        overflow-wrap:break-word;
+        word-break:break-all;
+    }
+}
+.noteHeaderLink:hover{
+    text-decoration:none;
+    color:gray;
+    width:100%;
+}
+.noteContent
+{
+    padding:0px 5px;
+}
+.noteDate
+{
+    color:gray;
+}
+.caption {
+    text-align: center;
+    font-size: .8rem;
+  }
+.noteHeader
+{
+    padding:0px 5px;
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+}
+.noteName
+{
+    font-size:20px;
+    color:black;
+}
