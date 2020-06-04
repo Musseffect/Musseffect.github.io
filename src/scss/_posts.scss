@@ -2,13 +2,20 @@
 //New
 .tagCircle
 {
-    background-color:white;
-    width:10px;
-    height:10px;
-    align-self: center;
-    margin-right:5px;
+    /*background-color:white;*/
+    /*width:10px;*/
+    /*height:10px;*/
+	align-self: center;
+    /*margin-right:5px;*/
 	border-radius:5px;
 	flex-shrink:0;
+}
+.tagCircle::before
+{
+	color:white;
+	content:"#";
+	width:10px;
+	height:10px;
 }
 .tag
 {

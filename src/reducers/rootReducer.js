@@ -3,9 +3,9 @@ import {
 	SWITCH_LANG,
 	SET_TITLE,
 	SWITCH_TAG_STATE,
-	REQUEST_POSTS,
-	ERROR_RECEIVING_POSTS,
-	RECEIVE_POSTS
+	REQUEST_CONTENT,
+	ERROR_RECEIVING_CONTENT,
+	RECEIVE_CONTENT
 } from '../actions/actions.js';
 
 var rootReducer=function(state, action)
@@ -27,11 +27,11 @@ var rootReducer=function(state, action)
 				state.tags = Object.assign({},state.tags);
 			}
 			return Object.assign({},state);
-		case REQUEST_POSTS:
+		case REQUEST_CONTENT:
 			return Object.assign({},state,{isFetching:true});
-		case ERROR_RECEIVING_POSTS:
-			return Object.assign({},state,{hasError:true});
-		case RECEIVE_POSTS:
+		case ERROR_RECEIVING_CONTENT:
+			return Object.assign({},state,{hasError:true,isFetching:false});
+		case RECEIVE_CONTENT:
 			let tags = {};
 			action.posts.forEach(function(value)
 			{
@@ -59,11 +59,11 @@ var rootReducer=function(state, action)
 			}
 			let sortedNotes = action.notes.map(function(value)
 			{
-				let content = value.content.reduce(function(acc,cur)
+				/*let content = value.content.reduce(function(acc,cur)
 				{
-					return acc + cur;
+					return acc + cur + "\n";
 				},"");
-				value.content = content;
+				value.content = content;*/
 				return Object.assign({date:new Date(value.datetime)},value);
 			}).sort(function(a,b)
 			{

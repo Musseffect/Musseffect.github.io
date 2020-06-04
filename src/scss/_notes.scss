@@ -15,6 +15,21 @@
 	  width:60%;
   	}
 }
+.nodeSpoiler
+{
+    background-color:gray;
+    color:gray;
+}
+.nodeSpoiler:hover
+{
+    color:black;
+    background-color:none;
+}
+.noteFigure
+{
+    text-align:center;
+    /*font-size: .8rem;*/
+}
 .notesContainer
 {
     flex-direction: column;
@@ -105,4 +120,8 @@
 {
     font-size:20px;
     color:black;
+}
+.paragraph
+{
+    margin-bottom:0.5rem;
 }

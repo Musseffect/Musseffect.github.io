@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
-import Tag from "../components/tag.jsx";
 import { withRouter,Redirect} from 'react-router';
-import ReactMarkdown from "react-markdown";
 import {switchLanguage, setTitle} from "../actions/actions.js";
 import { Link } from 'react-router-dom';
 import { dateToString } from '../utils.js';
@@ -22,7 +20,8 @@ const mapDispatchToProps=function(dispatch)
 };
 
 
-class NotesPage extends React.Component{
+class NotesPage extends Component
+{
     constructor(props)
     {
         super(props);

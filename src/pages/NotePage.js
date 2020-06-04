@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import { connect } from "react-redux";
 import Tag from "../components/tag.jsx";
 import { withRouter,Redirect} from 'react-router';
-import ReactMarkdown from "react-markdown";
+import MarkdownRender from "../components/markdownRender.jsx";
 import {switchLanguage, setTitle} from "../actions/actions.js";
+import CodeRenderer from "../components/codeRenderer.jsx";
 import { dateToString } from '../utils.js';
 
 const mapStateToProps=function(state,ownProps)
@@ -52,7 +53,11 @@ class NotePage extends Component {
             </div>
           <div className="noteName">{name}</div>
         </div>
-        <ReactMarkdown source = {content} escapeHtml={true} renderers={{image: imageRenderer}} className = {'noteContent'}/>
+        <MarkdownRender source = {content} escapeHtml={true} renderers={
+          {
+            image: imageRenderer,
+            code: CodeRenderer
+          }} className = {'noteContent'}/>
       </div>
     )
   }

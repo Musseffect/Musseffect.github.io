@@ -96,11 +96,6 @@ class App extends Component {
         </div>
       </MediaQuery>
       <div className="content">
-        <div id="menu" className="navbar navbar-expand navbar-dark bg-primary" style={{width:"100%",display:"none",flexDirection:"row"}} >
-          <div id="menuButtons" className="navbar-nav mr-auto" style={{margin:'auto'}}>
-            {links}
-          </div>
-        </div>
           {isFetching&&(
             <div className="loaderBackground">
                 <div className="loader">
@@ -109,8 +104,8 @@ class App extends Component {
             </div>
           )}
           {hasError?
-          <div id="errorMessage">
-            Im sorry, you've got a fucking error, man
+          <div id="errorMessage" className="pageContainer">
+            Im sorry, you've got yourself an error, man
           </div>:!isFetching&&
           <div id="routeContent">
             <Switch>

@@ -13,36 +13,55 @@ export var clickOnTag = function(tagName)
 {
     return {type:SWITCH_TAG_STATE,tag:tagName};
 }
-export const REQUEST_POSTS = "REQUEST_POSTS";
-export var requestPosts=function()
+export const REQUEST_CONTENT = "REQUEST_POSTS";
+export var requestContent=function()
 {
-    return {type:REQUEST_POSTS};
+    return {type:REQUEST_CONTENT};
 }
-export const ERROR_RECEIVING_POSTS = "ERROR_RECEIVING_POSTS";
+export const ERROR_RECEIVING_CONTENT = "ERROR_RECEIVING_CONTENT";
 export var handleError = function(error)
 {
-    return {type:ERROR_RECEIVING_POSTS,error:error};
+    console.log(error);
+    return {type:ERROR_RECEIVING_CONTENT,error:error};
 }
-export var fetchPosts = function()
+export var fetchContent = function()
 {
     return function(dispatch){
-        dispatch(requestPosts())
+        dispatch(requestContent())
         return fetch(`https://api.github.com/gists/546725186d756cd780efe1455e60eead`)
     .then(
       response => response.json(),
       error => dispatch(handleError(error))
     )
-    .then(json =>
-      dispatch(receivePosts(JSON.parse(json.files["mainContent.json"].content)))
+    .then(json =>{
+            try{
+                dispatch(receiveContent(json.files))
+            }catch(error)
+            {
+                dispatch(handleError(error));
+            }
+        }
         )
     };
 }
-export const RECEIVE_POSTS = "RECEIVE_POSTS";
-export var receivePosts = function(json)
+export const RECEIVE_CONTENT = "RECEIVE_CONTENT";
+export var receiveContent = function(files)
 {
+    const posts = JSON.parse(files["posts.json"].content).posts;
+    const notesDescription = JSON.parse(files["notes.json"].content);
+    const notes = notesDescription.notes.map((value)=>{return {
+        content:files[value.file].content,
+        name:value.name,
+        datetime:value.datetime
+    }});
     return {
-        type:RECEIVE_POSTS,
+        type:RECEIVE_CONTENT,
+        posts:posts,
+        notes:notes
+    }
+    /*return {
+        type:RECEIVE_CONTENT,
         posts:json.posts,
         notes:json.notes
-    }
+    }*/
 }
