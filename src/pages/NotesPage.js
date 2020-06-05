@@ -45,7 +45,7 @@ class NotesPage extends Component
                         {dateToString(date)}
                         </div>
                         <div className="notePreviewName">
-                            <Link to={'/notes/'+index} className="noteHeaderLink">{value.name}</Link>
+                            <Link to={'/notes/'+value.link} className="noteHeaderLink">{value.name}</Link>
                         </div>
                     </div>);
                 })

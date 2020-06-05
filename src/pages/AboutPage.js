@@ -33,7 +33,10 @@ class AboutPage extends Component {
       <div className='aboutContainer pageContainer'>
         <div className="h2" style={{width:"100%",textAlign:"center",}}>
           Not great, not terrible.
-          </div>
+        </div>
+        <p>
+          Isn't that great?
+        </p>
       </div>
     )
   }

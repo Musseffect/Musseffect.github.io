@@ -1,3 +1,5 @@
+
+
 export const SWITCH_LANG = "SWITCH_LANG";
 export var switchLanguage = function()
 {
@@ -21,47 +23,101 @@ export var requestContent=function()
 export const ERROR_RECEIVING_CONTENT = "ERROR_RECEIVING_CONTENT";
 export var handleError = function(error)
 {
-    console.log(error);
     return {type:ERROR_RECEIVING_CONTENT,error:error};
 }
-export var fetchContent = function()
+export const ERROR_RECEIVING_NOTE = "ERROR_RECEIVING_NOTE";
+export var handleNoteError = function(error)
+{
+    return {type:ERROR_RECEIVING_NOTE,error:error};
+}
+export const REQUEST_NOTE = "REQUEST_NOTES";
+export var requestNote = function()
+{
+    return {type:REQUEST_NOTE};
+}
+var fetchNote = function(noteURL)
 {
     return function(dispatch){
-        dispatch(requestContent())
-        return fetch(`https://api.github.com/gists/546725186d756cd780efe1455e60eead`)
+        dispatch(requestNote());
+        return fetch(noteURL)
     .then(
-      response => response.json(),
-      error => dispatch(handleError(error))
+      response => response.text(),
+      error => dispatch(handleNoteError(error))
     )
-    .then(json =>{
+    .then(content =>{
             try{
-                dispatch(receiveContent(json.files))
+                dispatch(receiveNote(content,noteURL))
             }catch(error)
             {
-                dispatch(handleError(error));
+                dispatch(handleNoteError(error));
             }
         }
         )
+    };
+    //https://gist.github.com/Musseffect/546725186d756cd780efe1455e60eead/raw/OscilloscopeLines.md
+}
+function shouldFetchNote(state, noteURL) {
+    if(state.note.url == noteURL)
+    {
+        const CACHE_TIME_MS = 1000*60*5;
+        const item = state.note;
+        const isCached = Date.now() - item.updatedAt<CACHE_TIME_MS;
+        return !isCached;
+    }
+    return true;
+  }
+export var fetchNoteIfNeeded = function(noteURL)
+{
+    return (dispatch,getState)=>{
+        if(shouldFetchNote(getState(),noteURL))
+            return dispatch(fetchNote(noteURL));
+    }
+}
+export var fetchContent = function(contentLink)
+{
+    return function(dispatch){
+        dispatch(requestContent());
+        return fetch(contentLink)
+        .then(
+        response => response.json(),
+        error => dispatch(handleError(error))
+        )
+        .then(json =>{
+                try{
+                    dispatch(receiveContent(json))
+                }catch(error)
+                {
+                    dispatch(handleError(error));
+                }
+            }
+            )
+    };
+}
+export const RECEIVE_NOTE = "RECEIVE_NOTE";
+export var receiveNote = function(content,noteURL)
+{
+    return {
+        type:RECEIVE_NOTE,
+        content:content,
+        url:noteURL,
+        receivedAt: Date.now()
     };
 }
 export const RECEIVE_CONTENT = "RECEIVE_CONTENT";
 export var receiveContent = function(files)
 {
-    const posts = JSON.parse(files["posts.json"].content).posts;
-    const notesDescription = JSON.parse(files["notes.json"].content);
-    const notes = notesDescription.notes.map((value)=>{return {
+    /*const posts = JSON.parse(files["posts.json"].content).posts;//TODO remove .posts
+    const notesDescription = JSON.parse(files["notes.json"].content);*/
+    const posts = files.posts;
+    const notes = files.notes;
+    /*const notes = notesDescription.notes.map((value)=>{return {
         content:files[value.file].content,
         name:value.name,
         datetime:value.datetime
-    }});
+    }});*/
     return {
         type:RECEIVE_CONTENT,
         posts:posts,
         notes:notes
     }
-    /*return {
-        type:RECEIVE_CONTENT,
-        posts:json.posts,
-        notes:json.notes
-    }*/
 }

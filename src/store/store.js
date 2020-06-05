@@ -14,38 +14,23 @@ const initialState=(function(){
 		state.tags = {};
 		state.posts = [];
 		state.notes = [];
-		/*
-		state.tags = {};
-		state.posts.forEach(function(value)
-		{
-			value.tags.forEach(function(value)
-			{
-				state.tags[value]=false;
-			});
-		});
-		if(localStorage)
-		{
-			if (localStorage.getItem("tags") !== null) {
-				let tags = JSON.parse(localStorage.getItem("tags"));
-				Object.entries(tags).forEach(function([key,value])
-				{
-					if(state.tags[key]!==undefined)
-					{
-						state.tags[key] = value;
-					}
-				});
-			}else
-			{
-				localStorage.setItem("tags", JSON.stringify(state.tags));
-			}
-		}*/
+		state.notesDictionary={};
+		state.note = {
+			isFetching:false,
+			content:null,
+			updatedAt:null,
+			err:null,
+			url:null
+		};
 		return state;
 })();
 
+const contentBaseLink = "https://gist.githubusercontent.com/Musseffect/546725186d756cd780efe1455e60eead/raw/content.json";
+//`https://api.github.com/gists/546725186d756cd780efe1455e60eead`;
 
 const store = createStore(rootReducer,initialState,applyMiddleware(thunkMiddleware)
 	/*,window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()*/);  
 
-store.dispatch(fetchContent());
+store.dispatch(fetchContent(contentBaseLink));
 
 export default store;

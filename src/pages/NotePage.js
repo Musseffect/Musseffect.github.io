@@ -1,22 +1,28 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
-import Tag from "../components/tag.jsx";
 import { withRouter,Redirect} from 'react-router';
 import MarkdownRender from "../components/markdownRender.jsx";
-import {switchLanguage, setTitle} from "../actions/actions.js";
+import {setTitle, fetchNoteIfNeeded} from "../actions/actions.js";
 import CodeRenderer from "../components/codeRenderer.jsx";
 import { dateToString } from '../utils.js';
 
 const mapStateToProps=function(state,ownProps)
 {
-  const { id } = ownProps.match.params;
-  return {note:state.notes[id]};
+  const linkName = ownProps.match.params.id;
+  const id = state.notesDictionary[linkName];
+  return {
+    note:state.notes[id],
+    content:state.note.content,
+    isFetching:state.note.isFetching,
+    err:state.note.err
+  };
 };
 
 const mapDispatchToProps=function(dispatch)
 {
   return ({
     //switchLanguage:function(){dispatch(switchLanguage());},
+    fetchNoteIfNeeded:function(file){dispatch(fetchNoteIfNeeded(file));},
     setTitle:function(title){dispatch(setTitle(title));}
   });
 };
@@ -34,20 +40,33 @@ class NotePage extends Component {
   componentDidMount()
   {
     if(this.props.note!==undefined)
+    {
       this.props.setTitle(this.props.note.name);
+      this.props.fetchNoteIfNeeded(this.props.note.file);
+    }
   }
   render() {
     let {
-      note
+      note,
+      content,
+      err,
+      isFetching
     } = this.props;
     if(note == undefined)
     {
       return <Redirect to='/' />
     }
-    let {date,name,content} = note;
+    let {date,name} = note;
     return (
       <div className='noteContainer pageContainer'>
-        <div className='noteHeader'>
+        {err!=null?(<div>Couldn't load damn page</div>):isFetching?(
+            <div className="loaderBackground">
+                <div className="loader">
+                  <div></div><div></div><div></div>
+                </div>
+            </div>
+          ):(<div>
+          <div className='noteHeader'>
           <div className="noteDate">
             {dateToString(date)}
             </div>
@@ -57,7 +76,8 @@ class NotePage extends Component {
           {
             image: imageRenderer,
             code: CodeRenderer
-          }} className = {'noteContent'}/>
+          }} className = {'noteContent'}/></div>)
+        }
       </div>
     )
   }

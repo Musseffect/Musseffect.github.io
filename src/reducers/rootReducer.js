@@ -5,7 +5,10 @@ import {
 	SWITCH_TAG_STATE,
 	REQUEST_CONTENT,
 	ERROR_RECEIVING_CONTENT,
-	RECEIVE_CONTENT
+	RECEIVE_CONTENT,
+	REQUEST_NOTE,
+	ERROR_RECEIVING_NOTE,
+	RECEIVE_NOTE
 } from '../actions/actions.js';
 
 var rootReducer=function(state, action)
@@ -30,6 +33,7 @@ var rootReducer=function(state, action)
 		case REQUEST_CONTENT:
 			return Object.assign({},state,{isFetching:true});
 		case ERROR_RECEIVING_CONTENT:
+			console.log(action.error);
 			return Object.assign({},state,{hasError:true,isFetching:false});
 		case RECEIVE_CONTENT:
 			let tags = {};
@@ -59,17 +63,42 @@ var rootReducer=function(state, action)
 			}
 			let sortedNotes = action.notes.map(function(value)
 			{
-				/*let content = value.content.reduce(function(acc,cur)
-				{
-					return acc + cur + "\n";
-				},"");
-				value.content = content;*/
 				return Object.assign({date:new Date(value.datetime)},value);
 			}).sort(function(a,b)
 			{
 				return +b.date - +a.date;
 			});
-			return Object.assign({},state,{posts:action.posts,tags:tags,notes:sortedNotes,isFetching:false});
+			let notesDictionary = {};
+			sortedNotes.forEach(function(value,index)
+			{
+				notesDictionary[value.link] = index;
+			})
+			return Object.assign({},state,{posts:action.posts,tags:tags,notes:sortedNotes,isFetching:false,notesDictionary});
+		case REQUEST_NOTE:
+			return Object.assign({},state,{note:{
+				isFetching:true,
+				content:null,
+				updatedAt:null,
+				err:null,
+				url:null
+			}});
+		case ERROR_RECEIVING_NOTE:
+			console.log(action.error);
+			return Object.assign({},state,{note:{
+				isFetching:false,
+				content:null,
+				updatedAt:null,
+				err:true,
+				url:null
+			}});
+		case RECEIVE_NOTE:
+			return Object.assign({},state,{note:{
+				isFetching:false,
+				content:action.content,
+				updatedAt:action.receivedAt,
+				err:null,
+				url:action.url
+			}});
 		default:
 			return state;
 	}

@@ -1,5 +1,5 @@
 import React, { PureComponent  } from 'react';
-import { LightAsync as SyntaxHighlighter } from 'react-syntax-highlighter';
+import  SyntaxHighlighter from 'react-syntax-highlighter/dist/esm/light-async';
 import glsl from 'react-syntax-highlighter/dist/esm/languages/hljs/glsl';
 import js from 'react-syntax-highlighter/dist/esm/languages/hljs/javascript';
 import cpp from 'react-syntax-highlighter/dist/esm/languages/hljs/cpp';
