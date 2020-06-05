@@ -5,6 +5,7 @@
     margin:auto;
     object-fit:contain;
     object-position:center;
+    max-height:400px;
 	@include respond-to(handhelds) {
 	  width:100%;
   	}
