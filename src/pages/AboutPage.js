@@ -57,7 +57,7 @@ class AboutPage extends Component {
               <div className="about-entry-rcol">
                   <p className="about-paragraph about-paragraph-header">
                     Диплом бакалавра<br/>
-                    Новосибирский Государственный Технический Университет
+                    <a className="about-link" href = "https://nstu.ru/">Новосибирский Государственный Технический Университет</a>
                   </p>
                   <p className="about-paragraph">Направление: Информатика и вычислительная техника</p>
                   <p className="about-paragraph">"Разработка виртуального лабораторного стенда для сравнительного анализа алгоритмов численного интегрирования"</p>
@@ -70,7 +70,7 @@ class AboutPage extends Component {
               <div className="about-entry-rcol">
                   <p className="about-paragraph about-paragraph-header">
                     Диплом магистра<br/>
-                    Новосибирский Государственный Технический Университет
+                    <a className="about-link" href = "https://nstu.ru/">Новосибирский Государственный Технический Университет</a>
                   </p>
                   <p className="about-paragraph">Направление: Информатика и вычислительная техника</p>
                   <p className="about-paragraph">Профиль: Компьютерное моделирование</p>
@@ -97,29 +97,36 @@ class AboutPage extends Component {
           <hr className="about-separator"/>
           <div className="about-entry">
               <div className="about-entry-lcol">Русский:</div>
-              <div className="about-entry-rcol">родной</div>
+              <div className="about-entry-rcol">Родной</div>
           </div>
           <div className="about-entry">
               <div className="about-entry-lcol">Английский:</div>
+              <div className="about-entry-rcol">Upper Intermediate</div>
           </div>
 
           <div className="about-section">Персональные проекты</div>
           <hr className="about-separator"/>
-          <p className="about-paragraph">
-              <a className="about-link" href="/">This</a> SPA, hosted on github
-          </p>
-          <p className="about-paragraph">
-              Power systems
-          </p>
-          <p className="about-paragraph">
-              Solvers
-          </p>
-          <p className="about-paragraph">
-              Nonlinear least squares
-          </p>
-          <p className="about-paragraph">
-              SolversHost
-          </p>
+            <p className="about-paragraph">
+              <a className="about-link" href="https://github.com/Musseffect/Nonlinear-least-squares">Это</a> SPA, хостится на GitHub Pages - React/JS
+            </p>
+            <p className="about-paragraph">
+              <a className="about-link" href="https://github.com/Musseffect/ElectricalPowerSystems">Power system simulator</a> - проект для магистерской диссертации - C#/WPF/ANTLR
+            </p>
+            <p className="about-paragraph">
+              <a className="about-link" href="https://github.com/Musseffect/SolversJS">Solvers</a> - решатели ОДУ - JS/ANTLR/
+            </p>
+            <p className="about-paragraph">
+              <a href="https://github.com/Musseffect/3D-container-packing">Упаковка контейнеров в 3D</a> с использованием жадных эвристик и генетического алгоритма - C++/QT
+            </p>
+            <p className="about-paragraph">
+              <a href="https://github.com/Musseffect/SolversHost">SolversHost</a> - проект для бакалавриата, <a className="about-link" href="https://musseffect.github.io/SolversHost/">хостится на  GitHub Pages</a> - React/JS
+            </p>
+            <p className="about-paragraph">
+              <a href="https://github.com/Musseffect/Nonlinear-least-squares">Нелинейный метод наименьших квадратов</a> - <a className="about-link" href="https://musseffect.github.io/Nonlinear-least-squares/">хостится на  GitHub Pages</a> - JS/ANTLR
+            </p>
+            <p className="about-paragraph">
+              <a href = "https://github.com/Musseffect/OptimizationMethods">Методы оптимизации</a> - C#/WPF/ANTLR
+            </p>
 
           <div className="about-section">Дополнительные интересы</div>
           <hr className="about-separator"/>
@@ -205,18 +212,32 @@ class AboutPage extends Component {
             </div>
             <div className="about-entry">
                 <div className="about-entry-lcol">English:</div>
-                <div className="about-entry-rcol">Advanced</div>
+                <div className="about-entry-rcol">Upper Intermediate</div>
             </div>
 
             <div className="about-section">Personal projects</div>
             <hr className="about-separator"/>
             <p className="about-paragraph">
-              <a className="about-link" href="/">This</a> SPA, hosted on github
+              <a className="about-link" href="https://github.com/Musseffect/Nonlinear-least-squares">This</a> SPA, hosted on GitHub Pages - React/JS
             </p>
-            <p className="about-paragraph">Power systems</p>
-            <p className="about-paragraph">Solvers</p>
-            <p className="about-paragraph">SolversHost</p>
-            <p className="about-paragraph">Nonlinear least squares</p>
+            <p className="about-paragraph">
+              <a className="about-link" href="https://github.com/Musseffect/ElectricalPowerSystems">Power system simulator</a> - master's degree project- C#/WPF/ANTLR
+            </p>
+            <p className="about-paragraph">
+              <a className="about-link" href="https://github.com/Musseffect/SolversJS">Solvers</a> - JS/ANTLR/
+            </p>
+            <p className="about-paragraph">
+              <a href="https://github.com/Musseffect/3D-container-packing">Container packing in 3D</a> with genetic algorithm - C++/QT
+            </p>
+            <p className="about-paragraph">
+              <a href="https://github.com/Musseffect/SolversHost">SolversHost</a> - bachelor's degree project, <a className="about-link" href="https://musseffect.github.io/SolversHost/">hosted on GitHub Pages</a> - React/JS
+            </p>
+            <p className="about-paragraph">
+              <a href="https://github.com/Musseffect/Nonlinear-least-squares">Nonlinear least squares</a> - <a className="about-link" href="https://musseffect.github.io/Nonlinear-least-squares/">hosted on GitHub Pages</a> - JS/ANTLR
+            </p>
+            <p className="about-paragraph">
+              <a href = "https://github.com/Musseffect/OptimizationMethods">Optimization Methods</a> - C#/WPF/ANTLR
+            </p>
 
             <div className="about-section">Hobbies</div>
             <hr className="about-separator"/>

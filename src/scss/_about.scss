@@ -62,20 +62,6 @@
         color:themed('pageBackgroundColor');
     }
 }
-.about-link
-{
-	@include themify($themes)
-    {
-        color:themed('linkColor');
-    }
-}
-.about-link:hover
-{
-	@include themify($themes)
-    {
-        color:themed('linkHoverColor');
-    } 
-}
 @include respond-to(handhelds) {
     .about-entry-lcol,.about-entry-rcol,.about-entry-lcol-border
     {
