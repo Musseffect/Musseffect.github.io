@@ -63,18 +63,6 @@
 .theme-dark .about-spoiler:hover {
   color: #0e0e0e; }
 
-.theme-light .about-link {
-  color: black; }
-
-.theme-dark .about-link {
-  color: #dcdcdc; }
-
-.theme-light .about-link:hover {
-  color: gray; }
-
-.theme-dark .about-link:hover {
-  color: gray; }
-
 @media only screen and (max-width: 640px) {
   .about-entry-lcol, .about-entry-rcol, .about-entry-lcol-border {
     display: block; }
