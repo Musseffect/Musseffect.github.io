@@ -1,29 +1,27 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
-import { withRouter } from 'react-router';
+import { withRouter} from 'react-router';
+import {Link} from 'react-router-dom';
 import Tag from "../components/tag.jsx";
-import {switchLanguage, setTitle,clickOnTag} from "../actions/actions.js";
-import { Modal, ModalBody, ModalHeader, ModalFooter } from '../components/modal.jsx';
+import {setTitle,clickOnTag} from "../actions/actions.js";
 import ImageViewer from '../components/imageViewer.jsx';
-
 
 const mapStateToProps=function(state)
 {
   return {
-    posts:state.posts,
-    tags:state.tags
+    posts:state.posts.items,
+    tagEntries:state.posts.tagEntries
   };
 };
 
 const mapDispatchToProps=function(dispatch)
 {
   return ({
-    //switchLanguage:function(){dispatch(switchLanguage());}
     setTitle:function(title){dispatch(setTitle(title));},
     clickOnTag:function(value){dispatch(clickOnTag(value));}
   });
 };
-
+//<div className="postGalleryName">{value.name}</div>
 class GalleryPage extends Component {
   constructor(props)
   {
@@ -41,7 +39,7 @@ class GalleryPage extends Component {
   render() {
     const {
       posts,
-      tags,
+      tagEntries,
       clickOnTag
     } = this.props;
     let activeTags=[];
@@ -50,14 +48,6 @@ class GalleryPage extends Component {
       currentImage,
       currentPost
     } = this.state;
-    let tagEntries = Object.entries(tags).sort((a,b)=>a[0].localeCompare(b[0]));
-    /*tagEntries.forEach(function([key, value])
-    {
-      if(value==true)
-      {
-        activeTags.push(key);
-      }
-    });*/
     let self = this;
     let isValid = (currentPost>=0&&currentPost<posts.length);
     if(isValid)
@@ -77,8 +67,7 @@ class GalleryPage extends Component {
             })
             }
         </div>
-        <div style={{display:"flex",flexDirection:"column"}}>
-        <div style={{width:"5px",height:""}}></div>
+        <div className="galleryPosts">
         {
           posts.map(function(value,postIndex)
           {
@@ -95,10 +84,10 @@ class GalleryPage extends Component {
             active = false;
             if(activeCount==activeTags.length)
               active = true;
-            return (<div key={postIndex} style={active?{}:{opacity:0.1,display:"none"}}>
-                    <div className="h5" style={{marginTop:"10px"}}>{value.name}</div>
-                    <hr/>
-                    <div style={{display:"flex",flexDirection:"row",width:'100%',flexWrap:"wrap"}}>{
+            return (<div className={"galleryPost"+(active?" active":"")} key={postIndex}>
+                    <Link key={postIndex +"link"} to={'/posts/'+postIndex} className="galleryPostName">{value.name}</Link>
+                    <hr className="galleryLine"/>
+                    <div className="postImages">{
                       value.images.map(function(value,index)
                       {
                         return (
@@ -106,7 +95,7 @@ class GalleryPage extends Component {
                         <div key={index+'_frame'} className='postImgFrame'>
                           <img 
                             key={index} 
-                            className="postImg2" 
+                            className="postImg" 
                             src={value.thumbnail} 
                             onClick={()=>{self.setState({currentPost:postIndex,currentImage:index,showImage:true})}}
                           ></img>
@@ -115,7 +104,7 @@ class GalleryPage extends Component {
                           );
                       })
                     }</div>
-                    <div style={{display:"flex",flexDirection:"row",flexShrink:0,flexWrap:"wrap"}}>
+                    <div className="galleryPostTags">
                       {
                         tags.map(function(value,index)
                         {

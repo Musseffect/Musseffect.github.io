@@ -1,0 +1,102 @@
+[
+{
+	"group":"*",
+	"items":[
+		{
+			"href":"https://google.com",
+			"name":"link1",
+			"tags":["cuda", "opengl", "real-time"]
+		},
+		{
+			"href":"https://wow.com",
+			"name":"lol",
+			"tags":["opengl", "huj", "lol"]
+		},
+		{
+			"href":"https://google.com",
+			"name":"link1",
+			"tags":["cuda", "opengl", "real-time"]
+		},
+		{
+			"href":"https://wow.com",
+			"name":"lol",
+			"tags":["opengl", "huj", "lol"]
+		},
+		{
+			"href":"https://wow.com",
+			"name":"lol",
+			"tags":["opengl", "huj", "lol"]
+		}
+		]
+},
+{
+	"group":"group1",
+	"items:"[
+		{
+			"href":"https://google.com",
+			"name":"link2",
+			"tags":["opengl", "huj", "lol"]
+		},
+		{
+			"href":"https://wow.com",
+			"name":"lol",
+			"tags":["opengl", "huj", "lol"]
+		},
+		{
+			"href":"https://wow.com",
+			"name":"lol",
+			"tags":["opengl", "huj", "lol"]
+		},
+		{
+			"href":"https://wow.com",
+			"name":"lol",
+			"tags":["opengl", "huj", "lol"]
+		},
+		{
+			"href":"https://google.com",
+			"name":"link1",
+			"tags":["cuda", "opengl", "real-time"]
+		},
+		{
+			"href":"https://wow.com",
+			"name":"lol",
+			"tags":["opengl", "huj", "lol"]
+		}
+		]
+},
+{
+	"group":"group2",
+	"items:"[
+		{
+			"href":"https://ya.ru",
+			"name":"link2",
+			"tags":["opengl", "huj", "lol"]
+		},
+		{
+			"href":"https://wow.com",
+			"name":"lol",
+			"tags":["opengl", "huj", "lol"]
+		},
+		{
+			"href":"https://wow.com",
+			"name":"lol",
+			"tags":["opengl", "huj", "lol"]
+		},
+		{
+			"href":"https://google.com",
+			"name":"link1",
+			"tags":["cuda", "opengl", "real-time"]
+		},
+		{
+			"href":"https://wow.com",
+			"name":"lol",
+			"tags":["opengl", "huj", "lol"]
+		},
+		{
+			"href":"https://wow.com",
+			"name":"lol",
+			"tags":["opengl", "huj", "lol"]
+		}
+		]
+}
+]

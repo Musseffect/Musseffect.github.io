@@ -1,0 +1,24 @@
+		
+https://google.com	|	link1	|	cuda, opengl, real-time
+https://wow.com	|     lol	|	opengl, huj, lol
+https://google.com	|	link1	|	cuda, opengl, real-time
+https://wow.com	|     lol	|	opengl, huj, lol
+https://wow.com	|     lol	|	opengl, huj, lol
+
+
+		!!!group1
+https://google.com	|	link2	|	opengl, huj, lol
+https://wow.com	|     lol	|	opengl, huj, lol
+https://wow.com	|     lol	|	opengl, huj, lol
+https://wow.com	|     lol	|	opengl, huj, lol
+https://google.com	|	link1	|	cuda, opengl, real-time
+https://wow.com	|     lol	|	opengl, huj, lol
+
+
+		!!!group2   	
+https://ya.ru	|	link2	|	opengl, huj, lol
+https://wow.com	|     lol	|	opengl, huj, lol
+https://wow.com	|     lol	|	opengl, huj, lol
+https://google.com	|	link1	|	cuda, opengl, real-time
+https://wow.com	|     lol	|	opengl, huj, lol
+https://wow.com	|     lol	|	opengl, huj, lol

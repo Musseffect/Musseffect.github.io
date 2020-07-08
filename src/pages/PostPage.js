@@ -3,22 +3,20 @@ import { connect } from "react-redux";
 import Tag from "../components/tag.jsx";
 import { withRouter,Redirect} from 'react-router';
 import ReactMarkdown from "react-markdown";
-import {switchLanguage, setTitle} from "../actions/actions.js";
+import {setTitle} from "../actions/actions.js";
 import ImageViewer from '../components/imageViewer.jsx';
 const mapStateToProps=function(state,ownProps)
 {
   const { id } = ownProps.match.params;
-  return {post:state.posts[id]};
+  return {post:state.posts.items[id],lang:state.options.language};
 };
 
 const mapDispatchToProps=function(dispatch)
 {
   return ({
-    //switchLanguage:function(){dispatch(switchLanguage());},
     setTitle:function(title){dispatch(setTitle(title));}
   });
 };
-
 
 class PostPage extends Component {
   constructor(props)
@@ -36,7 +34,8 @@ class PostPage extends Component {
   }
   render() {
     const {
-      post
+      post,
+      lang
     } = this.props;
     if(post == undefined)
     {
@@ -60,7 +59,7 @@ class PostPage extends Component {
       <div className='postContainer pageContainer'>
         <div className='postContent'>
           <img className="postMainImg" src={mainImg}/>
-          <div className="postName h5">
+          <div className="postName">
             {name}
           </div>
           <div className="postTags">
@@ -71,8 +70,8 @@ class PostPage extends Component {
               })
             }
           </div>
-          <ReactMarkdown source = {description} className = {'postDescription'}/>
-          <div className="postImages2">
+          <ReactMarkdown source = {description[lang]} className = 'postDescription'/>
+          <div className="postImages">
             {
               images.map(function(value,index)
               {
@@ -81,7 +80,7 @@ class PostPage extends Component {
                 <div key={index+'_frame'} className='postImgFrame'>
                   <img 
                     key={index} 
-                    className="postImg2" 
+                    className="postImg" 
                     src={value.thumbnail} 
                     onClick={()=>{self.setState({currentImage:index,showImage:true})}}
                   ></img>
@@ -105,7 +104,6 @@ class PostPage extends Component {
   }
 }
 /*
-
         <div className="modalImageViewerContainer"  style={this.state.showImage?{}:{display:'none'}}>
           <div className="modalImageViewerBackground"></div>
           <div className="modalImageViewerCloseButton"

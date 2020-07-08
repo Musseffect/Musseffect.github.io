@@ -1,0 +1,95 @@
+
+$themes: (
+    theme-light: (
+      pageBackgroundColor: #FFFFFF,
+      textColor: #444444,
+      titleHoverColor:#000,
+      headerButtonColor:#000000,
+      headerButtonIconHoverColor:#0000FF,
+      headerButtonBoxShadow:inset 0px -2px 0px 0px #808080,
+      hrColor:rgba(0, 0, 0, 0.1),
+      tagBackground:#a2a2a2,
+      tagActiveBackground:#2573d8,
+      tagHoverBackground:#595959,
+      tagActiveHoverBackground:#23599e,
+      tagColor:#000,
+      tagHoverColor:#fff,
+      tagActiveColor:#fff,
+      tagActiveHoverColor:#fff,
+      headerLinkColor:#808080,
+      headerLinkHoverColor:#000,
+      headerLinkActiveColor:rgb(39, 39, 39),
+      headerBoxShadow:0px 4px 4px 0px rgba(0, 0, 0, 0.3),
+      footerBoxShadow:0px -4px 4px 0px rgba(0, 0, 0, 0.3),
+      noteTitleColor:#000,
+      noteDateColor:gray,
+      noteTitleHoverColor:gray,
+      postNameColor:black,
+      postNameHoverColor:black,
+      linkTagColor:rgba(0,0,0,0.7),
+      linkTagActiveColor:black,
+      linkVisitedColor:#7442ec,
+      linkHoverColor:gray,
+      linkColor:black,
+      linkBorderColor:black,
+      menuLineColor:gainsboro,
+      menuButtonsBorderColor:#bb0000,
+      aboutSectionColor:black
+    ),
+    theme-dark: (
+      pageBackgroundColor: #0e0e0e,
+      textColor:#dcdcdc,
+      titleHoverColor:#bd1111,
+      headerButtonColor:#e4e4e4,
+      headerButtonIconHoverColor:#bd1111,//#5d8fff
+      headerButtonBoxShadow:inset 0px -4px 0px 0px #dcdcdc,
+      hrColor:rgba(255, 255, 255, 0.7),
+      tagBackground:#1f1f1f,
+      tagActiveBackground:#bd1111,
+      tagHoverBackground:#FFF,
+      tagActiveHoverBackground:#ab0c0c,
+      tagColor:#dcdcdc,
+      tagHoverColor:#000,
+      tagActiveColor:#dcdcdc,
+      tagActiveHoverColor:#000,
+      headerLinkColor:#dcdcdc,
+      headerLinkHoverColor:#bd1111,
+      headerLinkActiveColor:#fff,
+      headerBoxShadow:0px 4px 3px 1px rgb(0, 0, 0),
+      footerBoxShadow:0px -4px 3px 1px rgb(0, 0, 0),
+      noteTitleColor:#dcdcdc,
+      noteDateColor:gray,
+      noteTitleHoverColor:#bd1111,
+      postNameColor:#dcdcdc,
+      postNameHoverColor:#bd1111,
+      linkTagColor:rgba(220,220,220,0.7),
+      linkTagActiveColor:#dcdcdc,
+      linkVisitedColor:#9879df,
+      linkHoverColor:gray,
+      linkColor:#dcdcdc,
+      linkBorderColor:#dcdcdc,
+      menuLineColor:gainsboro,
+      menuButtonsBorderColor:#dcdcdc,
+      aboutSectionColor:white
+    ),
+  );
+
+  @mixin themify($themes: $themes) {
+    @each $theme, $map in $themes {
+  
+      .#{$theme} & {
+        $theme-map: () !global;
+        @each $key, $submap in $map {
+          $value: map-get(map-get($themes, $theme), '#{$key}');
+          $theme-map: map-merge($theme-map, ($key: $value)) !global;
+        }
+  
+        @content;
+        $theme-map: null !global;
+      }
+  
+    }
+  }
+  @function themed($key) {
+    @return map-get($theme-map, $key);
+  }

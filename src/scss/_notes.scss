@@ -16,16 +16,6 @@
 	  width:60%;
   	}
 }
-.nodeSpoiler
-{
-    background-color:gray;
-    color:gray;
-}
-.nodeSpoiler:hover
-{
-    color:black;
-    background-color:none;
-}
 .noteFigure
 {
     text-align:center;
@@ -70,7 +60,6 @@
 }
 .notePreviewDate
 {
-    color:gray;
     margin-right:5px;
     white-space:nowrap;
 }
@@ -80,8 +69,12 @@
 .noteHeaderLink
 {
     text-decoration: none;
-    color:black;
-    font-size:20px;
+	@include themify($themes)
+	{
+		color:themed('noteTitleColor')
+	}
+    font-size:1.4rem;
+    font-weight:400;
     text-overflow:ellipsis;
     overflow:hidden;
     white-space:nowrap;
@@ -95,16 +88,23 @@
 }
 .noteHeaderLink:hover{
     text-decoration:none;
-    color:gray;
+	@include themify($themes)
+	{
+		color:themed('noteTitleHoverColor')
+	}
     width:100%;
 }
 .noteContent
 {
     padding:0px 5px;
+    font-family:sans-serif;
 }
-.noteDate
+.noteDate,.notePreviewDate
 {
-    color:gray;
+	@include themify($themes)
+	{
+		color:themed('noteDateColor')
+	}
 }
 .caption {
     text-align: center;
@@ -119,10 +119,45 @@
 }
 .noteName
 {
-    font-size:20px;
-    color:black;
+    font-size:1.4rem;
+    font-weight:400;
+	@include themify($themes)
+	{
+		color:themed('noteTitleColor')
+	}
 }
 .paragraph
 {
     margin-bottom:0.5rem;
+    overflow-x:auto;
+}
+.noteContent h1,.noteContent h2,.noteContent h3,.noteContent h4,.noteContent h5,.noteContent h6
+{
+    margin: 0 0 .5rem 0;
+    font-weight:500;
+    line-height:1.2;
+}
+.noteContent h1
+{
+    font-size:1.5rem;
+}
+.noteContent h2
+{
+    font-size:1.4rem;
+}
+.noteContent h3
+{
+    font-size:1.3rem;
+}
+.noteContent h4
+{
+    font-size:1.2rem;
+}
+.noteContent h5
+{
+    font-size:1.1rem;
+}
+.noteContent h6
+{
+    font-size:1rem;
 }

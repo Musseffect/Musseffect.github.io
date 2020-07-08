@@ -3,21 +3,21 @@ import { connect } from "react-redux";
 import { withRouter } from 'react-router';
 import PostPreview from '../components/postPreview.jsx';
 import Tag from "../components/tag.jsx";
-import {switchLanguage, setTitle,clickOnTag} from "../actions/actions.js";
-
+import {setTitle,clickOnTag} from "../actions/actions.js";
+import {tr} from "../localization.js";
 
 const mapStateToProps=function(state)
 {
   return {
-    posts:state.posts,
-    tags:state.tags
+    posts:state.posts.items,
+    tagEntries:state.posts.tagEntries,
+    lang:state.options.language
   };
 };
 
 const mapDispatchToProps=function(dispatch)
 {
   return ({
-    //switchLanguage:function(){dispatch(switchLanguage());}
     setTitle:function(title){dispatch(setTitle(title));},
     clickOnTag:function(value){dispatch(clickOnTag(value));}
   });
@@ -30,16 +30,11 @@ class PostsPage extends Component {
   }
   componentDidMount()
   {
-    this.props.setTitle("Posts");
+    this.props.setTitle(tr("menuProjects",this.props.lang));
   }
   render() {
-    const {posts,tags,clickOnTag} = this.props;
+    const {posts,clickOnTag,tagEntries} = this.props;
     let activeTags=[];
-    
-    let tagEntries = Object.entries(tags).sort((a,b)=>a[0].localeCompare(b[0]));
-    /*tagEntries.forEach(function([key, value])
-    {
-    })*/
     return (
       <div className='postsContainer pageContainer'>
         <div className='globalTagsContainer'>

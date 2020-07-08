@@ -1,0 +1,247 @@
+<html>
+<head></head>
+<style>
+    .spoiler
+    {
+        background-color:black;
+        color:black;
+    }
+    .spoiler:hover
+    {
+        color:white;
+    }
+    .entry-lcol,.entry-rcol,.entry-lcol-border
+    {
+        display:table-cell;
+    }
+    .entry-lcol,.entry-lcol-border
+    {
+        width:200px;
+        text-align:end;
+        padding-right:10px;
+    }
+    .entry-lcol-border
+    {
+        border-right:1px solid gray;
+    }
+    .text
+    {
+        font-family:sans-serif;
+    }
+    .header
+    {
+        font-size:2rem;
+        font-family: Helvetica, Arial, sans-serif;
+    }
+    .section
+    {
+        font-size: 1.3rem;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        font-family: Helvetica, Arial, sans-serif;
+    }
+    .hr
+    {
+        height:1px;
+        background-color:gray;
+        width:100%;
+        border:none;
+        margin: 0.2rem 0;
+    }
+    .vr
+    {
+        height:100%;
+        background-color:gray;
+        width:1px;
+        border:none;
+        margin: 0 0.2rem;
+    }
+    .entry
+    {
+        display:block;
+        border-spacing:10px;
+    }
+    .aboutContainer
+    {
+        font-family: Arial, sans-serif;
+        line-height:1.2rem;
+    }
+    .paragraph
+    {
+        margin: 0.65em 0;
+    }
+</style>
+<body>
+    <div id="en" class="aboutContainer">
+        <div class="header" style="width: 100%; text-align: center;">
+            Not great, not terrible
+        </div>
+        <div class="text">Hi there</div>
+        <div class="text">My name is <span class="spoiler">Mikhail</span>. I am a programmer and i have a special interest in computer graphics.</div>
+        
+        <div class="section">Main areas of interest</div>
+        <hr class="hr">
+        <p class="paragraph">General programming(web, desktop)</p>
+        <p class="paragraph">Computer graphics(Real-time and Offline GI stuff)</p>
+        <p class="paragraph">Gamedev</p>
+        <p class="paragraph">Numerical methods(Optimization, ODE, DAE and other problems)</p>
+        <p class="paragraph">Formal languages in programming and modeling</p>
+        
+        <div class="section">Education</div>
+        <hr class="hr">
+        <div class="entry">
+            <div class="entry-lcol-border">
+                2018
+            </div>
+            <div class="entry-rcol">
+                <div>Bachelor of Science<br><a href="https://en.nstu.ru/">Novosibirsk State Technical University</a></div>
+                <p>Informatics and computer engineering</p>
+                <p>Thesis: "Developement of virtual laboratory for comparison of numerical methods for ODE systems"</p>
+            </div>
+        </div>
+        <div class="entry">
+            <div class="entry-lcol-border">
+                2020
+            </div>
+            <div class="entry-rcol">
+                <div>Master of Science<br><a href="https://en.nstu.ru/">Novosibirsk State Technical University</a></div>
+                <p>Informatics and computer engineering</p>
+                <p>Profile: Computer modelling</p>
+                <p>Thesis: "Modeling of transients in electrical power systems"</p>
+            </div>
+        </div>
+
+        <div class="section">Skills</div>
+        <hr class="hr">
+        <div class="entry">
+            <div class="entry-lcol">Main languages:</div>
+            <div class="entry-rcol">C++, JavaScript, GLSL</div>
+        </div>
+        <div class="entry">
+            <div class="entry-lcol">Have experiense:</div>
+            <div class="entry-rcol">C#, Java, Python, ReactJS</div>
+        </div>
+        <div class="entry">
+            <div class="entry-lcol">Tools:</div>
+            <div class="entry-rcol">QT, Visual Studio, GIT, ANTLR</div>
+        </div>
+
+        <div class="section">Languages</div>
+        <hr class="hr">
+        <div class="entry">
+            <div class="entry-lcol">Russian:</div>
+            <div class="entry-rcol">Native</div>
+        </div>
+        <div class="entry">
+            <div class="entry-lcol">English:</div>
+            <div class="entry-rcol">Advanced</div>
+        </div>
+
+        <div class="section">Personal projects</div>
+        <hr class="hr">
+        <p class="paragraph"><a href="/">This</a> SPA, hosted on github</p>
+        <p class="paragraph">Power systems</p>
+        <p class="paragraph">Solvers</p>
+        <p class="paragraph">SolversHost</p>
+        <p class="paragraph">Nonlinear least squares</p>
+
+        <div class="section">Hobbies</div>
+        <hr class="hr">
+        <div class="entry">
+            <p class="paragraph">Film photography</p>
+            <p class="paragraph">Sound synthesis</p>
+            <p class="paragraph">Generative art</p>
+            <p class="paragraph">Сomputer games</p>
+            <p class="paragraph">FRACTALS</p>
+        </div>
+    </div>
+    <div id="ru" class="aboutContainer">
+        <div class="header" style="width: 100%; text-align: center;">Not great, not terrible.</div>
+        <div class="text">Привет!</div>
+        <div class="text">Меня зовут <span class="spoiler">Михаил</span>. Я погромист и очень интересуюсь компьютерной графикой.</div>
+
+        <div class="section">Основные интересы</div>
+        <hr class="hr">
+        <p class="paragraph">Программирование</p>
+        <p class="paragraph">Компьютерная графика(Real-time и Offline Global illumination)</p>
+        <p class="paragraph">Разработка игр</p>
+        <p class="paragraph">Численные методы(оптимизация, диф. уравнения и т.д.)</p>
+        <p class="paragraph">Формальные языки в программировании и физ. моделировании</p>
+
+        <div class="section">Образование</div>
+        <hr class="hr">
+        <div class="entry">
+            <div class="entry-lcol-border">
+                2018
+            </div>
+            <div class="entry-rcol">
+                <div>Диплом бакалавра<br>Новосибирский Государственный Технический Университет</div>
+                <p>Направление: Информатика и вычислительная техника</p>
+                <p>"Разработка виртуального лабораторного стенда для сравнительного анализа алгоритмов численного интегрирования"</p>
+            </div>
+        </div>
+        <div class="entry">
+            <div class="entry-lcol-border">
+                2020
+            </div>
+            <div class="entry-rcol">
+                <div>Диплом магистра<br>Новосибирский Государственный Технический Университет</div>
+                <p>Направление: Информатика и вычислительная техника</p>
+                <p>Профиль: Компьютерное моделирование</p>
+                <p>"Моделирование переходных процессов в электроэнергетических системах"</p>
+            </div>
+        </div>
+
+        <div class="section">Навыки</div>
+        <hr class="hr">
+        <div class="entry">
+            <div class="entry-lcol">Основные языки:</div>
+            <div class="entry-rcol">C++, JavaScript, GLSL</div>
+        </div>
+        <div class="entry">
+            <div class="entry-lcol">Некоторый опыт:</div> 
+            <div class="entry-rcol">C#, Java, Python, ReactJS</div>
+        </div>
+        <div class="entry">
+            <div class="entry-lcol">Инструменты:</div>
+            <div class="entry-rcol">QT, Visual Studio, GIT, ANTLR</div>
+        </div>
+
+        <div class="section">Языки</div>
+        <hr class="hr">
+        <div class="entry">
+            <div class="entry-lcol">Русский:</div>
+            <div class="entry-rcol">родной</div>
+        </div>
+        <div class="entry">
+            <div class="entry-lcol">Английский:</div>
+        </div>
+
+        <div class="section">Персональные проекты</div>
+        <hr class="hr">
+        <p class="paragraph">
+            <a href="/">This</a> SPA, hosted on github
+        </p>
+        <p class="paragraph">
+            Power systems
+        </p>
+        <p class="paragraph">
+            Solvers
+        </p>
+        <p class="paragraph">
+            Nonlinear least squares
+        </p>
+        <p class="paragraph">
+            SolversHost
+        </p>
+
+        <div class="section">Дополнительные интересы</div>
+        <hr class="hr">
+        <p class="paragraph">Плёночная фотография</p>
+        <p class="paragraph">Sound synthesis</p>
+        <p class="paragraph">Generative art</p>
+        <p class="paragraph">Компьютерные игры</p>
+        <p class="paragraph">Фракталы</p>
+    </div>
+</body>
+</html>

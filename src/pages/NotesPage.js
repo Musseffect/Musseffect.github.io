@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
 import { withRouter,Redirect} from 'react-router';
-import {switchLanguage, setTitle} from "../actions/actions.js";
+import {setTitle} from "../actions/actions.js";
 import { Link } from 'react-router-dom';
 import { dateToString } from '../utils.js';
+import {tr} from "../localization.js";
 
 const mapStateToProps=function(state,ownProps)
 {
     return {
-      notes:state.notes
+      notes:state.notes[state.options.language],
+      lang:state.options.language
     };
 };
 
@@ -19,7 +21,6 @@ const mapDispatchToProps=function(dispatch)
   });
 };
 
-
 class NotesPage extends Component
 {
     constructor(props)
@@ -28,7 +29,7 @@ class NotesPage extends Component
     }
     componentDidMount()
     {
-        this.props.setTitle("Notes");
+        this.props.setTitle(tr("menuNotes",this.props.lang));
     }
     render()
     {

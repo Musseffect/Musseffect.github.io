@@ -8,12 +8,29 @@ const initialState=(function(){
 		let about=[];
 		state.about=about;
 		state.title="";
-		state.language = "ru";
 		state.isFetching = false;
 		state.hasError = false;
-		state.tags = {};
-		state.posts = [];
+		state.options = {
+			language:"en",
+			theme:"light"
+		}
+		state.posts = {};
 		state.notes = [];
+		if(localStorage)
+			{
+				if (localStorage.getItem("options") !== null) {
+					let options = JSON.parse(localStorage.getItem("options"));
+					if(typeof options === 'object'){
+						Object.keys(options).forEach(function(value){
+							if(state.options[value]!==undefined)
+								state.options[value] = options[value];
+						})
+					}
+				}else
+				{
+					localStorage.setItem("options", JSON.stringify(state.options));
+				}
+			}
 		state.notesDictionary={};
 		state.note = {
 			isFetching:false,
@@ -22,15 +39,17 @@ const initialState=(function(){
 			err:null,
 			url:null
 		};
+		state.links={items:[],tags:[]};
 		return state;
 })();
 
 const contentBaseLink = "https://gist.githubusercontent.com/Musseffect/546725186d756cd780efe1455e60eead/raw/content.json";
+const linksBaseLink = "https://gist.githubusercontent.com/Musseffect/546725186d756cd780efe1455e60eead/raw/links.json";
 //`https://api.github.com/gists/546725186d756cd780efe1455e60eead`;
 
 const store = createStore(rootReducer,initialState,applyMiddleware(thunkMiddleware)
 	/*,window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()*/);  
 
-store.dispatch(fetchContent(contentBaseLink));
+store.dispatch(fetchContent(contentBaseLink,linksBaseLink));
 
 export default store;

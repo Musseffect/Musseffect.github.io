@@ -3,34 +3,29 @@ import { connect } from "react-redux";
 import { withRouter,Redirect} from 'react-router';
 import MarkdownRender from "../components/markdownRender.jsx";
 import {setTitle, fetchNoteIfNeeded} from "../actions/actions.js";
-import CodeRenderer from "../components/codeRenderer.jsx";
 import { dateToString } from '../utils.js';
+import {tr} from "../localization.js";
 
 const mapStateToProps=function(state,ownProps)
 {
   const linkName = ownProps.match.params.id;
-  const id = state.notesDictionary[linkName];
+  const {index,lang} = state.notesDictionary[linkName];
   return {
-    note:state.notes[id],
+    note:state.notes[lang][index],
     content:state.note.content,
     isFetching:state.note.isFetching,
-    err:state.note.err
+    err:state.note.err,
+    lang:state.options.language
   };
 };
 
 const mapDispatchToProps=function(dispatch)
 {
   return ({
-    //switchLanguage:function(){dispatch(switchLanguage());},
     fetchNoteIfNeeded:function(file){dispatch(fetchNoteIfNeeded(file));},
     setTitle:function(title){dispatch(setTitle(title));}
   });
 };
-
-function imageRenderer(props)
-{
-  return <img {...props} className="noteImage"/>
-}
 
 class NotePage extends Component {
   constructor(props)
@@ -50,7 +45,8 @@ class NotePage extends Component {
       note,
       content,
       err,
-      isFetching
+      isFetching,
+      lang
     } = this.props;
     if(note == undefined)
     {
@@ -59,7 +55,7 @@ class NotePage extends Component {
     let {date,name} = note;
     return (
       <div className='noteContainer pageContainer'>
-        {err!=null?(<div>Couldn't load damn page</div>):isFetching?(
+        {err!=null?(<div>{tr("noteLoadingError",lang)})</div>):isFetching?(
             <div className="loaderBackground">
                 <div className="loader">
                   <div></div><div></div><div></div>
@@ -67,16 +63,12 @@ class NotePage extends Component {
             </div>
           ):(<div>
           <div className='noteHeader'>
-          <div className="noteDate">
-            {dateToString(date)}
+            <div className="noteDate">
+              {dateToString(date)}
             </div>
-          <div className="noteName">{name}</div>
-        </div>
-        <MarkdownRender source = {content} escapeHtml={true} renderers={
-          {
-            image: imageRenderer,
-            code: CodeRenderer
-          }} className = {'noteContent'}/></div>)
+            <div className="noteName">{name}</div>
+          </div>
+          <MarkdownRender source = {content} escapeHtml={true} className = {'noteContent'}/></div>)
         }
       </div>
     )

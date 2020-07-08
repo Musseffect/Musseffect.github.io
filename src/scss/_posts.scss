@@ -1,10 +1,5 @@
-
-//New
 .tagCircle
 {
-    /*background-color:white;*/
-    /*width:10px;*/
-    /*height:10px;*/
 	align-self: center;
     /*margin-right:5px;*/
 	border-radius:5px;
@@ -12,13 +7,17 @@
 }
 .tagCircle::before
 {
-	color:white;
 	content:"#";
 	width:10px;
 	height:10px;
 }
 .tag
 {
+	@include themify($themes)
+	{
+		color:themed('tagColor');
+		background-color:themed('tagBackground')
+	}
 	user-select: none;
 	cursor: pointer;
     display:flex;
@@ -26,34 +25,74 @@
     font-weight:600;
     padding:3px 7px;
     margin:3px 3px;
-    border-radius:2px;
-	background-color:rgb(128, 128, 128);
+    border-radius:0px;
 	max-width:100%;
 }
 .tag:hover{
-	background-color:#595959;
+	@include themify($themes)
+	{
+		color:themed('tagHoverColor');
+		background-color:themed('tagHoverBackground')
+	}
 }
 .tag.active
 {
-    background-color:rgb(37, 115, 216);
+	@include themify($themes)
+	{
+		color:themed('tagActiveColor');
+		background-color:themed('tagActiveBackground')
+	}
 }
 .tag.active:hover{
-	background-color:#23599e;
+	@include themify($themes)
+	{
+		color:themed('tagActiveHoverColor');
+		background-color:themed('tagActiveHoverBackground')
+	}
 }
 .tagName
 {
-	color:white;
 	overflow:hidden;
 	text-overflow:ellipsis;
 }
+.postName
+{
+	font-weight:500;
+    font-size:22px;
+	padding:0 5px;
+	width:100%;
+	word-break:break-word;
+	text-align:center;
+	/*margin-bottom:0.5rem;*/
+	@include themify($themes)
+	{
+		color:themed('postNameColor')
+	}
+}
 .postHeaderLink
 {
+	font-weight:500;
     padding:5px;
-    color:black;
+	@include themify($themes)
+	{
+		color:themed('postNameColor')
+	}
+	overflow:hidden;
+	max-width:100%;
+	text-align:center;
+	flex-shrink:0;
+	position:relative;
     font-size:22px;
     text-overflow:ellipsis;
 	white-space:nowrap;
 	word-wrap: normal;
+}
+.postHeaderLink:hover
+{
+	@include themify($themes)
+	{
+		color:themed('postNameHoverColor')
+	}
 }
 .postPreviewTags
 {
@@ -147,7 +186,7 @@
 .globalTagsContainer
 {
 	display:flex;
-	padding:0px 10%;
+	padding:0px 5px;
 	width:100%;
 	flex-wrap:wrap;
 	justify-content:center;
@@ -158,9 +197,7 @@
 	position:relative;
 	flex-direction:row;
 	flex-wrap:wrap;
-	//justify-content: space-between;
 }
-
 
 //Post
 .postContent
@@ -209,35 +246,6 @@
 		padding:0px;
 	}
 }
-.postImages
-{
-    display:flex;
-    flex-direction:row;
-    flex-wrap:wrap;
-}
-.postImg
-{
-	@include respond-to(handhelds) {
-		height:100px;
-		width:100px;
-		margin:4px;
-	}
-	@include respond-to(medium-screens) { 
-		height:200px;
-		width:200px;
-		margin:4px;
-	}
-	@include respond-to(wide-screens) { 
-		height:300px;
-		width:300px;
-		margin:10px;
-	}
-	border: 1px gray solid;
-    background-color:gray;
-	object-fit:cover;
-	object-position:center;
-}
-
 
 @mixin imageContainer($imgPerRow,$margin)
 {
@@ -246,7 +254,7 @@
 	margin-right:#{$margin};
 }
 
-.postImages2
+.postImages
 {
 	display:flex;
 	flex-direction:row;
@@ -308,7 +316,7 @@
     padding-bottom:100%;
     position:relative;
 }
-.postImg2
+.postImg
 {
 	cursor:pointer;
     position:absolute;
@@ -318,4 +326,60 @@
     height:100%;
     object-fit:contain;
     object-position:center;
+}
+.galleryLine
+{
+	@include themify($themes)
+	{
+		border-top-color:themed('hrColor')
+	}
+	margin: 0.1rem 0 1rem 0;
+}
+.galleryPosts
+{
+	display:flex;
+	flex-direction:column;
+}
+.galleryPost
+{
+	display:none;
+}
+.galleryPost.active
+{
+	display:block;
+}
+.galleryPostName
+{
+	margin:0.5rem 0 0;
+	display:inline-block;
+	font-weight:500;
+	font-size:22px;
+	max-width:100%;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	white-space:nowrap;
+	@include respond-to(handhelds) {
+	  padding:0 5px;
+	}
+	@include respond-to(medium-screens){
+		padding:0 5px;
+	}
+	@include themify($themes)
+	{
+		color:themed('postNameColor')
+	}
+}
+.galleryPostName:hover
+{
+	@include themify($themes)
+	{
+		color:themed('postNameHoverColor')
+	}
+}
+.galleryPostTags
+{
+	display:flex;
+	flex-direction:row;
+	flex-shrink:0;
+	flex-wrap:wrap;
 }

@@ -1,4 +1,4 @@
 SET mypath=%~dp0
 @echo off
-python %~dp0textToJSONArray.py C:\plans\links.txt %~dp0jsonResult.txt %*
+python %~dp0textToJSONArray.py C:\Musseffect.github.io\src\utils\example.txt %~dp0jsonResult.json %*
 pause

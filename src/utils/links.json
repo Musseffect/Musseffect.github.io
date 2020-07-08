@@ -1,0 +1,1682 @@
+[
+{
+	"name":"RANDOM",
+	"items":[
+		{
+			"href":"https://observablehq.com/@riccardoscalco/draw-regular-polygons-by-means-of-functions",
+			"name":"https://observablehq.com/@riccardoscalco/draw-regular-polygons-by-means-of-functions",
+			"tags":[]
+		},
+		{
+			"href":"Hachure map",
+			"name":"Hachure map",
+			"tags":[]
+		},
+		{
+			"href":"Marching squares/cubes for isolines and contour maps",
+			"name":"Marching squares/cubes for isolines and contour maps",
+			"tags":[]
+		},
+		{
+			"href":"contour maps vector",
+			"name":"contour maps vector",
+			"tags":[]
+		},
+		{
+			"href":"https://sighack.com/post/getting-creative-with-perlin-noise-fields",
+			"name":"https://sighack.com/post/getting-creative-with-perlin-noise-fields",
+			"tags":[]
+		},
+		{
+			"href":"https://davenewt.github.io/perlin-noise-flow-field/",
+			"name":"https://davenewt.github.io/perlin-noise-flow-field/",
+			"tags":[]
+		},
+		{
+			"href":"chromatic polarization",
+			"name":"chromatic polarization",
+			"tags":[]
+		},
+		{
+			"href":"Franz Sales Meyer - A handbook of ornament",
+			"name":"Franz Sales Meyer - A handbook of ornament",
+			"tags":[]
+		},
+		{
+			"href":"http://connorbell.ca/blog/",
+			"name":"http://connorbell.ca/blog/",
+			"tags":[]
+		},
+		{
+			"href":"http://www.kynd.info/log/?p=705",
+			"name":"http://www.kynd.info/log/?p=705",
+			"tags":[]
+		},
+		{
+			"href":"http://e-maxx.ru/algo/index.php?mod=lastadded",
+			"name":"http://e-maxx.ru/algo/index.php?mod=lastadded",
+			"tags":[]
+		},
+		{
+			"href":"https://vvvv.org/blog",
+			"name":"https://vvvv.org/blog",
+			"tags":[]
+		},
+		{
+			"href":"http://graphicscodex.com/",
+			"name":"http://graphicscodex.com/",
+			"tags":[]
+		},
+		{
+			"href":"http://roberthodgin.com/portfolio/",
+			"name":"http://roberthodgin.com/portfolio/",
+			"tags":[]
+		},
+		{
+			"href":"Video feedback photography",
+			"name":"Video feedback photography",
+			"tags":[]
+		},
+		{
+			"href":"https://www.artstation.com/artwork/63Eq5",
+			"name":"https://www.artstation.com/artwork/63Eq5",
+			"tags":[]
+		}
+		]
+},
+{
+	"name":"WPF",
+	"items":[
+		{
+			"href":"https://joshsmithonwpf.wordpress.com/",
+			"name":"Josh Smith on wpf",
+			"tags":["wpf", "programming"]
+		},
+		{
+			"href":"https://www.codeproject.com/Articles/23265/WPF-Diagram-Designer-Part-2",
+			"name":"WPF Diagram designer",
+			"tags":["wpf"]
+		},
+		{
+			"href":"https://www.codeproject.com/Articles/182683/NetworkView-A-WPF-custom-control-for-visualizing-a",
+			"name":"NetworkView",
+			"tags":["wpf"]
+		}
+		]
+},
+{
+	"name":"generative",
+	"items":[
+		{
+			"href":"http://www.lumicon.de/wp/?p=3173",
+			"name":"",
+			"tags":["generative"]
+		},
+		{
+			"href":"http://www.complexification.net/gallery/",
+			"name":"http://www.complexification.net/gallery/",
+			"tags":[]
+		},
+		{
+			"href":"https://tylerxhobbs.com/essays/2017/a-generative-approach-to-simulating-watercolor-paints",
+			"name":"https://tylerxhobbs.com/essays/2017/a-generative-approach-to-simulating-watercolor-paints",
+			"tags":[]
+		},
+		{
+			"href":"https://generativeartistry.com/tutorials/",
+			"name":"https://generativeartistry.com/tutorials/",
+			"tags":[]
+		}
+		]
+},
+{
+	"name":"reaction diffusion",
+	"items":[
+		{
+			"href":"https://experiments.withgoogle.com/gray-scott-simulation",
+			"name":"",
+			"tags":["reaction-diffusion"]
+		},
+		{
+			"href":"http://www.karlsims.com/rd.html",
+			"name":"",
+			"tags":["reaction-diffusion"]
+		},
+		{
+			"href":"http://mrob.com/pub/comp/xmorphia/",
+			"name":"gray-scott parametrization",
+			"tags":["reaction-diffusion"]
+		},
+		{
+			"href":"https://people.ece.cornell.edu/land/courses/ece5760/FinalProjects/s2018/dc884/dc884/index.html",
+			"name":"simulation of reaction diffusion",
+			"tags":["reaction-diffusion"]
+		},
+		{
+			"href":"https://softologyblog.wordpress.com/2017/02/04/the-belousov-zhabotinsky-reaction-and-the-hodgepodge-machine/",
+			"name":"",
+			"tags":["reaction-diffusion"]
+		}
+		]
+},
+{
+	"name":"hyperbolic",
+	"items":[
+		{
+			"href":"http://mphitchman.com/geometry/section5-3.html",
+			"name":"",
+			"tags":[]
+		},
+		{
+			"href":"http://roy.red/generating-spherical-and-hyperbolic-tilings-in-glsl-.html",
+			"name":"",
+			"tags":[]
+		},
+		{
+			"href":"http://www.malinc.se/m/ImageTiling.php",
+			"name":"",
+			"tags":[]
+		},
+		{
+			"href":"https://www.google.com/search?q=Compass+and+Straightedge+in+the+Poincar%C3%A9+Disk%22+%28Goodman-Strauss,+2001%29&source=lmns&bih=757&biw=1600&hl=en&ved=2ahUKEwjH-_KC3sXpAhXSxSoKHV-nBesQ_AUoAHoECAEQAA",
+			"name":"",
+			"tags":[]
+		},
+		{
+			"href":"https://westy31.home.xs4all.nl/Geometry/Geometry.html#Fractal_tiling",
+			"name":"",
+			"tags":[]
+		}
+		]
+},
+{
+	"name":"oscilloscope music",
+	"items":[
+		{
+			"href":"https://www.reddit.com/r/oscilloscopemusic/comments/9gj4qj/getting_started_general_information/",
+			"name":"https://www.reddit.com/r/oscilloscopemusic/comments/9gj4qj/getting_started_general_information/",
+			"tags":[]
+		},
+		{
+			"href":"https://www.youtube.com/watch?v=UVf7ZhS5oIY",
+			"name":"https://www.youtube.com/watch?v=UVf7ZhS5oIY",
+			"tags":[]
+		},
+		{
+			"href":"http://recordnotfound.com/Oscilloscope-kritzikratzi-122942",
+			"name":"http://recordnotfound.com/Oscilloscope-kritzikratzi-122942",
+			"tags":[]
+		},
+		{
+			"href":"http://macumbista.net/?page_id=4985",
+			"name":"http://macumbista.net/?page_id=4985",
+			"tags":[]
+		},
+		{
+			"href":"https://vimeo.com/276126676",
+			"name":"https://vimeo.com/276126676",
+			"tags":[]
+		},
+		{
+			"href":"Rutt-Etra technique",
+			"name":"Rutt-Etra technique",
+			"tags":[]
+		},
+		{
+			"href":"VERY IMPORTANT http://m1el.github.io/woscope-how/index.html",
+			"name":"VERY IMPORTANT http://m1el.github.io/woscope-how/index.html",
+			"tags":[]
+		}
+		]
+},
+{
+	"name":"distance fields",
+	"items":[
+		{
+			"href":"http://mercury.sexy/hg_sdf/",
+			"name":"",
+			"tags":["sdf"]
+		},
+		{
+			"href":"https://nshelton.github.io/resources/",
+			"name":"",
+			"tags":["sdf"]
+		},
+		{
+			"href":"https://swiftcoder.wordpress.com/2010/06/21/logarithmic-spiral-distance-field/",
+			"name":"",
+			"tags":["sdf"]
+		},
+		{
+			"href":"http://numb3r23.github.io/cgTalk/04_distancefields.html#/6/3",
+			"name":"",
+			"tags":["sdf"]
+		},
+		{
+			"href":"https://mcinversion.com/",
+			"name":"",
+			"tags":["sdf"]
+		},
+		{
+			"href":"https://aka-san.halcy.de/thesis.pdf",
+			"name":"",
+			"tags":["sdf"]
+		},
+		{
+			"href":"https://medium.com/@avseoul/ray-marching-metaball-in-unity3d-fc6f83766c5d",
+			"name":"",
+			"tags":["sdf"]
+		},
+		{
+			"href":"https://shaderfun.com/2018/07/23/signed-distance-fields-part-8-gradients-bevels-and-noise/",
+			"name":"",
+			"tags":["sdf"]
+		},
+		{
+			"href":"http://blog.hvidtfeldts.net/",
+			"name":"",
+			"tags":["sdf"]
+		},
+		{
+			"href":"https://github.com/portsmouth/snelly",
+			"name":"",
+			"tags":["sdf"]
+		},
+		{
+			"href":"https://adrianb.io/2016/10/01/raymarching.html",
+			"name":"",
+			"tags":["sdf"]
+		},
+		{
+			"href":"https://issuu.com/andershellerupmadsen/docs/dip_2970",
+			"name":"Interactive Modeling with Distance Fields",
+			"tags":["sdf"]
+		},
+		{
+			"href":"http://jamie-wong.com/2016/07/15/ray-marching-signed-distance-functions/",
+			"name":"Ray Marching and Signed Distance Functions",
+			"tags":["sdf"]
+		},
+		{
+			"href":"https://kosmonautblog.wordpress.com/2017/05/01/signed-distance-field-rendering-journey-pt-1/",
+			"name":"https://kosmonautblog.wordpress.com/2017/05/01/signed-distance-field-rendering-journey-pt-1/",
+			"tags":[]
+		},
+		{
+			"href":"https://www.jishuwen.com/d/2M9J",
+			"name":"Log-Spherical Mapping in SDF Raymarching",
+			"tags":["sdf"]
+		}
+		]
+},
+{
+	"name":"blackhole",
+	"items":[
+		{
+			"href":"https://theconfused.me/blog/numerical-integration-of-light-paths-in-a-schwarzschild-metric/",
+			"name":"",
+			"tags":["blackhole", "numerical"]
+		},
+		{
+			"href":"https://theconfused.me/blog/distances-in-schwarzschild-lensing/",
+			"name":"",
+			"tags":["blackhole"]
+		},
+		{
+			"href":"https://arxiv.org/pdf/1502.03808.pdf",
+			"name":"",
+			"tags":["blackhole"]
+		},
+		{
+			"href":"https://rantonels.github.io/starless/",
+			"name":"",
+			"tags":["blackhole"]
+		},
+		{
+			"href":"https://dmitrybrant.com/2018/12/11/ray-tracing-black-holes",
+			"name":"",
+			"tags":["blackhole", "raytracing"]
+		},
+		{
+			"href":"http://locklessinc.com/articles/raytracing/",
+			"name":"",
+			"tags":["blackhole", "raytracing"]
+		},
+		{
+			"href":"https://www.physicsforums.com/threads/light-ray-paths-near-schwarzschild-blackhole.347915/",
+			"name":"",
+			"tags":["blackhole", "raytracing"]
+		},
+		{
+			"href":"https://www.spacetimetravel.org/licht/licht.html",
+			"name":"",
+			"tags":["blackhole", "numerical"]
+		},
+		{
+			"href":"https://physics.fjfi.cvut.cz/~schmijos/slog/003_BHrender/prezentace.pdf",
+			"name":"",
+			"tags":["blackhole"]
+		},
+		{
+			"href":"https://arxiv.org/pdf/1511.06025.pdf",
+			"name":"",
+			"tags":["blackhole"]
+		},
+		{
+			"href":"https://luth.obspm.fr/~luthier/gourgoulhon/pdf/VincePGP11.pdf",
+			"name":"",
+			"tags":["blackhole"]
+		},
+		{
+			"href":"https://www.researchgate.net/publication/230913721_Approximation_of_Light-Ray_Deflection_Angle_and_Gravitational_Lenses_in_the_Schwarzschild_Metric_II_Lensing_Magnification_in_a_Binary_System",
+			"name":"",
+			"tags":["blackhole"]
+		},
+		{
+			"href":"https://www.aanda.org/articles/aa/full_html/2016/11/aa29075-16/aa29075-16.html",
+			"name":"",
+			"tags":["blackhole"]
+		},
+		{
+			"href":"https://iopscience.iop.org/article/10.1088/0004-637X/800/1/77",
+			"name":"",
+			"tags":["blackhole"]
+		},
+		{
+			"href":"https://www.spacetimetravel.org/licht/light.pdf",
+			"name":"",
+			"tags":["blackhole"]
+		},
+		{
+			"href":"https://inspirehep.net/literature/1405421",
+			"name":"Seeing relativity-I: Ray tracing in a Schwarzschild metric to explore the maximal analytic extension of the metric and making a proper rendering of the stars",
+			"tags":["blackhole", "raytracing"]
+		}
+		]
+},
+{
+	"name":"OpenCL",
+	"items":[
+		{
+			"href":"https://objectcomputing.com/resources/publications/sett/july-2011-gpu-computing-with-opencl",
+			"name":"",
+			"tags":["opencl"]
+		}
+		]
+},
+{
+	"name":"fractals and demo stuff",
+	"items":[
+		{
+			"href":"http://kevs3d.co.uk/dev/shaders",
+			"name":"GPU Shader Experiments",
+			"tags":["terrain", "glsl", "fractals", "sdf"]
+		},
+		{
+			"href":"http://sub.blue",
+			"name":"sub blue",
+			"tags":["fractals", "sdf", "glsl"]
+		},
+		{
+			"href":"http://www.davidbyrd.io/renders/",
+			"name":"",
+			"tags":[]
+		},
+		{
+			"href":"http://blog.hvidtfeldts.net/",
+			"name":"Synthopia blogs",
+			"tags":["glsl", "sdf", "fractals"]
+		},
+		{
+			"href":"https://www.iquilezles.org/",
+			"name":"",
+			"tags":["glsl", "sdf", "fractals", "demo"]
+		},
+		{
+			"href":"https://en.wikibooks.org/wiki/Fractals/Iterated_function_systems",
+			"name":"",
+			"tags":[]
+		},
+		{
+			"href":"http://www.fractalforums.com/sierpinski-gasket/kaleidoscopic-(escape-time-ifs)/",
+			"name":"http://www.fractalforums.com/sierpinski-gasket/kaleidoscopic-(escape-time-ifs)/",
+			"tags":[]
+		},
+		{
+			"href":"https://softologyblog.wordpress.com",
+			"name":"https://softologyblog.wordpress.com",
+			"tags":[]
+		},
+		{
+			"href":"http://algorithmic-worlds.net/",
+			"name":"http://algorithmic-worlds.net/",
+			"tags":[]
+		},
+		{
+			"href":"http://michael.schuldt.io/projects/mandelbox/mandelbox.html",
+			"name":"http://michael.schuldt.io/projects/mandelbox/mandelbox.html",
+			"tags":[]
+		},
+		{
+			"href":"https://math.stackexchange.com/questions/6605/magnet-mandelbrot-set",
+			"name":"https://math.stackexchange.com/questions/6605/magnet-mandelbrot-set",
+			"tags":[]
+		},
+		{
+			"href":"http://www.fractalforums.com/ifs-iterated-function-systems/julia-set-inverse-iteration/",
+			"name":"http://www.fractalforums.com/ifs-iterated-function-systems/julia-set-inverse-iteration/",
+			"tags":[]
+		},
+		{
+			"href":"http://www.fractal.org/Bewustzijns-Besturings-Model/Fractals-Useful-Beauty.htm",
+			"name":"http://www.fractal.org/Bewustzijns-Besturings-Model/Fractals-Useful-Beauty.htm",
+			"tags":[]
+		},
+		{
+			"href":"http://www.fractalforums.com/3d-fractal-generation/rendering-3d-fractals-without-distance-estimators/105/",
+			"name":"http://www.fractalforums.com/3d-fractal-generation/rendering-3d-fractals-without-distance-estimators/105/",
+			"tags":[]
+		},
+		{
+			"href":"http://www.dhushara.com/DarkHeart/DarkHeart.htm",
+			"name":"http://www.dhushara.com/DarkHeart/DarkHeart.htm",
+			"tags":[]
+		},
+		{
+			"href":"http://www.malinc.se/m/NewtonFractals.php",
+			"name":"http://www.malinc.se/m/NewtonFractals.php",
+			"tags":[]
+		},
+		{
+			"href":"https://khyperia.com/blog/fractal-raytracer-2.html",
+			"name":"",
+			"tags":["fractals", "raytracing"]
+		},
+		{
+			"href":"https://darkeclipz.github.io/fractals/",
+			"name":"https://darkeclipz.github.io/fractals/",
+			"tags":[]
+		},
+		{
+			"href":"https://fractalforums.org/noobs-corner/76/trying-to-replicate-a-fractal/3208",
+			"name":"https://fractalforums.org/noobs-corner/76/trying-to-replicate-a-fractal/3208",
+			"tags":[]
+		},
+		{
+			"href":"http://www.fractalforums.com/3d-fractal-generation/an-escape-tim-algorithm-for-kleinian-group-limit-sets/",
+			"name":"http://www.fractalforums.com/3d-fractal-generation/an-escape-tim-algorithm-for-kleinian-group-limit-sets/",
+			"tags":[]
+		},
+		{
+			"href":"https://users.math.yale.edu/public_html/People/frame/Fractals/CircInvFrac/welcome.html",
+			"name":"https://users.math.yale.edu/public_html/People/frame/Fractals/CircInvFrac/welcome.html",
+			"tags":[]
+		},
+		{
+			"href":"https://fractalus.ru/forum/index.html",
+			"name":"https://fractalus.ru/forum/index.html",
+			"tags":[]
+		},
+		{
+			"href":"https://vimeo.com/126664436",
+			"name":"https://vimeo.com/126664436",
+			"tags":[]
+		},
+		{
+			"href":"https://nshelton.github.io/home/levels/",
+			"name":"https://nshelton.github.io/home/levels/",
+			"tags":[]
+		},
+		{
+			"href":"http://www.fractalforums.com/general-discussion/stripe-average-coloring",
+			"name":"http://www.fractalforums.com/general-discussion/stripe-average-coloring",
+			"tags":[]
+		},
+		{
+			"href":"https://hal.archives-ouvertes.fr/hal-00367972/document",
+			"name":"https://hal.archives-ouvertes.fr/hal-00367972/document",
+			"tags":[]
+		},
+		{
+			"href":"http://www.hpdz.net/TechInfo/Convergent.htm",
+			"name":"http://www.hpdz.net/TechInfo/Convergent.htm",
+			"tags":[]
+		},
+		{
+			"href":"https://users.math.yale.edu/public_html/People/frame/Fractals/CircInvFrac/welcome.html",
+			"name":"https://users.math.yale.edu/public_html/People/frame/Fractals/CircInvFrac/welcome.html",
+			"tags":[]
+		},
+		{
+			"href":"http://woo4.me/wooscripter/hybrid-kifs-fractals/",
+			"name":"http://woo4.me/wooscripter/hybrid-kifs-fractals/",
+			"tags":[]
+		},
+		{
+			"href":"http://www.miqel.com/fractals_math_patterns/mandelbox_3d_fractal.html",
+			"name":"http://www.miqel.com/fractals_math_patterns/mandelbox_3d_fractal.html",
+			"tags":[]
+		},
+		{
+			"href":"http://abacus.bates.edu/~sross/",
+			"name":"http://abacus.bates.edu/~sross/",
+			"tags":[]
+		},
+		{
+			"href":"http://thebookofshaders.com",
+			"name":"http://thebookofshaders.com",
+			"tags":[]
+		}
+		]
+},
+{
+	"name":"fractal flames",
+	"items":[
+		{
+			"href":"http://www.fractalforums.com/programming/requesting-clarifications-on-the-fractal-flame-algorithm/",
+			"name":"http://www.fractalforums.com/programming/requesting-clarifications-on-the-fractal-flame-algorithm/",
+			"tags":[]
+		},
+		{
+			"href":"https://habr.com/ru/post/251537/",
+			"name":"https://habr.com/ru/post/251537/",
+			"tags":[]
+		},
+		{
+			"href":"https://github.com/jameswmccarty/Fractal-Flame-Algorithm-in-C/blob/master/fractal.c",
+			"name":"https://github.com/jameswmccarty/Fractal-Flame-Algorithm-in-C/blob/master/fractal.c",
+			"tags":[]
+		},
+		{
+			"href":"https://jo.dreggn.org/home/2010_fractal_flames.pdf",
+			"name":"https://jo.dreggn.org/home/2010_fractal_flames.pdf",
+			"tags":[]
+		},
+		{
+			"href":"https://fr0st.wordpress.com/2009/04/15/xaos-and-the-generalization-of-the-fractal-flame-algorithm/",
+			"name":"https://fr0st.wordpress.com/2009/04/15/xaos-and-the-generalization-of-the-fractal-flame-algorithm/",
+			"tags":[]
+		},
+		{
+			"href":"https://www.semanticscholar.org/paper/The-Fractal-Flame-Algorithm-Spotworks-Berthoud/178e0cc10a81270e272e0a2bb2bb8bdbafb29438",
+			"name":"https://www.semanticscholar.org/paper/The-Fractal-Flame-Algorithm-Spotworks-Berthoud/178e0cc10a81270e272e0a2bb2bb8bdbafb29438",
+			"tags":[]
+		},
+		{
+			"href":"https://tigerprints.clemson.edu/cgi/viewcontent.cgi?article=2704&context=all_theses",
+			"name":"https://tigerprints.clemson.edu/cgi/viewcontent.cgi?article=2704&context=all_theses",
+			"tags":[]
+		},
+		{
+			"href":"https://fractalformulas.wordpress.com/2017/05/01/basics-of-flame-fractals/",
+			"name":"https://fractalformulas.wordpress.com/2017/05/01/basics-of-flame-fractals/",
+			"tags":[]
+		},
+		{
+			"href":"https://chronologicaldot.wordpress.com/2013/10/15/understanding-how-fractal-transforms-are-processed/",
+			"name":"https://chronologicaldot.wordpress.com/2013/10/15/understanding-how-fractal-transforms-are-processed/",
+			"tags":[]
+		},
+		{
+			"href":"http://rectangleworld.com/blog/archives/623",
+			"name":"http://rectangleworld.com/blog/archives/623",
+			"tags":[]
+		},
+		{
+			"href":"https://stackoverflow.com/questions/1115940/drawing-flame-fractals",
+			"name":"https://stackoverflow.com/questions/1115940/drawing-flame-fractals",
+			"tags":[]
+		},
+		{
+			"href":"https://sourceforge.net/p/flamethyst/code/HEAD/tree/trunk/source/",
+			"name":"https://sourceforge.net/p/flamethyst/code/HEAD/tree/trunk/source/",
+			"tags":[]
+		},
+		{
+			"href":"https://nshelton.github.io/home/fractalflames/",
+			"name":"https://nshelton.github.io/home/fractalflames/",
+			"tags":[]
+		}
+		]
+},
+{
+	"name":"L-systems",
+	"items":[
+		{
+			"href":"http://paulbourke.net/fractals/lsys/",
+			"name":"",
+			"tags":["l-systems"]
+		},
+		{
+			"href":"https://sol.gfxile.net/lsys.html",
+			"name":"",
+			"tags":["l-systems"]
+		},
+		{
+			"href":"https://cathyatseneca.gitbooks.io/3d-modelling-for-programmers/content/l-systems/index.html",
+			"name":"",
+			"tags":["l-systems"]
+		}
+		]
+},
+{
+	"name":"SPACE ODYSSEY",
+	"items":[
+		{
+			"href":"https://nofilmschool.com/2013/08/learn-how-to-create-slit-screen-sequences",
+			"name":"",
+			"tags":[]
+		},
+		{
+			"href":"https://screenmusings.org/movie/dvd/2001-A-Space-Odyssey/pages/2001-A-Space-Odyssey-246.htm",
+			"name":"",
+			"tags":[]
+		},
+		{
+			"href":"http://www.collativelearning.com/2001%20chapter%202.html",
+			"name":"",
+			"tags":[]
+		},
+		{
+			"href":"https://cinefex.com/blog/tag/douglas-trumbull/",
+			"name":"",
+			"tags":[]
+		},
+		{
+			"href":"https://indiefilmhustle.com/stanley-kubrick-slit-scan-2001/",
+			"name":"",
+			"tags":[]
+		},
+		{
+			"href":"http://www.2001italia.it/",
+			"name":"",
+			"tags":[]
+		}
+		]
+},
+{
+	"name":"raymarching",
+	"items":[
+		{
+			"href":"https://www.pouet.net/topic.php?which=7920&page=60",
+			"name":"Raymarching Beginners' Thread",
+			"tags":["raymarching"]
+		},
+		{
+			"href":"https://www.pouet.net/topic.php?which=7931&page=1",
+			"name":"Raymarching Toolbox Thread",
+			"tags":["raymarching"]
+		},
+		{
+			"href":"https://www.gamasutra.com/blogs/DavidKuri/20180504/317575/GPU_Ray_Tracing_in_Unity__Part_1.php",
+			"name":"",
+			"tags":["raymarching"]
+		},
+		{
+			"href":"http://www.fractalforums.com/programming/a-collection-of-resources-on-ray-marching/",
+			"name":"",
+			"tags":["raymarching"]
+		}
+		]
+},
+{
+	"name":"Tone mapping",
+	"items":[
+		{
+			"href":"https://mynameismjp.wordpress.com/2010/04/30/a-closer-look-at-tone-mapping/",
+			"name":"",
+			"tags":["tone mapping"]
+		},
+		{
+			"href":"https://ventspace.wordpress.com/2017/10/20/games-look-bad-part-1-hdr-and-tone-mapping/",
+			"name":"",
+			"tags":["tone mapping"]
+		}
+		]
+},
+{
+	"name":"procedural",
+	"items":[
+		{
+			"href":"http://jamie-wong.com",
+			"name":"",
+			"tags":["procedural"]
+		},
+		{
+			"href":"https://www.youtube.com/playlist?list=PLFt_AvWsXl0eBW2EiBtl_sxmDtSgZBxB3",
+			"name":"Procedural Terrain Generation",
+			"tags":["procedural", "terrain"]
+		},
+		{
+			"href":"https://www.reddit.com/r/gamedev/comments/57xod1/procedural_galaxy_generation_in_frontier_elite_2/",
+			"name":"",
+			"tags":["procedural", "galaxy"]
+		},
+		{
+			"href":"https://gamedev.stackexchange.com/questions/47680/procedural-generation-of-galaxy",
+			"name":"",
+			"tags":["procedural", "galaxy"]
+		},
+		{
+			"href":"http://www.jongware.com/galaxy1.html",
+			"name":"",
+			"tags":["procedural", "galaxy"]
+		},
+		{
+			"href":"https://80.lv/articles/generating-the-universe-in-elite-dangerous/",
+			"name":"",
+			"tags":["procedural", "galaxy"]
+		},
+		{
+			"href":"https://medium.com/inner-worlds/inner-worlds-i-vladimir-romanyuk-the-space-engineer-276fccfc36dc",
+			"name":"",
+			"tags":["procedural", "galaxy"]
+		},
+		{
+			"href":"http://colordodge.com/procedural-planets/",
+			"name":"",
+			"tags":["procedural", "planets"]
+		},
+		{
+			"href":"https://www.seedofandromeda.com/blogs/51-procedural-star-rendering",
+			"name":"",
+			"tags":["procedural", "planets"]
+		},
+		{
+			"href":"http://www.decarpentier.nl/scape-procedural-extensions",
+			"name":"",
+			"tags":["procedural", "terrain"]
+		},
+		{
+			"href":"https://martindevans.me/game-development/2016/03/30/Procedural-Generation-For-Dummies-Half-Edge-Geometry/",
+			"name":"",
+			"tags":["procedural"]
+		},
+		{
+			"href":"https://wwwtyro.net/",
+			"name":"https://wwwtyro.net/",
+			"tags":[]
+		},
+		{
+			"href":"https://inconvergent.net/2019/depth-of-field/#footnotes",
+			"name":"https://inconvergent.net/2019/depth-of-field/#footnotes",
+			"tags":[]
+		},
+		{
+			"href":"http://devmag.org.za/2009/04/25/perlin-noise/",
+			"name":"",
+			"tags":["noise"]
+		},
+		{
+			"href":"http://www-evasion.imag.fr/Membres/Fabrice.Neyret/flownoise/index.gb.html",
+			"name":"",
+			"tags":["noise"]
+		}
+		]
+},
+{
+	"name":"quasirandom sequences and random walk, very useful",
+	"items":[
+		{
+			"href":"http://extremelearning.com.au/unreasonable-effectiveness-of-quasirandom-sequences/",
+			"name":"",
+			"tags":["randomness"]
+		},
+		{
+			"href":"https://blog.demofox.org/2017/05/29/when-random-numbers-are-too-random-low-discrepancy-sequences/",
+			"name":"",
+			"tags":["randomness"]
+		}
+		]
+},
+{
+	"name":"clouds",
+	"items":[
+		{
+			"href":"http://vterrain.org/Atmosphere/Clouds/",
+			"name":"",
+			"tags":["clouds"]
+		},
+		{
+			"href":"http://www.rioki.org/2013/03/07/glsl-skybox.html",
+			"name":"",
+			"tags":["clouds"]
+		},
+		{
+			"href":"https://www.guerrilla-games.com/read/the-real-time-volumetric-cloudscapes-of-horizon-zero-dawn",
+			"name":"",
+			"tags":["clouds", "real-time"]
+		},
+		{
+			"href":"https://lightbulbbox.wordpress.com/2015/11/11/clouds-by-perlin-and-worley/",
+			"name":"",
+			"tags":["clouds", "noise"]
+		}
+		]
+},
+{
+	"name":"atmosphere",
+	"items":[
+		{
+			"href":"https://developer.amd.com/wordpress/media/2012/10/ATI-LightScattering.pdf",
+			"name":"",
+			"tags":["atmosphere"]
+		},
+		{
+			"href":"http://simonwallner.at/project/atmospheric-scattering/",
+			"name":"",
+			"tags":["atmosphere"]
+		},
+		{
+			"href":"https://arxiv.org/pdf/1802.02237.pdf",
+			"name":"woodcock tracking (delta tracking)",
+			"tags":["raytracing", "volumetric"]
+		},
+		{
+			"href":"http://www.cs.cornell.edu/courses/cs6630/2012sp/notes/09volpath.pdf",
+			"name":"",
+			"tags":["raytracing", "volumetric"]
+		}
+		]
+},
+{
+	"name":"terrain",
+	"items":[
+		{
+			"href":"https://www.classes.cs.uchicago.edu/archive/2015/fall/23700-1/final-project/MusgraveTerrain00.pdf",
+			"name":"",
+			"tags":["terrain"]
+		},
+		{
+			"href":"http://www.afqa123.com/2017/02/25/terrain-rendering/",
+			"name":"",
+			"tags":["terrain"]
+		},
+		{
+			"href":"http://acko.net/blog/making-worlds-1-of-spheres-and-cubes/",
+			"name":"",
+			"tags":["planets", "terrain"]
+		},
+		{
+			"href":"http://www-evasion.imag.fr/Membres/Eric.Bruneton/index.fr.html",
+			"name":"terrain",
+			"tags":[]
+		},
+		{
+			"href":"http://mgarland.org/files/papers/scape.pdf",
+			"name":"Fast Polygonal Approximation of Terrains and Height Fields",
+			"tags":["terrain"]
+		},
+		{
+			"href":"http://habib.wikidot.com/projected-grid-ocean-shader-full-html-version",
+			"name":"",
+			"tags":["terrain", "ocean"]
+		}
+		]
+},
+{
+	"name":"drawing",
+	"items":[
+		{
+			"href":"https://drawabox.com/lesson/1/6/123pointperspective",
+			"name":"",
+			"tags":["drawing"]
+		}
+		]
+},
+{
+	"name":"DEMOSCENE",
+	"items":[
+		{
+			"href":"https://mariuszbartosik.com/lets-make-a-demo/",
+			"name":"",
+			"tags":["demo"]
+		}
+		]
+},
+{
+	"name":"Math",
+	"items":[
+		{
+			"href":"http://hplgit.github.io/INF5620/doc/pub/H14/",
+			"name":"",
+			"tags":["math"]
+		},
+		{
+			"href":"https://www.ottisoft.com/rippletank.htm",
+			"name":"",
+			"tags":["math"]
+		}
+		]
+},
+{
+	"name":"render stuff",
+	"items":[
+		{
+			"href":"http://www.mikktspace.com/",
+			"name":"http://www.mikktspace.com/",
+			"tags":[]
+		},
+		{
+			"href":"http://kesen.realtimerendering.com/",
+			"name":"http://kesen.realtimerendering.com/",
+			"tags":[]
+		},
+		{
+			"href":"http://granskog.xyz/ethz-graphics-path-tracer",
+			"name":"",
+			"tags":["raytracing"]
+		},
+		{
+			"href":"https://taylorpetrick.com/projects/ignis-pt",
+			"name":"https://taylorpetrick.com/projects/ignis-pt",
+			"tags":[]
+		},
+		{
+			"href":"http://graphics.stanford.edu/courses/cs348b-10/lectures/path/path.pdf",
+			"name":"",
+			"tags":["raytracing"]
+		},
+		{
+			"href":"https://old.cescg.org/CESCG-2015/papers/Otte-Efficient_Implementation_of_Bi-directional_Path_Tracer_on_GPU.pdf",
+			"name":"",
+			"tags":["raytracing"]
+		},
+		{
+			"href":"https://bartwronski.files.wordpress.com/2014/08/bwronski_volumetric_fog_siggraph2014.pdf",
+			"name":"",
+			"tags":["volumetric", "real-time"]
+		},
+		{
+			"href":"https://graphics.pixar.com/library/ProductionVolumeRendering/paper.pdf",
+			"name":"https://graphics.pixar.com/library/ProductionVolumeRendering/paper.pdf",
+			"tags":[]
+		},
+		{
+			"href":"https://graphics.stanford.edu/papers/trd/trd.pdf",
+			"name":"https://graphics.stanford.edu/papers/trd/trd.pdf",
+			"tags":[]
+		},
+		{
+			"href":"https://github.com/jacklv123/Volumetric-photon-mapping",
+			"name":"",
+			"tags":["volumetric", "raytracing"]
+		},
+		{
+			"href":"http://robbinmarcus.blogspot.com/2015/10/real-time-raytracing-part-2.html",
+			"name":"http://robbinmarcus.blogspot.com/2015/10/real-time-raytracing-part-2.html",
+			"tags":[]
+		},
+		{
+			"href":"http://viclw17.github.io/",
+			"name":"http://viclw17.github.io/",
+			"tags":[]
+		},
+		{
+			"href":"https://agraphicsguy.wordpress.com/2015/11/01/sampling-microfacet-brdf/",
+			"name":"",
+			"tags":["shading"]
+		},
+		{
+			"href":"http://www-graphics.stanford.edu/courses/cs348b-competition/cs348b-05/gems2/index.html",
+			"name":"http://www-graphics.stanford.edu/courses/cs348b-competition/cs348b-05/gems2/index.html",
+			"tags":[]
+		},
+		{
+			"href":"http://www.kevinbeason.com/worklog/",
+			"name":"http://www.kevinbeason.com/worklog/",
+			"tags":[]
+		},
+		{
+			"href":"benedict bitterely",
+			"name":"benedict bitterely",
+			"tags":[]
+		},
+		{
+			"href":"http://rendering-memo.blogspot.com/2016/03/bidirectional-path-tracing-6-implement.html",
+			"name":"http://rendering-memo.blogspot.com/2016/03/bidirectional-path-tracing-6-implement.html",
+			"tags":[]
+		},
+		{
+			"href":"https://bheisler.github.io/post/writing-gpu-accelerated-path-tracer-part-1/",
+			"name":"https://bheisler.github.io/post/writing-gpu-accelerated-path-tracer-part-1/",
+			"tags":[]
+		},
+		{
+			"href":"https://www.keithlantz.net/2013/10/path-tracing-sphere-and-triangle-texture-mapping/",
+			"name":"https://www.keithlantz.net/2013/10/path-tracing-sphere-and-triangle-texture-mapping/",
+			"tags":[]
+		},
+		{
+			"href":"https://docs.lib.purdue.edu/cgi/viewcontent.cgi?article=1024&context=techmasters",
+			"name":"https://docs.lib.purdue.edu/cgi/viewcontent.cgi?article=1024&context=techmasters",
+			"tags":[]
+		},
+		{
+			"href":"voxel ray tracing",
+			"name":"voxel ray tracing",
+			"tags":[]
+		},
+		{
+			"href":"http://www.kevinbeason.com/smallpt/",
+			"name":"http://www.kevinbeason.com/smallpt/",
+			"tags":[]
+		},
+		{
+			"href":"http://richiesams.blogspot.com/2015/04/making-our-first-pretty-picture.html",
+			"name":"http://richiesams.blogspot.com/2015/04/making-our-first-pretty-picture.html",
+			"tags":[]
+		},
+		{
+			"href":"http://people.eecs.berkeley.edu/~cecilia77/graphics/a6/#part2",
+			"name":"http://people.eecs.berkeley.edu/~cecilia77/graphics/a6/#part2",
+			"tags":[]
+		},
+		{
+			"href":"https://devblogs.nvidia.com/accelerated-ray-tracing-cuda/",
+			"name":"https://devblogs.nvidia.com/accelerated-ray-tracing-cuda/",
+			"tags":[]
+		},
+		{
+			"href":"https://docs.lib.purdue.edu/cgi/viewcontent.cgi?article=1024&context=techmasters",
+			"name":"Full CUDA Implementation Of GPGPU Recursive Ray-Tracing",
+			"tags":["cuda", "raytracing"]
+		},
+		{
+			"href":"https://www.thanassis.space/cudarenderer-BVH.html#cudabvh  ///Renderer 2.x - Porting to CUDA",
+			"name":"https://www.thanassis.space/cudarenderer-BVH.html#cudabvh  ///Renderer 2.x - Porting to CUDA",
+			"tags":[]
+		},
+		{
+			"href":"https://github.com/straaljager/GPU-path-tracing-with-CUDA-tutorial-2/blob/master/tutorial2_cuda_pathtracer.cu",
+			"name":"GPU-path-tracing-with-CUDA-tutorial-2",
+			"tags":["cuda", "raytracing"]
+		},
+		{
+			"href":"https://amietia.com/gpupathtracing.html",
+			"name":"https://amietia.com/gpupathtracing.html",
+			"tags":[]
+		},
+		{
+			"href":"https://agraphicsguy.wordpress.com/2016/02/04/the-missing-primary-ray-pdf-in-path-tracing/",
+			"name":"https://agraphicsguy.wordpress.com/2016/02/04/the-missing-primary-ray-pdf-in-path-tracing/",
+			"tags":[]
+		},
+		{
+			"href":"http://www.cs.uu.nl/docs/vakken/magr/2016-2017/slides/lecture%2007%20-%20path%20tracing.pdf",
+			"name":"http://www.cs.uu.nl/docs/vakken/magr/2016-2017/slides/lecture%2007%20-%20path%20tracing.pdf",
+			"tags":[]
+		},
+		{
+			"href":"http://scratchapixel.com",
+			"name":"http://scratchapixel.com",
+			"tags":[]
+		},
+		{
+			"href":"http://www.cse.chalmers.se/edu/year/2018/course/TDA362/tutorials/pathtracer.html",
+			"name":"http://www.cse.chalmers.se/edu/year/2018/course/TDA362/tutorials/pathtracer.html",
+			"tags":[]
+		},
+		{
+			"href":"https://blog.demofox.org/2016/09/21/path-tracing-getting-started-with-diffuse-and-emissive/",
+			"name":"",
+			"tags":[]
+		},
+		{
+			"href":"https://www.particleincell.com/2015/cosine-distribution/",
+			"name":"https://www.particleincell.com/2015/cosine-distribution/",
+			"tags":[]
+		},
+		{
+			"href":"tu wien rendering youtube",
+			"name":"tu wien rendering youtube",
+			"tags":[]
+		},
+		{
+			"href":"https://www.youtube.com/watch?v=k9Nz2z1jTFQ&list=PLslgisHe5tBPckSYyKoU3jEA4bqiFmNBJ",
+			"name":"Ray Tracing for Global Illumination",
+			"tags":["raytracing"]
+		},
+		{
+			"href":"http://cosinekitty.com/raytrace/contents.html",
+			"name":"http://cosinekitty.com/raytrace/contents.html",
+			"tags":[]
+		},
+		{
+			"href":"http://pbr-book.org",
+			"name":"PBRT",
+			"tags":["raytracing"]
+		},
+		{
+			"href":"AN INTRODUCTION TO RAY TRACING Andrew Glassner",
+			"name":"AN INTRODUCTION TO RAY TRACING Andrew Glassner",
+			"tags":[]
+		},
+		{
+			"href":"https://web.cs.wpi.edu/~emmanuel/courses/cs563/S07/talks/emmanuel_agu_samprec_wk6_p1.pdf",
+			"name":"https://web.cs.wpi.edu/~emmanuel/courses/cs563/S07/talks/emmanuel_agu_samprec_wk6_p1.pdf",
+			"tags":[]
+		},
+		{
+			"href":"http://www.codinglabs.net/article_physically_based_rendering_cook_torrance.aspx",
+			"name":"http://www.codinglabs.net/article_physically_based_rendering_cook_torrance.aspx",
+			"tags":[]
+		},
+		{
+			"href":"http://www.cs.uu.nl/docs/vakken/magr/2015-2016/slides/lecture%2001%20-%20intro%20and%20whitted.pdf",
+			"name":"http://www.cs.uu.nl/docs/vakken/magr/2015-2016/slides/lecture%2001%20-%20intro%20and%20whitted.pdf",
+			"tags":[]
+		},
+		{
+			"href":"http://fileadmin.cs.lth.se/cs/education/edan30/lectures/s1-rt.pdf",
+			"name":"http://fileadmin.cs.lth.se/cs/education/edan30/lectures/s1-rt.pdf",
+			"tags":[]
+		},
+		{
+			"href":"http://fileadmin.cs.lth.se/cs/Education/EDAN30/assignments/lab2.pdf",
+			"name":"http://fileadmin.cs.lth.se/cs/Education/EDAN30/assignments/lab2.pdf",
+			"tags":[]
+		},
+		{
+			"href":"https://people.cs.kuleuven.be/~philip.dutre/GI/TotalCompendium.pdf",
+			"name":"https://people.cs.kuleuven.be/~philip.dutre/GI/TotalCompendium.pdf",
+			"tags":[]
+		},
+		{
+			"href":"http://raytracey.blogspot.com/",
+			"name":"http://raytracey.blogspot.com/",
+			"tags":[]
+		},
+		{
+			"href":"http://vda.univie.ac.at/Teaching/ImageSynthesis/16w/LectureNotes/02_intersections.pdf",
+			"name":"http://vda.univie.ac.at/Teaching/ImageSynthesis/16w/LectureNotes/02_intersections.pdf",
+			"tags":[]
+		},
+		{
+			"href":"http://celarek.at/tag/optix/",
+			"name":"http://celarek.at/tag/optix/",
+			"tags":[]
+		},
+		{
+			"href":"http://people.eecs.berkeley.edu/~cecilia77/graphics/a6/#part2",
+			"name":"http://people.eecs.berkeley.edu/~cecilia77/graphics/a6/#part2",
+			"tags":[]
+		},
+		{
+			"href":"http://psgraphics.blogspot.com/2017/12/lazy-spectral-rendering.html",
+			"name":"http://psgraphics.blogspot.com/2017/12/lazy-spectral-rendering.html",
+			"tags":[]
+		},
+		{
+			"href":"http://jcgt.org/published/0002/02/01/",
+			"name":"http://jcgt.org/published/0002/02/01/",
+			"tags":[]
+		},
+		{
+			"href":"https://www.doc.ic.ac.uk/~dfg/graphics/graphics2008/GraphicsSlides10.pdf",
+			"name":"https://www.doc.ic.ac.uk/~dfg/graphics/graphics2008/GraphicsSlides10.pdf",
+			"tags":[]
+		},
+		{
+			"href":"https://seblagarde.wordpress.com/2013/04/29/memo-on-fresnel-equations/#more-1921",
+			"name":"https://seblagarde.wordpress.com/2013/04/29/memo-on-fresnel-equations/#more-1921",
+			"tags":[]
+		},
+		{
+			"href":"https://richwhitehouse.com/index.php?postid=70",
+			"name":"https://richwhitehouse.com/index.php?postid=70",
+			"tags":[]
+		},
+		{
+			"href":"http://skyrenderer.blogspot.com/",
+			"name":"http://skyrenderer.blogspot.com/",
+			"tags":[]
+		},
+		{
+			"href":"https://pdfs.semanticscholar.org/daeb/4eb5d25449c99cf3eecb682c2be29198e635.pdf",
+			"name":"https://pdfs.semanticscholar.org/daeb/4eb5d25449c99cf3eecb682c2be29198e635.pdf",
+			"tags":[]
+		},
+		{
+			"href":"preetham sky model",
+			"name":"preetham sky model",
+			"tags":[]
+		},
+		{
+			"href":"http://mathinfo.univ-reims.fr/IMG/pdf/PreethamSig2003CourseNotes.pdf",
+			"name":"http://mathinfo.univ-reims.fr/IMG/pdf/PreethamSig2003CourseNotes.pdf",
+			"tags":[]
+		},
+		{
+			"href":"http://wscg.zcu.cz/WSCG2007/Papers_2007/short/E59-full.pdf",
+			"name":"http://wscg.zcu.cz/WSCG2007/Papers_2007/short/E59-full.pdf",
+			"tags":[]
+		},
+		{
+			"href":"hosek",
+			"name":"hosek",
+			"tags":[]
+		},
+		{
+			"href":"nishita",
+			"name":"nishita",
+			"tags":[]
+		}
+		]
+},
+{
+	"name":"real time",
+	"items":[
+		{
+			"href":"dithering alpha",
+			"name":"dithering alpha",
+			"tags":[]
+		},
+		{
+			"href":"https://disney-animation.s3.amazonaws.com/library/s2012_pbs_disney_brdf_notes_v2.pdf",
+			"name":"",
+			"tags":["shading"]
+		},
+		{
+			"href":"http://advances.realtimerendering.com/s2018/index.htm",
+			"name":"http://advances.realtimerendering.com/s2018/index.htm",
+			"tags":[]
+		},
+		{
+			"href":"https://developer.unigine.com/en/devlog/20151009-unigine-2.0",
+			"name":"https://developer.unigine.com/en/devlog/20151009-unigine-2.0",
+			"tags":[]
+		},
+		{
+			"href":"https://hacks.mozilla.org/2014/01/webgl-deferred-shading/",
+			"name":"",
+			"tags":["shading"]
+		}
+		]
+},
+{
+	"name":"blending",
+	"items":[
+		{
+			"href":"https://developer.nvidia.com/content/transparency-or-translucency-rendering",
+			"name":"https://developer.nvidia.com/content/transparency-or-translucency-rendering",
+			"tags":[]
+		}
+		]
+},
+{
+	"name":"radiosity",
+	"items":[
+		{
+			"href":"http://hcsoftware.sourceforge.net/RadiosGL/RadiosGL.html",
+			"name":"http://hcsoftware.sourceforge.net/RadiosGL/RadiosGL.html",
+			"tags":[]
+		},
+		{
+			"href":"http://vda.univie.ac.at/Teaching/ImageSynthesis/16w/LectureNotes/10_radiosity.pdf",
+			"name":"http://vda.univie.ac.at/Teaching/ImageSynthesis/16w/LectureNotes/10_radiosity.pdf",
+			"tags":[]
+		},
+		{
+			"href":"Radiosity and Realistic Image Synthesis By Michael F. Cohen, John R. Wallace",
+			"name":"Radiosity and Realistic Image Synthesis By Michael F. Cohen, John R. Wallace",
+			"tags":[]
+		}
+		]
+},
+{
+	"name":"directx",
+	"items":[
+		{
+			"href":"https://www.youtube.com/watch?v=tE9XT3q51qM",
+			"name":"C++ DirectX 11 Engine Tutorial 5 - Keyboard Input",
+			"tags":["directx", "c++"]
+		},
+		{
+			"href":"https://github.com/Microsoft/DirectXTK/wiki/Mouse-and-keyboard-input",
+			"name":"",
+			"tags":["directx"]
+		},
+		{
+			"href":"https://directx.fandom.com/ru/wiki/%D0%9F%D0%B8%D1%88%D0%B5%D0%BC_%D1%84%D1%80%D0%B5%D0%B9%D0%BC%D0%B2%D0%BE%D1%80%D0%BA_(%D1%87%D0%B0%D1%81%D1%82%D1%8C_2)",
+			"name":"",
+			"tags":["directx"]
+		},
+		{
+			"href":"https://www.3dgep.com/learning-directx12-1/",
+			"name":"",
+			"tags":["directx"]
+		}
+		]
+},
+{
+	"name":"shaders",
+	"items":[
+		{
+			"href":"https://www.ronja-tutorials.com/",
+			"name":"https://www.ronja-tutorials.com/",
+			"tags":[]
+		},
+		{
+			"href":"http://morphographic.com/category/experiments/",
+			"name":"http://morphographic.com/category/experiments/",
+			"tags":[]
+		}
+		]
+},
+{
+	"name":"sky",
+	"items":[
+		{
+			"href":"http://timothykol.com/pub/sky.pdf",
+			"name":"http://timothykol.com/pub/sky.pdf",
+			"tags":[]
+		}
+		]
+},
+{
+	"name":"opengl",
+	"items":[
+		{
+			"href":"http://lazyfoo.net/tutorials/SDL/",
+			"name":"http://lazyfoo.net/tutorials/SDL/",
+			"tags":[]
+		},
+		{
+			"href":"http://www.codinglabs.net/tutorial_simple_def_rendering.aspx",
+			"name":"http://www.codinglabs.net/tutorial_simple_def_rendering.aspx",
+			"tags":[]
+		},
+		{
+			"href":"http://archive.gamedev.net/archive/reference/programming/features/realtimerender/page5.html",
+			"name":"http://archive.gamedev.net/archive/reference/programming/features/realtimerender/page5.html",
+			"tags":[]
+		},
+		{
+			"href":"https://web.cs.wpi.edu/~emmanuel/courses/cs543/f18/",
+			"name":"https://web.cs.wpi.edu/~emmanuel/courses/cs543/f18/",
+			"tags":[]
+		},
+		{
+			"href":"https://paroj.github.io/gltut/Basics/Tut02%20Vertex%20Attributes.html",
+			"name":"",
+			"tags":["opengl", "graphics"]
+		},
+		{
+			"href":"http://www.songho.ca/opengl/gl_vbo.html",
+			"name":"",
+			"tags":["opengl", "graphics"]
+		},
+		{
+			"href":"https://cognitivewaves.wordpress.com/opengl-vbo-shader-vao/",
+			"name":"",
+			"tags":["opengl", "graphics"]
+		},
+		{
+			"href":"https://github.com/bartvbl/A-Hitchhikers-Guide-to-OpenGL",
+			"name":"",
+			"tags":["opengl", "graphics"]
+		},
+		{
+			"href":"http://www.opengl-tutorial.org/ru/intermediate-tutorials/tutorial-14-render-to-texture/",
+			"name":"http://www.opengl-tutorial.org/ru/intermediate-tutorials/tutorial-14-render-to-texture/",
+			"tags":[]
+		},
+		{
+			"href":"http://viclw17.github.io/2019/05/10/opengl-project-setup-and-boilerplate-code/",
+			"name":"",
+			"tags":["opengl", "graphics"]
+		}
+		]
+},
+{
+	"name":"Film stuff",
+	"items":[
+		{
+			"href":"https://slideplayer.com/slide/6276198/",
+			"name":"",
+			"tags":["film-photo"]
+		},
+		{
+			"href":"https://pdfs.semanticscholar.org/9f54/257e6ec63213e067966e3591c98716392829.pdf",
+			"name":"",
+			"tags":["film-photo"]
+		},
+		{
+			"href":"https://www.britannica.com/technology/technology-of-photography/Instant-picture-photography",
+			"name":"",
+			"tags":["film-photo"]
+		},
+		{
+			"href":"https://fstoppers.com/film/worst-camera-ive-ever-loved-nishika-n8000-173235",
+			"name":"nishika-n8000",
+			"tags":["film-photo"]
+		},
+		{
+			"href":"http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.40.1275&rep=rep1&type=pdf",
+			"name":"",
+			"tags":["film-photo"]
+		}
+		]
+},
+{
+	"name":"music synthesis",
+	"items":[
+		{
+			"href":"https://www.lpthe.jussieu.fr/~talon/MUSIC7.PDF",
+			"name":"",
+			"tags":["music"]
+		},
+		{
+			"href":"https://www.dsprelated.com/freebooks/sasp/",
+			"name":"",
+			"tags":["music"]
+		}
+		]
+},
+{
+	"name":"fluid",
+	"items":[
+		{
+			"href":"https://pdfs.semanticscholar.org/9d47/1060d6c48308abcc98dbed850a39dbfea683.pdf",
+			"name":"",
+			"tags":["fluid"]
+		},
+		{
+			"href":"https://github.com/tunabrain/incremental-fluids",
+			"name":"",
+			"tags":["fluid"]
+		},
+		{
+			"href":"https://developer.nvidia.com/gpugems/gpugems/part-vi-beyond-triangles/chapter-38-fast-fluid-dynamics-simulation-gpu",
+			"name":"",
+			"tags":["fluid"]
+		},
+		{
+			"href":"http://www.karlsims.com/fluid-flow.html",
+			"name":"",
+			"tags":["fluid"]
+		},
+		{
+			"href":"http://jamie-wong.com/2016/08/05/webgl-fluid-simulation/",
+			"name":"",
+			"tags":["fluid"]
+		},
+		{
+			"href":"https://developer.download.nvidia.com/books/HTML/gpugems/gpugems_ch38.html",
+			"name":"",
+			"tags":["fluid"]
+		},
+		{
+			"href":"https://software.intel.com/content/www/us/en/develop/articles/fluid-simulation-for-video-games-part-3.html",
+			"name":"",
+			"tags":["fluid"]
+		},
+		{
+			"href":"https://developer.nvidia.com/sites/all/modules/custom/gpugems/books/GPUGems/gpugems_ch01.html",
+			"name":"",
+			"tags":["fluid"]
+		}
+		]
+},
+{
+	"name":"Unity",
+	"items":[
+		{
+			"href":"https://www.youtube.com/user/Cercopithecan/videos",
+			"name":"",
+			"tags":["unity"]
+		},
+		{
+			"href":"https://github.com/keijiro/RDSystem",
+			"name":"",
+			"tags":["unity"]
+		},
+		{
+			"href":"https://catlikecoding.com/",
+			"name":"UNITY Stuff, very useful",
+			"tags":["unity"]
+		},
+		{
+			"href":"https://lindenreid.wordpress.com/all-tutorials/",
+			"name":"",
+			"tags":["unity"]
+		}
+		]
+},
+{
+	"name":"openframeworks",
+	"items":[
+		{
+			"href":"unkiyoshi.com",
+			"name":"",
+			"tags":["openframeworks"]
+		},
+		{
+			"href":"http://clab.concordia.ca/openframeworks-tutorial-part-ii-texture-mapping/",
+			"name":"",
+			"tags":["openframeworks"]
+		},
+		{
+			"href":"https://sites.google.com/site/ofauckland/examples/6-addons---ofxsimpleguitoo",
+			"name":"",
+			"tags":["openframeworks"]
+		},
+		{
+			"href":"https://junkiyoshi.com/openframeworks20190923",
+			"name":"",
+			"tags":["openframeworks"]
+		}
+		]
+},
+{
+	"name":"webgl",
+	"items":[
+		{
+			"href":"http://blog.edankwan.com/post/case-study-of-i-remember-fr",
+			"name":"http://blog.edankwan.com/post/case-study-of-i-remember-fr",
+			"tags":[]
+		},
+		{
+			"href":"http://webglsamples.org/WebGL2Samples/",
+			"name":"",
+			"tags":["webgl", "real-time"]
+		},
+		{
+			"href":"https://gpfault.net/posts/webgl2-particles.txt.html",
+			"name":"GPU-Accelerated Particles with WebGL 2",
+			"tags":["webgl", "particles", "real-time"]
+		}
+		]
+},
+{
+	"name":"threeJS",
+	"items":[
+		{
+			"href":"https://threejsfundamentals.org/threejs/lessons/threejs-custom-geometry.html",
+			"name":"",
+			"tags":["webgl", "threeJS"]
+		}
+		]
+},
+{
+	"name":"Neural nets",
+	"items":[
+		{
+			"href":"https://softologyblog.wordpress.com/2019/03/31/style-transfer-gans-generative-adversarial-networks/",
+			"name":"",
+			"tags":["neural-net"]
+		},
+		{
+			"href":"https://openai.com/blog/generative-models/",
+			"name":"",
+			"tags":["neural-net"]
+		},
+		{
+			"href":"https://en.wikipedia.org/wiki/Generative_adversarial_network",
+			"name":"",
+			"tags":["neural-net"]
+		},
+		{
+			"href":"https://www.kdnuggets.com/2017/01/generative-adversarial-networks-hot-topic-machine-learning.html",
+			"name":"",
+			"tags":["neural-net"]
+		},
+		{
+			"href":"https://wxs.ca/research/multiscale-neural-synthesis/",
+			"name":"",
+			"tags":["neural-net"]
+		}
+		]
+},
+{
+	"name":"JAVA",
+	"items":[
+		{
+			"href":"http://www.c-java.ru/wp-content/uploads/2017/09/Java_JavaEE.txt",
+			"name":"\u0420\u045b\u0421\u0403\u0420\u0405\u0420\u0455\u0420\u0406\u0421\u2039 \u0421\u040f\u0420\u00b7\u0421\u2039\u0420\u0454\u0420\u00b0 \u0420\u0457\u0421\u0402\u0420\u0455\u0420\u0456\u0421\u0402\u0420\u00b0\u0420\u0458\u0420\u0458\u0420\u0451\u0421\u0402\u0420\u0455\u0420\u0406\u0420\u00b0\u0420\u0405\u0420\u0451\u0421\u040f Java \u0420\u0451 Java Enterprise",
+			"tags":["java"]
+		},
+		{
+			"href":"https://jonskeet.uk/java/",
+			"name":"Java - a hotchpotch of resources",
+			"tags":["java"]
+		}
+		]
+},
+{
+	"name":"CUDA",
+	"items":[
+		{
+			"href":"http://www.hds.bme.hu/~fhegedus/C++/Professional%20CUDA%20C%20Programming.pdf",
+			"name":"",
+			"tags":["cuda", "book"]
+		},
+		{
+			"href":"https://developer.nvidia.com/cuda-code-samples",
+			"name":"",
+			"tags":["cuda"]
+		}
+		]
+},
+{
+	"name":"line rendering IMPORTANT",
+	"items":[
+		{
+			"href":"https://wwwtyro.net/2019/11/18/instanced-lines.html",
+			"name":"https://wwwtyro.net/2019/11/18/instanced-lines.html",
+			"tags":[]
+		}
+		]
+},
+{
+	"name":"photography",
+	"items":[
+		{
+			"href":"https://www.bhphotovideo.com/explora/photography/tips-and-solutions/depth-field-part-1",
+			"name":"",
+			"tags":["dof"]
+		}
+	]
+}
+]

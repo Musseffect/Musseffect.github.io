@@ -17,7 +17,7 @@ class PostPreview extends Component {
           <img className='postThumbnailImage' src={thumbnail}/>
         </Link>
         </div>
-        <Link key="link_1" to={'/posts/'+link} className="postHeaderLink h6">{name}</Link>
+        <Link key="link_1" to={'/posts/'+link} className="postHeaderLink">{name}</Link>
         <div className='postPreviewTags'>
             {
             tags.map(function(value,index)

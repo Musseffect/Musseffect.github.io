@@ -1,9 +1,9 @@
 
 
-export const SWITCH_LANG = "SWITCH_LANG";
-export var switchLanguage = function()
+export const CHANGE_OPTION = "CHANGE_OPTION";
+export var changeOption = function(option,value)
 {
-    return {type:SWITCH_LANG};
+    return {type:CHANGE_OPTION,option:option,value:value};
 }
 export const SET_TITLE = "SET_TITLE";
 export var setTitle =  function(title)
@@ -14,6 +14,11 @@ export const SWITCH_TAG_STATE = "SWITCH_TAG_STATE";
 export var clickOnTag = function(tagName)
 {
     return {type:SWITCH_TAG_STATE,tag:tagName};
+}
+export const SWITCH_LINKTAG_STATE = "SWITCH_LINKTAG_STATE";
+export var clickOnLinkTag = function(tagName)
+{
+    return {type:SWITCH_LINKTAG_STATE,tag:tagName};
 }
 export const REQUEST_CONTENT = "REQUEST_POSTS";
 export var requestContent=function()
@@ -52,9 +57,8 @@ var fetchNote = function(noteURL)
                 dispatch(handleNoteError(error));
             }
         }
-        )
+    )
     };
-    //https://gist.github.com/Musseffect/546725186d756cd780efe1455e60eead/raw/OscilloscopeLines.md
 }
 function shouldFetchNote(state, noteURL) {
     if(state.note.url == noteURL)
@@ -73,24 +77,24 @@ export var fetchNoteIfNeeded = function(noteURL)
             return dispatch(fetchNote(noteURL));
     }
 }
-export var fetchContent = function(contentLink)
+export var fetchContent = function(contentLink,linksLink)
 {
     return function(dispatch){
         dispatch(requestContent());
-        return fetch(contentLink)
-        .then(
-        response => response.json(),
-        error => dispatch(handleError(error))
-        )
-        .then(json =>{
+        return Promise.all([
+            fetch(contentLink).then(value=>value.json()),
+            fetch(linksLink).then(value=>value.json())
+        ]).then(([jsonContent,jsonLinks]) =>{
                 try{
-                    dispatch(receiveContent(json))
+                    dispatch(receiveContent(jsonContent,jsonLinks))
                 }catch(error)
                 {
                     dispatch(handleError(error));
                 }
             }
-            )
+        ).catch((error)=>{
+            dispatch(handleError(error));
+        })
     };
 }
 export const RECEIVE_NOTE = "RECEIVE_NOTE";
@@ -104,12 +108,12 @@ export var receiveNote = function(content,noteURL)
     };
 }
 export const RECEIVE_CONTENT = "RECEIVE_CONTENT";
-export var receiveContent = function(files)
+export var receiveContent = function(content,links)
 {
     /*const posts = JSON.parse(files["posts.json"].content).posts;//TODO remove .posts
     const notesDescription = JSON.parse(files["notes.json"].content);*/
-    const posts = files.posts;
-    const notes = files.notes;
+    const posts = content.posts;
+    const notes = content.notes;
     /*const notes = notesDescription.notes.map((value)=>{return {
         content:files[value.file].content,
         name:value.name,
@@ -118,6 +122,7 @@ export var receiveContent = function(files)
     return {
         type:RECEIVE_CONTENT,
         posts:posts,
-        notes:notes
+        notes:notes,
+        links:links
     }
 }

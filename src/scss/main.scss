@@ -15,7 +15,14 @@ $large: 1008px;
   @else if $media == wide-screens {
     @media only screen and (min-width: $large) { @content; }
   }
+  @else if $media == medium-wide
+  {
+	  @media only screen and (min-width: $medium){ @content; }
+  }
 }
+
+@import "./_themes.scss";
+
 
 @import "./_common.scss";
 @import "./_about.scss";
@@ -42,14 +49,17 @@ $large: 1008px;
 {
 	flex-shrink:0;
 	display:flex;
-	flex-direction:row;
+	flex-direction:column;
 	width:100%;
-	height:70px;
+	/*height:70px;*/
 	position:relative;
-	justify-content:center;
+	align-items:center;
 	flex-wrap:nowrap;
-	padding:0px 10%;
-	box-shadow: 0px -2px 4px 0px rgba(0,0,0,0.3);
+	padding:10px 10%;
+	@include themify($themes)
+	{
+	  box-shadow:themed('footerBoxShadow')
+	}
 }
 
 #menuButtons
@@ -90,33 +100,46 @@ overflow-x:hidden;
 {
 	flex-shrink:0;
 	width:100%;
-	height:70px;
 	display:flex;
 	flex-wrap:nowrap;
-	color:black;
-	background-color:white;
 	@include respond-to(handhelds) {
+		height:45px;
 		padding:0px 5%;
-  }
+  	}
 	@include respond-to(medium-screens) { 
-		flex-basis:0px 5%;
-   }
+		height:50px;
+		padding:0px 5%;
+		@include themify($themes)
+		{
+			box-shadow:themed('headerBoxShadow')
+		}
+   	}
 	@include respond-to(wide-screens) {
-		flex-basis:0px 10%;
-  }
-	box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.3);
+		height:70px;
+		padding:0px 10%;
+		@include themify($themes)
+		{
+		  box-shadow:themed('headerBoxShadow')
+		}
+  	}
 	/*border-bottom:1px solid black;*/
 
 }
 .headerTitleText
 {
 	font-size:25px;
-	color:black;
+	@include themify($themes)
+	{
+		color:themed('textColor')
+	}
 	cursor: pointer;
 }
 .headerTitleText:hover
 {
-	color:black;
+	@include themify($themes)
+	{
+		color:themed('titleHoverColor')
+	}
 	text-decoration:underline;
 }
 .headerPageTitle
@@ -127,23 +150,39 @@ overflow-x:hidden;
 	flex-direction:column;
 	align-items:center;
 	justify-content:center;
-	background-color:white;
 	@include respond-to(handhelds) {
 		flex-basis:100%;
-  }
+  	}
 	@include respond-to(medium-screens) { 
 		flex-basis:33%;
-   }
+   	}
 	@include respond-to(wide-screens) {
 		flex-basis:33%;
-  }
+  	}
 }
 .headerButtonBlock
 {
 	display:flex;
 	flex-direction:row;
-	flex-basis:33%;
-	justify-content: center;
+	flex-shrink:0;
+	@include respond-to(handhelds) {
+		justify-content: space-evenly;
+		border-top:2px solid;
+		border-bottom:2px solid;
+		@include themify($themes)
+		{
+			border-bottom-color:themed('menuButtonsBorderColor');
+			border-top-color:themed('menuButtonsBorderColor');
+		}
+  	}
+	@include respond-to(medium-screens) { 
+		justify-content: center;
+		flex-basis:33%;
+   	}
+   @include respond-to(wide-screens) {
+		justify-content: center;
+	    flex-basis:33%;
+ 	}
 	//padding:0px 10px;
 }
 .footerButtonBlock
@@ -161,14 +200,25 @@ overflow-x:hidden;
 	flex-direction:row;
 	align-items:center;
 	justify-content:center;
-	background-color:white;
 	flex-basis:33%;
 	//cursor:pointer;
 }
+.link.active
+{
+	@include themify($themes)
+	{
+		color:themed('headerLinkActiveColor')
+	}
+	font-weight:500;
+}
 .link
 {
+	white-space:nowrap;
 	text-decoration:none;
-	color:gray;
+	@include themify($themes)
+	{
+		color:themed('headerLinkColor')
+	}
 	background-color:transparent;
 	cursor:pointer;
 	display:block;
@@ -176,17 +226,42 @@ overflow-x:hidden;
 	@include respond-to(handhelds) {
 		width:100%;
 		text-align:center;
-		box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.3);
-  }
+		/*box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.3);*/
+  	}
 	@include respond-to(medium-screens) { 
 
-   }
+   	}
 	@include respond-to(wide-screens) {
-  }
+  	}
 }
 .link:hover
 {
-	color:rgb(66, 66, 66);
+	@include themify($themes)
+	{
+		color:themed('headerLinkHoverColor')
+	}
+}
+.menuSeparator
+{
+	@include themify($themes)
+	{
+		background-color:themed('menuLineColor');
+	}
+	border:none;
+	@include respond-to(handhelds) {
+		height:1px;
+		margin:0 5px;
+  	}
+	@include respond-to(medium-screens) { 
+		width:1px;
+		margin:0;
+		height:50%;
+   	}
+	@include respond-to(wide-screens) {
+		width:1px;
+		margin:0;
+		height:50%;
+  	}
 }
 .linksSmallContainer
 {
@@ -194,56 +269,92 @@ overflow-x:hidden;
 	flex-direction:column;
 	flex-shrink:0;
 	flex-grow:0;
-
-}
-/*.headerMainButton:hover
-{
-	box-shadow:inset 0px -4px 0px 0px gray;
-	transition: box-shadow 1s;
-}*/
-
-.footer
-{
-	display:block;
-	width:100%;
-	min-height:auto;
-	background-color:yellow;
-	opacity:1.0;
+	padding:0 15%;
+	@include themify($themes)
+	{
+	  box-shadow:themed('headerBoxShadow')
+	}
 }
 .headerButton:hover
 {
-	box-shadow:inset 0px -4px 0px 0px gray;
+	@include respond-to(handhelds) {
+  	}
+	@include respond-to(medium-screens) { 
+		@include themify($themes)
+		{
+			box-shadow:themed('headerButtonBoxShadow')
+		}
+   	}
+   @include respond-to(wide-screens) {
+		@include themify($themes)
+		{
+			box-shadow:themed('headerButtonBoxShadow')
+		}
+ 	}
 	transition: box-shadow 1s;
 }
-.footerButton:hover
+/*.footerButton:hover
 {
 	box-shadow:inset 0px 0px 8px 4px grey;
 	transition: box-shadow 1s;
-}
-.headerButton>a,.footerButton>a
+}*/
+.headerButton>a
 {
-	color:black;
+	@include themify($themes)
+	{
+		color:themed('headerButtonColor')
+	}
 }
-.headerButton>a:hover,.footerButton>a:hover
+.headerButton>a:hover
 {
-	color:blue;
+	@include themify($themes)
+	{
+		color:themed('headerButtonIconHoverColor')
+	}
 }
-.headerButton,.footerButton
+.headerButton
 {
-	padding:0px 7px;
 	width:auto;
 	height:auto;
 	display:flex;
 	flex-direction:column;
 	align-items:center;
 	justify-content:center;
-	background-color:white;
 	cursor:pointer;
+	@include respond-to(handhelds) { 
+		height:40px;
+		padding:7px;
+   	}
+	@include respond-to(medium-screens) { 
+		padding:0px 7px;
+   	}
+	@include respond-to(wide-screens) {
+		padding:0px 7px;
+
+  	}
 }
 
 html,body
 {
 	height:100vh;
+}
+#background
+{
+	width:100%;
+	height:100%;
+	position:fixed;
+	z-index:-1000;
+	@include themify($themes)
+	{
+		background-color:themed('pageBackgroundColor')
+	}
+}
+#rootLayout
+{
+	@include themify($themes)
+	{
+		color:themed('textColor')
+	}
 }
 #root,#rootLayout,.containerMain
 {
@@ -518,8 +629,65 @@ html,body
 {
 	justify-content:center;
 	font-size:20px;
+	flex-direction:column;
 	@include respond-to(handhelds) {
 		padding:10px;
 	}
 }
+.languageButtonContainer
+{
+	flex-basis:50%;
+	flex-shrink:0;
+	flex-grow:1;
+	padding:0px 3px;
+}
+.languageSwitchContainer
+{
+	width:100%;
+	display:flex;
+	flex-direction:row;
+	margin-top:6px;
+}
+.footerButton
+{
+	cursor: pointer;
+	user-select:none;
+	padding: 3px 7px;
+	font-size:1rem;
+	width:fit-content;
+	font-weight:500;
+	@include themify($themes)
+	{
+	  color:themed('tagColor');
+	  background-color:themed('tagBackground');
+	}
+}
 
+.footerButton.active
+{
+	@include themify($themes)
+	{
+	  color:themed('tagActiveColor');
+	  background-color:themed('tagActiveBackground');
+	}
+}
+.footerButton.active:hover
+{
+	@include themify($themes)
+	{
+	  color:themed('tagActiveHoverColor');
+	  background-color:themed('tagActiveHoverBackground');
+	}
+}
+.footerButton:hover
+{
+	@include themify($themes)
+	{
+	  color:themed('tagHoverColor');
+	  background-color:themed('tagHoverBackground');
+	}
+}
+.leftLanguageButton
+{
+	margin-left:auto;
+}

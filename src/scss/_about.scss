@@ -1,4 +1,124 @@
 .aboutContainer
 {
-    padding-top:20px;
+    flex-direction:column;
+    padding:1em;
+    font-family: Arial, sans-serif;
+}
+.about-paragraph
+{
+    margin: 0.65em 0;
+}
+.about-entry
+{
+    display:block;
+    border-spacing:10px;
+}
+.about-text
+{
+    font-family:sans-serif;
+}
+.about-header
+{
+    width:100%;
+    text-align:center;
+    font-size:2rem;
+    font-family: Helvetica, Arial, sans-serif;
+    margin-bottom:0.5rem;
+}
+.about-separator
+{
+    height:1px;
+	@include themify($themes)
+    {
+        background-color:themed('aboutSectionColor');
+    }
+    width:100%;
+    border:none;
+    margin: 0.2rem 0;
+}
+.about-section
+{
+	@include themify($themes)
+    {
+        color:themed('aboutSectionColor');
+    }
+    font-size: 1.4rem;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-family: Helvetica, Arial, sans-serif;
+}
+.about-spoiler
+{
+	@include themify($themes)
+    {
+        background-color:themed('textColor');
+        color:themed('textColor');
+    }
+}
+.about-spoiler:hover
+{
+	@include themify($themes)
+    {
+        color:themed('pageBackgroundColor');
+    }
+}
+.about-link
+{
+	@include themify($themes)
+    {
+        color:themed('linkColor');
+    }
+}
+.about-link:hover
+{
+	@include themify($themes)
+    {
+        color:themed('linkHoverColor');
+    } 
+}
+@include respond-to(handhelds) {
+    .about-entry-lcol,.about-entry-rcol,.about-entry-lcol-border
+    {
+        display:block;
+    }
+    .about-entry-rcol
+    {
+        padding-left:20px;
+    }
+  }
+@include respond-to(medium-wide) { 
+    .about-entry-lcol,.about-entry-rcol,.about-entry-lcol-border
+    {
+        display:table-cell;
+    }
+   }
+   .about-entry-lcol,.about-entry-lcol-border
+   {
+        padding-right:10px;
+       @include respond-to(handhelds) {
+           display:block;
+           margin:10px 0px;
+           text-align:start;
+         }
+       @include respond-to(medium-wide) { 
+           width:200px;
+           text-align:end;
+          }
+   }
+   .about-entry-lcol-border
+   {
+       @include respond-to(handhelds) {
+           border-bottom:1px solid gray;
+         }
+       @include respond-to(medium-wide) { 
+           border-right:1px solid gray;
+          }
+   }
+   .about-paragraph-header
+   {
+       line-height:1.2rem;
+   }
+.about-content
+{
+    line-height:1.5rem;
 }
