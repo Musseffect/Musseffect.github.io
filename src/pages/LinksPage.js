@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { withRouter } from 'react-router';
 import { setTitle, clickOnLinkTag} from "../actions/actions.js";
 import {tr} from "../localization.js";
+import Link from "../components/link.jsx";
 
 const mapStateToProps=function(state)
 {
@@ -96,7 +97,8 @@ class LinksPage extends Component {
                   active &= link.name.includes(searchText);
                 }
                 activeLinks |= active; 
-                return (
+                return (<Link key={index} active={active} name={link.name} href={link.href} tags={tags} clickOnTag={clickOnTag}></Link>);
+                /*return (
                   <div key={index} className={"linkItem"+(active?'':' disabled')}>
                     <a target="_blank" className="linkName">{link.name}</a>
                     <div className="linkFull">
@@ -112,7 +114,7 @@ class LinksPage extends Component {
                           }
                       </div>
                     </div>
-                  </div>);
+                  </div>);*/
               }); 
               return (<div className = {"linkGroup"+(activeLinks?" active":"")} key={index}>
                 <div className = "linkGroupName">

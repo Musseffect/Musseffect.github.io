@@ -34,7 +34,8 @@ $themes: (
       linkBorderColor:black,
       menuLineColor:gainsboro,
       menuButtonsBorderColor:#bb0000,
-      aboutSectionColor:black
+      aboutSectionColor:black,
+      noteTableHeadColor:#dedede
     ),
     theme-dark: (
       pageBackgroundColor: #0e0e0e,
@@ -70,7 +71,8 @@ $themes: (
       linkBorderColor:#dcdcdc,
       menuLineColor:gainsboro,
       menuButtonsBorderColor:#dcdcdc,
-      aboutSectionColor:white
+      aboutSectionColor:white,
+      noteTableHeadColor:#565656
     ),
   );
 

@@ -62,9 +62,8 @@
 {
     text-decoration: underline;
 }
-.linkName
+.linkName,.linkNameFull
 {
-    font-weight:400;
     overflow-y:hidden;
     user-select:none;
 }
@@ -72,12 +71,12 @@
 {
     display:none;
 }
-.linkItem:hover>.linkName
+.linkItem:hover .linkNameFull
 {
     white-space:normal;
     word-break:break-all;
 }
-.linkItem:hover>.linkName:before
+.linkItem:hover .linkName:before,.linkItem:hover .linkNameFull:before
 {
     content:"\02C4";
     transform:scaleX(1.5);
@@ -87,7 +86,7 @@
     width:20px;
     transition:0.2s ease-in-out;
 }
-.linkName:before
+.linkName:before,.linkNameFull:before
 {
     content:"\02C4";
     transform:rotate(180deg)scaleX(1.5);
@@ -102,20 +101,25 @@
     display:none;
     width:100%;
     height:auto;
-    position:relative;
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    z-index:100;
+    border-bottom:2px solid;
+	@include themify($themes)
+	{
+		border-bottom-color:themed('linkBorderColor');
+        background-color:themed('pageBackgroundColor');
+    }
     /*z-index: 1000;*/
     /*box-shadow:inset black 0px -2px 0px 0px;*/
 }
-.linkItem:hover
-{
-    margin-right:5px;
+.linkItem:hover{
 	@include themify($themes)
 	{
-		border-right-color:themed('linkBorderColor');
-		border-bottom-color:themed('linkBorderColor');
-	}
-    border-right:2px solid;
-    border-bottom:2px solid;
+		border-top-color:themed('linkBorderColor');
+    }
 }
 .linkItem:hover>.linkFull
 {
@@ -126,7 +130,6 @@
 {
     display:flex;
     flex-direction:column;
-    overflow-x:hidden;
 }
 .linksList
 {
@@ -143,10 +146,13 @@
 .linkItem
 {
     position:relative;
-    overflow-x:hidden;
-    overflow-y:hidden;
+    border-top:2px solid;
+	@include themify($themes)
+	{
+        border-top-color:themed('pageBackgroundColor');
+	}
 }
-.linkName,.linkFullHref
+.linkName,.linkNameFull,.linkHref
 {
     font-size:1.2rem;
     display:block;
@@ -160,14 +166,14 @@
     position:relative;
     text-overflow:ellipsis;
 }
-.linkName:visited,.linkFullHref:visited
+.linkHref:visited
 {
 	@include themify($themes)
 	{
 		color:themed('linkVisitedColor')
 	}
 }
-.linkName:hover,.linkFullHref:hover
+.linkHref:hover
 {
     text-decoration:underline;
 	@include themify($themes)
@@ -185,7 +191,6 @@
 {
     display:flex;
     flex-direction:column;
-    overflow-x:hidden;
 }
 .linkGroup
 {

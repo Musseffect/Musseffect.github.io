@@ -79,6 +79,7 @@
     overflow:hidden;
     white-space:nowrap;
     cursor:pointer;
+	font-family:Arial, Helvetica, sans-serif;
     display:block;
     @include respond-to(handhelds) {
         white-space:normal;
@@ -97,7 +98,7 @@
 .noteContent
 {
     padding:0px 5px;
-    font-family:sans-serif;
+    font-family:"Open Sans", Arial, Helvetica, sans-serif;
 }
 .noteDate,.notePreviewDate
 {
@@ -121,15 +122,34 @@
 {
     font-size:1.4rem;
     font-weight:400;
+	font-family:Arial, Helvetica, sans-serif;
 	@include themify($themes)
 	{
 		color:themed('noteTitleColor')
 	}
 }
+.noteTable thead{
+	@include themify($themes)
+	{
+		background-color:themed('noteTableHeadColor')
+	}
+}
+.noteTable th,.noteTable td
+{
+    padding:5px 10px;
+    border:1px solid gray;
+}
+.noteTable
+{
+    width:100%;
+    overflow-x:auto;
+    margin-bottom:5px;
+}
 .paragraph
 {
     margin-bottom:0.5rem;
     overflow-x:auto;
+    overflow-y:hidden;
 }
 .noteContent h1,.noteContent h2,.noteContent h3,.noteContent h4,.noteContent h5,.noteContent h6
 {

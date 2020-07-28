@@ -67,7 +67,7 @@ class App extends Component {
         </MediaQuery>
         <div className="headerPageTitle">
           <NavLink  key="link_1" exact to='/' className="headerTitleText" activeClassName="active" onClick={this.closeMenu}>
-          {'Musseffect'}
+          {'MUSSEFFECT'}
           </NavLink>
         </div>
         <MediaQuery minWidth={smallMedium+1}>

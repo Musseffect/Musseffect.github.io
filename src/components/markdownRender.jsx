@@ -44,6 +44,7 @@ class MarkdownRender extends Component
             ]
         },this.props);
         newProps.renderers = Object.assign({
+            table: (props)=><div className="noteTable"><table>{props.children}</table></div>,
             image: imageRenderer,
             code: CodeRenderer,
             paragraph:(props)=>

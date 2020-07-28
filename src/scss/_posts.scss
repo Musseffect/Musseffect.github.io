@@ -22,11 +22,12 @@
 	cursor: pointer;
     display:flex;
     flex-direction:row;
-    font-weight:600;
+    font-weight:300;
     padding:3px 7px;
     margin:3px 3px;
     border-radius:0px;
 	max-width:100%;
+	font-family:'Helvetica', "Segoe UI", sans-serif;
 }
 .tag:hover{
 	@include themify($themes)
@@ -58,11 +59,12 @@
 .postName
 {
 	font-weight:500;
-    font-size:22px;
+	font-size:1.4rem;
 	padding:0 5px;
 	width:100%;
 	word-break:break-word;
 	text-align:center;
+	font-family:Arial, Helvetica, sans-serif;
 	/*margin-bottom:0.5rem;*/
 	@include themify($themes)
 	{
@@ -82,7 +84,8 @@
 	text-align:center;
 	flex-shrink:0;
 	position:relative;
-    font-size:22px;
+	font-size:1.4rem;
+	font-family:Arial, Helvetica, sans-serif;
     text-overflow:ellipsis;
 	white-space:nowrap;
 	word-wrap: normal;
@@ -100,7 +103,7 @@
 	padding:0px 10%;
 	width:100%;
 	flex-wrap:wrap;
-	justify-content:center;
+	justify-content:flex-start;
 	flex-shrink:0;
 	flex-grow:0;
 }
@@ -189,7 +192,7 @@
 	padding:0px 5px;
 	width:100%;
 	flex-wrap:wrap;
-	justify-content:center;
+	justify-content:flex-start;
 }
 .posts
 {
@@ -235,7 +238,7 @@
 }
 .postDescription
 {
-
+    font-family:"Open Sans", Arial, Helvetica, sans-serif;
 	@include respond-to(handhelds) {
 		padding:5px;
 	}
@@ -343,6 +346,7 @@
 .galleryPost
 {
 	display:none;
+	margin-bottom:10px;
 }
 .galleryPost.active
 {
@@ -353,11 +357,12 @@
 	margin:0.5rem 0 0;
 	display:inline-block;
 	font-weight:500;
-	font-size:22px;
+	font-size:1.4rem;
 	max-width:100%;
 	overflow:hidden;
 	text-overflow:ellipsis;
 	white-space:nowrap;
+	font-family:Arial, Helvetica, sans-serif;
 	@include respond-to(handhelds) {
 	  padding:0 5px;
 	}

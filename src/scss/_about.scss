@@ -2,22 +2,17 @@
 {
     flex-direction:column;
     padding:1em;
-    font-family: Arial, sans-serif;
 }
-.about-paragraph
+.aboutParagraph
 {
     margin: 0.65em 0;
 }
-.about-entry
+.aboutEntry
 {
     display:block;
     border-spacing:10px;
 }
-.about-text
-{
-    font-family:sans-serif;
-}
-.about-header
+.aboutHeader
 {
     width:100%;
     text-align:center;
@@ -25,7 +20,7 @@
     font-family: Helvetica, Arial, sans-serif;
     margin-bottom:0.5rem;
 }
-.about-separator
+.aboutSeparator
 {
     height:1px;
 	@include themify($themes)
@@ -36,7 +31,7 @@
     border:none;
     margin: 0.2rem 0;
 }
-.about-section
+.aboutSection
 {
 	@include themify($themes)
     {
@@ -47,7 +42,7 @@
     margin-bottom: 10px;
     font-family: Helvetica, Arial, sans-serif;
 }
-.about-spoiler
+.aboutSpoiler
 {
 	@include themify($themes)
     {
@@ -55,7 +50,7 @@
         color:themed('textColor');
     }
 }
-.about-spoiler:hover
+.aboutSpoiler:hover
 {
 	@include themify($themes)
     {
@@ -63,22 +58,22 @@
     }
 }
 @include respond-to(handhelds) {
-    .about-entry-lcol,.about-entry-rcol,.about-entry-lcol-border
+    .aboutEntry-lcol,.aboutEntry-rcol,.aboutEntry-lcol-border
     {
         display:block;
     }
-    .about-entry-rcol
+    .aboutEntry-rcol
     {
         padding-left:20px;
     }
   }
 @include respond-to(medium-wide) { 
-    .about-entry-lcol,.about-entry-rcol,.about-entry-lcol-border
+    .aboutEntry-lcol,.aboutEntry-rcol,.aboutEntry-lcol-border
     {
         display:table-cell;
     }
    }
-   .about-entry-lcol,.about-entry-lcol-border
+   .aboutEntry-lcol,.aboutEntry-lcol-border
    {
         padding-right:10px;
        @include respond-to(handhelds) {
@@ -91,7 +86,7 @@
            text-align:end;
           }
    }
-   .about-entry-lcol-border
+   .aboutEntry-lcol-border
    {
        @include respond-to(handhelds) {
            border-bottom:1px solid gray;
@@ -100,11 +95,12 @@
            border-right:1px solid gray;
           }
    }
-   .about-paragraph-header
+   .aboutParagraphHeader
    {
        line-height:1.2rem;
    }
-.about-content
+.aboutContent
 {
     line-height:1.5rem;
+    font-family:"Open Sans", Arial, Helvetica, sans-serif;
 }

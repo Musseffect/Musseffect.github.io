@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { withRouter } from 'react-router';
 
 
 class Tag extends Component {
@@ -19,4 +18,4 @@ class Tag extends Component {
   }
 }
 
-export default withRouter(Tag);
+export default Tag;
