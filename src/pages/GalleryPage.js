@@ -85,7 +85,7 @@ class GalleryPage extends Component {
             if(activeCount==activeTags.length)
               active = true;
             return (<div className={"galleryPost"+(active?" active":"")} key={postIndex}>
-                    <Link key={postIndex +"link"} to={'/posts/'+postIndex} className="galleryPostName">{value.name}</Link>
+                    <Link key={postIndex +"link"} to={'/posts/'+value.link} className="galleryPostName">{value.name}</Link>
                     <hr className="galleryLine"/>
                     <div className="postImages">{
                       value.images.map(function(value,index)

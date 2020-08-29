@@ -18,9 +18,12 @@ def convert(srcFilename,dstFilename):
     while i < length:
         line = srcLines[i].lstrip().rstrip('\n').rstrip().expandtabs(1)
         i+=1
+        #skip empty line
         if(not line):
             continue
+        #check for group
         if(line.startswith("!!!")):
+            #new group
             currentGroup = line.lstrip("!!!")
             if(groups!=0):
                 dst.write("\n\t\t]\n},\n{\n")
@@ -32,12 +35,14 @@ def convert(srcFilename,dstFilename):
             links=0
             continue
         elif(groups==0):
+            #create group for first links
             dst.write("{\n")
             dst.write("\t\"group\":\"%s\",\n" % "*")
             dst.write("\t\"items\":[\n")
             groups+=1
             links=0
         elif(links!=0):
+            #append new links for current group
             dst.write(",\n")
         dst.write("\t\t{\n")
         values = line.split('|')
@@ -46,23 +51,35 @@ def convert(srcFilename,dstFilename):
         links+=1
         values[0] = values[0].lstrip().rstrip()
         if(not values[0] and len(values)>1):
+            #if empty href part
             values[0] = "https://www.google.com/search?q=" + values[0]
         elif(not values[0]):
             continue
+        #write href
         dst.write("\t\t\t\"href\":%s," % json.dumps(values[0], ensure_ascii=False).encode('utf8'))
+
+        #missing name part
         if(len(values)==1):
             dst.write("\n\t\t\t\"name\":%s," % json.dumps(values[0], ensure_ascii=False).encode('utf8'))
             dst.write("\n\t\t\t\"tags\":[]\n\t\t}")
             continue
         values[1] = values[1].lstrip().rstrip()
+        #write name
         dst.write("\n\t\t\t\"name\":%s," % json.dumps(values[1], ensure_ascii=False).encode('utf8'))
+
+        #missing tags part
         if(len(values)==2):
             dst.write("\n\t\t\t\"tags\":[]\n\t\t}")
             continue
+
         tags = values[2]
+
+        #empty tags part
         if(not tags):
             dst.write("\n\t\t\t\"tags\":[]\n\t\t}")
             continue
+        
+        #write tags
         tagList = tags.split(',')
         dst.write("\n\t\t\t\"tags\":[")
         tagLength = len(tagList)

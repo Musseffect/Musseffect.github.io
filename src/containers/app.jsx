@@ -14,6 +14,7 @@ import {changeOption} from "../actions/actions.js";
 import {smallMedium,mediumLarge} from "../windowSizes.js";
 import GalleryPage from '../pages/GalleryPage.js';
 import {tr} from "../localization.js";
+import Loader from './loader.jsx';
 
 const mapStateToProps=function(state)
 {
@@ -123,31 +124,24 @@ class App extends Component {
         </div>
       </MediaQuery>
       <div className="content">
-          {isFetching&&(
-            <div className="loaderBackground">
-                <div className="loader">
-                  <div></div><div></div><div></div>
-                </div>
-            </div>
-          )}
-          {hasError?
-          <div id="errorMessage" className="pageContainer">
-            <div>{tr("errorFirstPart",lang)}</div>
-            <div>{tr("errorSecondPart",lang)}</div>
-          </div>:!isFetching&&
-          <div id="routeContent">
-            <Switch>
-              <Route exact path='/' render={(props)=><GalleryPage {...props}/>} />
-              <Route path='/about' render={(props)=><AboutPage {...props}/>} />
-              <Route exact path='/posts' render={(props)=><PostsPage {...props}/>} />
-              <Route exact path='/notes' render={(props)=><NotesPage {...props}/>} />
-              <Route path='/links' render={(props)=><LinksPage {...props}/>} />
-              <Route path='/notes/:id' component={NotePage} />
-              <Route path="/posts/:id" component={PostPage} />
-              <Route path="*" component={NoMatchPage} />
-            </Switch>
-          </div>
-          }
+          <Loader isLoading={isFetching}>
+            {hasError?
+            (<div id="errorMessage" className="pageContainer">
+              <div>{tr("errorFirstPart",lang)}</div>
+              <div>{tr("errorSecondPart",lang)}</div>
+            </div>):(<div id="routeContent">
+                <Switch>
+                  <Route exact path='/' render={(props)=><GalleryPage {...props}/>} />
+                  <Route path='/about' render={(props)=><AboutPage {...props}/>} />
+                  <Route exact path='/posts' render={(props)=><PostsPage {...props}/>} />
+                  <Route exact path='/notes' render={(props)=><NotesPage {...props}/>} />
+                  <Route path='/links' render={(props)=><LinksPage {...props}/>} />
+                  <Route path='/notes/:link' component={NotePage} />
+                  <Route path="/posts/:link" component={PostPage} />
+                  <Route path="*" component={NoMatchPage} />
+                </Switch>
+              </div>)}
+          </Loader>
       </div>
       <footer id='footer'>
         <div className="footerButton" onClick={()=>changeOption("theme",theme=="light"?"dark":"light")}>
@@ -168,28 +162,3 @@ class App extends Component {
   }
 }
 export default withRouter(connect(mapStateToProps,mapDispatchToProps)(App));
-/*
-      <MediaQuery maxWidth = {smallMedium}>
-        <div className="footerButtonBlock">
-            <div className="footerButton">
-              <a href = "https://github.com/Musseffect">
-              <i className="fab fa-github fa-lg"></i>
-              </a>
-            </div>
-            <div className="footerButton">
-              <a href = "https://www.instagram.com/musseffect/">
-              <i className="fab fa-instagram fa-lg"></i>
-              </a>
-            </div>
-            <div className="footerButton">
-              <a href = "https://www.flickr.com/photos/musseffect2/">
-              <i className="fab fa-flickr fa-lg"></i>
-              </a>
-            </div>
-            <div className="footerButton">
-              <a href = "mailto:lazarevich356@gmail.com">
-              <i className="far fa-envelope fa-lg">
-              </i></a>
-            </div>
-          </div>
-        </MediaQuery> */

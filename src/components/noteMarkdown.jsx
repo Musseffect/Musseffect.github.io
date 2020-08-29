@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component,PureComponent } from 'react';
 import ReactMarkdown from "react-markdown";
 import MathJax from 'react-mathjax';
 import RemarkMathPlugin from 'remark-math';
@@ -17,10 +17,23 @@ macro.addMacro('figure',function(content,props,{transformer,eat})
         children:transformer.tokenizeBlock(content,eat.now())
     }
 })
+class MarkdownImage extends Component{
+  constructor(props){
+      super(props);
+      this.state = {show:false};
+  }
+  render(){
+    let {show} = this.state;
+    return <div>
+      <img {...this.props} onClick={()=>{this.setState({show:!show})}}
+    style={show?{maxWidth:"90%"}:{}} className="noteImage"/>
+    </div>;
+  }
+}
 
 function imageRenderer(props)
 {
-  return <img {...props} className="noteImage"/>
+  return <MarkdownImage {...props} />
 }
 function getCoreProps(props) {
   return props['data-sourcepos'] ? {
@@ -28,16 +41,13 @@ function getCoreProps(props) {
   } : {};
 }
 
-class MarkdownRender extends Component 
-{
-    constructor(props)
-    {
+class NoteMarkdown extends PureComponent {
+    constructor(props){
         super(props);
     }
-    render()
-    {
-        const newProps = Object.assign(
-        {
+    render(){
+        const {onImageClick,onImagePush} = this.props;
+        const newProps = Object.assign({
             plugins:[
                 RemarkMathPlugin,
                 macro.transformer 
@@ -45,7 +55,10 @@ class MarkdownRender extends Component
         },this.props);
         newProps.renderers = Object.assign({
             table: (props)=><div className="noteTable"><table>{props.children}</table></div>,
-            image: imageRenderer,
+            image: (props)=>{ 
+              let index = onImagePush(props.src);
+              return <img {...props} onClick={()=>{onImageClick(index)}}
+              className="noteImage"/>;},
             code: CodeRenderer,
             paragraph:(props)=>
                 <p className="paragraph">{props.children}</p>,
@@ -58,9 +71,9 @@ class MarkdownRender extends Component
         },this.props.renderers);
         return (
         <MathJax.Provider input="tex">
-            <ReactMarkdown {...newProps} />
+              <ReactMarkdown {...newProps} />
         </MathJax.Provider>);
     }
 }
 
-export default MarkdownRender;
+export default NoteMarkdown;

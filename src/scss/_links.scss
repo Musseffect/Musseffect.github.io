@@ -62,7 +62,7 @@
 {
     text-decoration: underline;
 }
-.linkName,.linkNameFull
+.linkName
 {
     overflow-y:hidden;
     user-select:none;
@@ -71,12 +71,7 @@
 {
     display:none;
 }
-.linkItem:hover .linkNameFull
-{
-    white-space:normal;
-    word-break:break-all;
-}
-.linkItem:hover .linkName:before,.linkItem:hover .linkNameFull:before
+.linkItem:hover .linkName:before
 {
     content:"\02C4";
     transform:scaleX(1.5);
@@ -86,7 +81,7 @@
     width:20px;
     transition:0.2s ease-in-out;
 }
-.linkName:before,.linkNameFull:before
+.linkName:before
 {
     content:"\02C4";
     transform:rotate(180deg)scaleX(1.5);
@@ -96,35 +91,11 @@
     width:20px;
     transition:0.2s ease-in-out;
 }
-.linkFull
-{
-    display:none;
-    width:100%;
-    height:auto;
-    position:absolute;
-    top:0;
-    left:0;
-    right:0;
-    z-index:100;
-    border-bottom:2px solid;
-	@include themify($themes)
-	{
-		border-bottom-color:themed('linkBorderColor');
-        background-color:themed('pageBackgroundColor');
-    }
-    /*z-index: 1000;*/
-    /*box-shadow:inset black 0px -2px 0px 0px;*/
-}
 .linkItem:hover{
 	@include themify($themes)
 	{
-		border-top-color:themed('linkBorderColor');
+		border-color:themed('linkBorderColor');
     }
-}
-.linkItem:hover>.linkFull
-{
-    display:flex;
-    flex-direction:column;
 }
 .linksList,.linkGroupItems
 {
@@ -147,12 +118,13 @@
 {
     position:relative;
     border-top:2px solid;
+    border-bottom:2px solid;
 	@include themify($themes)
 	{
-        border-top-color:themed('pageBackgroundColor');
+        border-color:themed('pageBackgroundColor');
 	}
 }
-.linkName,.linkNameFull,.linkHref
+.linkName
 {
     font-size:1.2rem;
     display:block;
@@ -166,14 +138,14 @@
     position:relative;
     text-overflow:ellipsis;
 }
-.linkHref:visited
+.linkName:visited
 {
 	@include themify($themes)
 	{
 		color:themed('linkVisitedColor')
 	}
 }
-.linkHref:hover
+.linkName:hover
 {
     text-decoration:underline;
 	@include themify($themes)

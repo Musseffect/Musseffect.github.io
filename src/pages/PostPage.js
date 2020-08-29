@@ -7,7 +7,8 @@ import {setTitle} from "../actions/actions.js";
 import ImageViewer from '../components/imageViewer.jsx';
 const mapStateToProps=function(state,ownProps)
 {
-  const { id } = ownProps.match.params;
+  const { link } = ownProps.match.params;
+  let id = state.posts.dictionary[link];
   return {post:state.posts.items[id],lang:state.options.language};
 };
 
@@ -103,33 +104,5 @@ class PostPage extends Component {
     )
   }
 }
-/*
-        <div className="modalImageViewerContainer"  style={this.state.showImage?{}:{display:'none'}}>
-          <div className="modalImageViewerBackground"></div>
-          <div className="modalImageViewerCloseButton"
-            onClick={()=>this.setState({showImage:false})}
-          ></div>
-          <div className="modalImageViewerWindow">
-              <div className="modalImageViewerHeader">
-              </div>
-              <div className="modalImageViewerBody">
-                <div className="modalImageViewerButtons">
-                <div 
-                  className="modalImageViewerLeftButton active"
-                  onClick={()=>this.setState({currentImage:(currentImage+images.length-1)%images.length})}
-                ></div>
-                <div 
-                  className="modalImageViewerRightButton active"
-                  onClick={()=>this.setState({currentImage:(currentImage+1)%images.length})}
-                ></div>
-                </div>
-                <img className="postModalImg" src={images[currentImage].full}></img>
-              </div>
-            <div className="modalImageViewerFooter">
-              <a className="modalImageViewerOpenOriginal" target="_blank" href={images[this.state.currentImage].original}>Open original</a>
-            </div>
-          </div>
-        </div>
-*/
 
 export default withRouter(connect(mapStateToProps,mapDispatchToProps)(PostPage));

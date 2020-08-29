@@ -66,7 +66,7 @@ class PostsPage extends Component {
             active = false;
             if(activeCount==activeTags.length)
               active = true;
-            return (<PostPreview key={index} name={value.name} link={index} thumbnail={value.thumbnail} tags={tags} active={active} clickOnTag={clickOnTag}/>);
+            return (<PostPreview key={index} name={value.name} link={value.link} thumbnail={value.thumbnail} tags={tags} active={active} clickOnTag={clickOnTag}/>);
           })
         }
         </div>

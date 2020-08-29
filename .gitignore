@@ -4,6 +4,8 @@ dist/*
 !dist/fonts.css
 !dist/fonts/
 !dist/favicon.ico
+!dist/robots.txt
+!dist/sitemap.xml
 
 # Logs
 logs

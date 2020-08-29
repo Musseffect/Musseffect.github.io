@@ -7,11 +7,25 @@ class Link extends Component {
   {
       super(props);
       this.state = {hover:false};
-      this.click=props.click;
   }
   render() {
     let {active,name,href,tags,clickOnTag} = this.props;
     let {hover} = this.state;
+
+    return (<div className={'linkItem'+(active?'':' disabled')}>
+          <a target="_blank" className="linkName" href={href}>{name}</a>
+          <div className='linkTags'>
+              {
+              tags.map(function(value,index)
+              {
+                  return (<div key={index} className={"linkTag"+(value.active?" active":"")}  onClick={()=>clickOnTag(value.name)}>
+                      {value.name}
+                  </div>);
+              })
+              }
+          </div>
+      </div>);
+
     return (
       <div onMouseLeave={()=>{this.setState({hover:false})}} 
       onMouseEnter={()=>{this.setState({hover:true})}} 

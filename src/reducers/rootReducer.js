@@ -58,14 +58,15 @@ var rootReducer=function(state, action)
 			console.error(action.error);
 			return Object.assign({},state,{hasError:true,isFetching:false});
 		case RECEIVE_CONTENT:
-			let posts = {items:action.posts,tags:{},tagEntries:[]};
-			posts.items.forEach(function(value)
+			let posts = {items:action.posts,tags:{},tagEntries:[],dictionary:{}};
+			posts.items.forEach(function(value,index)
 			{
 				value.tags.sort();
 				value.tags.forEach(function(value)
 				{
 					posts.tags[value] = false;
 				});
+				posts.dictionary[value.link] = index;
 			});
 			let links = {
 				groups:action.links,
@@ -83,6 +84,8 @@ var rootReducer=function(state, action)
 					{
 						links.tags[value] = false;
 					});
+					if(value.name=="")
+						value.name = value.href;
 				});	
 			});
 			/*links.groups.forEach(function(value)
