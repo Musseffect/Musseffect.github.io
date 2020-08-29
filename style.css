@@ -152,18 +152,14 @@
 .linkTag:hover {
   text-decoration: underline; }
 
-.linkName, .linkNameFull {
+.linkName {
   overflow-y: hidden;
   user-select: none; }
 
 .linkItem.disabled {
   display: none; }
 
-.linkItem:hover .linkNameFull {
-  white-space: normal;
-  word-break: break-all; }
-
-.linkItem:hover .linkName:before, .linkItem:hover .linkNameFull:before {
+.linkItem:hover .linkName:before {
   content: "\2C4";
   transform: scaleX(1.5);
   text-align: center;
@@ -172,7 +168,7 @@
   width: 20px;
   transition: 0.2s ease-in-out; }
 
-.linkName:before, .linkNameFull:before {
+.linkName:before {
   content: "\2C4";
   transform: rotate(180deg) scaleX(1.5);
   text-align: center;
@@ -181,34 +177,11 @@
   width: 20px;
   transition: 0.2s ease-in-out; }
 
-.linkFull {
-  display: none;
-  width: 100%;
-  height: auto;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 100;
-  border-bottom: 2px solid;
-  /*z-index: 1000;*/
-  /*box-shadow:inset black 0px -2px 0px 0px;*/ }
-  .theme-light .linkFull {
-    border-bottom-color: black;
-    background-color: #FFFFFF; }
-  .theme-dark .linkFull {
-    border-bottom-color: #dcdcdc;
-    background-color: #0e0e0e; }
-
 .theme-light .linkItem:hover {
-  border-top-color: black; }
+  border-color: black; }
 
 .theme-dark .linkItem:hover {
-  border-top-color: #dcdcdc; }
-
-.linkItem:hover > .linkFull {
-  display: flex;
-  flex-direction: column; }
+  border-color: #dcdcdc; }
 
 .linksList, .linkGroupItems {
   display: flex;
@@ -225,13 +198,14 @@
 
 .linkItem {
   position: relative;
-  border-top: 2px solid; }
+  border-top: 2px solid;
+  border-bottom: 2px solid; }
   .theme-light .linkItem {
-    border-top-color: #FFFFFF; }
+    border-color: #FFFFFF; }
   .theme-dark .linkItem {
-    border-top-color: #0e0e0e; }
+    border-color: #0e0e0e; }
 
-.linkName, .linkNameFull, .linkHref {
+.linkName {
   font-size: 1.2rem;
   display: block;
   font-weight: 400;
@@ -239,22 +213,22 @@
   overflow-x: hidden;
   position: relative;
   text-overflow: ellipsis; }
-  .theme-light .linkName, .theme-light .linkNameFull, .theme-light .linkHref {
+  .theme-light .linkName {
     color: black; }
-  .theme-dark .linkName, .theme-dark .linkNameFull, .theme-dark .linkHref {
+  .theme-dark .linkName {
     color: #dcdcdc; }
 
-.theme-light .linkHref:visited {
+.theme-light .linkName:visited {
   color: #7442ec; }
 
-.theme-dark .linkHref:visited {
+.theme-dark .linkName:visited {
   color: #9879df; }
 
-.linkHref:hover {
+.linkName:hover {
   text-decoration: underline; }
-  .theme-light .linkHref:hover {
+  .theme-light .linkName:hover {
     color: gray; }
-  .theme-dark .linkHref:hover {
+  .theme-dark .linkName:hover {
     color: gray; }
 
 .linkTags {
@@ -367,16 +341,19 @@
   margin: auto;
   object-fit: contain;
   object-position: center;
-  max-height: 400px; }
+  cursor: pointer; }
   @media only screen and (max-width: 640px) {
     .noteImage {
-      width: 100%; } }
+      max-width: 100%;
+      max-height: 150px; } }
   @media only screen and (min-width: 641px) and (max-width: 1007px) {
     .noteImage {
-      width: 60%; } }
+      max-width: 60%;
+      max-height: 200px; } }
   @media only screen and (min-width: 1008px) {
     .noteImage {
-      width: 60%; } }
+      max-width: 60%;
+      max-height: 400px; } }
 
 .noteFigure {
   text-align: center;
@@ -504,10 +481,15 @@
   line-height: 1.2; }
 
 .noteContent h1 {
-  font-size: 1.5rem; }
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #eaecef; }
 
 .noteContent h2 {
-  font-size: 1.4rem; }
+  font-size: 1.4rem;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #eaecef; }
 
 .noteContent h3 {
   font-size: 1.3rem; }
