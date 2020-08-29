@@ -1,7 +1,7 @@
 import { createStore, applyMiddleware } from "redux"; 
 import rootReducer from "../reducers/rootReducer.js";
 import thunkMiddleware from 'redux-thunk';
-import {fetchContent} from '../actions/actions.js';
+import {fetchContent, fetchContentGist} from '../actions/actions.js';
 
 const initialState=(function(){
 		let state={};
@@ -50,6 +50,6 @@ const contentGist = `https://api.github.com/gists/546725186d756cd780efe1455e60ee
 const store = createStore(rootReducer,initialState,applyMiddleware(thunkMiddleware)
 	/*,window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()*/);  
 
-store.dispatch(fetchContent(contentBaseLink,linksBaseLink));
-
+//store.dispatch(fetchContent(contentBaseLink,linksBaseLink));
+store.dispatch(fetchContentGist(contentGist));
 export default store;
