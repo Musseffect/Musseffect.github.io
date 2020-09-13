@@ -119,7 +119,7 @@ x_{n+1}&=x_n + hf(x_{n+1},z_{n+1},t_{n+1}) \\
 z_{n+1}&=g(x_{n+1},t_{n+1}) 
 \end{align}
 \end{cases} \\
-&\text{for } x_{n+1}, z_{n+1}
+\text{for } x_{n+1}, z_{n+1}
 $$
 ##### Semi-Explicit DAE index 1
 $$
@@ -144,7 +144,7 @@ $$
 \text{for } x_{n+1}, z_{n+1}
 $$
 
-### 2.1.4 Implicit Trapezoid
+### 2.1.4 Implicit Trapezoidal
 
 ##### Explicit DAE index 1
 $$
@@ -199,7 +199,7 @@ $$
 &\hspace{1em}l=1,S\\
 &\hspace{1em}\begin{cases}
 k_l = f(x_n + h\sum_{l=1}^{S}a_{lm} k_m,z_n^l,t_n + h c_l)\\
-g(x + h\sum_{l=1}^{S}a_{lm} k_m,z_n^l,t_n + h c_l)=0
+g(x_n + h\sum_{l=1}^{S}a_{lm} k_m,z_n^l,t_n + h c_l)=0
 \end{cases}\\
 &\text{for } k_l,z_n^l
 \end{align}
@@ -211,9 +211,10 @@ $$
 &\hspace{1em}l=1,S\\
 &\hspace{1em}\begin{cases}
 f(x_n + h\sum_{l=1}^{S}a_{lm} k_m,k_l,z_n^l,t_n + h c_l)=0\\
-g(x + h\sum_{l=1}^{S}a_{lm} k_m,z_n^l,t_n + h c_l)=0
+g(x_n + h\sum_{l=1}^{S}a_{lm} k_m,z_n^l,t_n + h c_l)=0
 \end{cases}\\
 &\text{for } k_l,z_n^l
+\end{align}
 $$
 
 ## 2.2 Multistep methods

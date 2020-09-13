@@ -2,30 +2,15 @@ Oscilloscope - device, that displays 1d signals and 2d curves.
 Analogue CRT oscilloscope uses electron gun that shoots electrons at screen and creates image. Electrons are deflected by magnetic or electric field according to input signal for X and Y coordinates.
 To create an image similar to image from a screen of CRT oscilloscope we need to use some math.
 Each curve is a result of continuous movement of point $\vec{p}(t)$ in time.
-At each time instance this point illuminates a part of a screen and creates a bright spot according to some distribution of instantaneous intensity.
-This distribution is radially symmetrical and is a function of distance from point on a screen $\vec{p}_{scr}=\text{vec2}(x,y)$ to point $\vec{p}(t)$.
-
-Good example of realistic distribution is normal distribution with zero mean:
-
-$$
-i_{radial}(r)=\frac{1}{\sigma \sqrt{2\pi}}e^{-\frac{r^2}{2\sigma^2}}\\
-r(\vec{p}(t),\vec{p}_{scr})=\sqrt{({(\vec{p}(t).x-x)}^2+{(\vec{p}(t).y-y)}^2}
-$$
-
-Parameter $\sigma$ (dispersion) changes size of a spot.
-
-![gaussian](https://drive.google.com/uc?id=1WVYCcr10coVR0wyPx6NfsaYvC2F5j5IG "gaussian")
-
-[figure]
-**Fig. 1** - Gaussian distribution with unit dispersion
-[/figure]
+At each time instance this point illuminates a part of a screen and creates a bright spot according to some distribution of instantaneous intensity $i(t)$.
+This distribution is radially symmetrical and is a function of distance from point on a screen $\vec{p}_{scr}=\text{vec}_2(x,y)$ to point $\vec{p}(t)$.
 
 Expression for intensity could be simplified in case of a linear motion $\vec{p}(t) = \vec{p}_0 + (t-t_0) \frac{\vec{p}_1 - \vec{p}_0}{\Delta t}$ in interval $[t_0,t_0 + \Delta t]$
 in local coordinate system with center $\vec{p}_0$ and axes $\vec{l}$ as $\vec{x}$ and $\vec{n}$ as $\vec{y}$ where:
 
 $$
 \vec{l}=\text{normalize}(\vec{p}_1-\vec{p}_0)\\
-\vec{n}=\text{normalize}(\text{vec2}(-\vec{p}_1.y+\vec{p}_0.y,\vec{p}_1.x-\vec{p}_0.x))
+\vec{n}=\text{normalize}(\text{vec}_2(-\vec{p}_1.y+\vec{p}_0.y,\vec{p}_1.x-\vec{p}_0.x))
 $$
 
 $\vec{l}$ - tangent vector for line $(\vec{p_0},\vec{p_1})$, $\vec{n}$ - normal vector.
@@ -35,7 +20,7 @@ Also we dont care about which of two possible directions is used for normal $\ve
 Expression for distance in local coordinate system:
 
 $$
-\vec{p}_{scr} = \text{vec2}(\text{dot}(\vec{p}_{loc}-\vec{p}_0,\vec{l}),\text{dot}(\vec{p}_{loc}-\vec{p}_0,\vec{n})) = \text{vec2}(x_{loc},y_{loc}) \\
+\vec{p}_{scr} = \text{vec}_2(\text{dot}(\vec{p}_{loc}-\vec{p}_0,\vec{l}),\text{dot}(\vec{p}_{loc}-\vec{p}_0,\vec{n})) = \text{vec}_2(x_{loc},y_{loc}) \\
 r(t,\vec{p}_{loc})=\sqrt{(\frac{t-t_0}{\Delta t}d - x_{loc})^2+y_{loc}^2}\\
 d = \|\vec{p}_1-\vec{p}_0\|
 $$
@@ -64,36 +49,69 @@ Let say that we have image $S_j(\vec{p}_{scr})$ and we want to compute image $S_
 Formula for image at next frame $j+1$ that also considers fading:
 
 $$
-I_{full}(\vec{p}_{scr}) = \int_{T}^{T+\Delta T} i(t) e^{-f (T + \Delta T - t)} dt\\
-S_{j+1}(\vec{p}_{scr})=S_{j}(\vec{p}_{scr})e^{-f \Delta T}+I_{full}(\vec{p}_scr)
+I(\vec{p}_{scr}) = \int_{T}^{T+\Delta T} i(t) e^{-f (T + \Delta T - t)} dt\\
+S_{j+1}(\vec{p}_{scr})=S_{j}(\vec{p}_{scr})e^{-f \Delta T}+I(\vec{p}_{scr})
 $$
 
-Analytical solution of integral:
+We could also use simplified formula that doesn't consider fading of lines produced during last frame:
 
 $$
-I_{full}(\vec{p}_{scr}) = \frac{1}{2d} e^{\frac{(f \Delta t \sigma)^2}{2d^2}} e^{\frac{f \Delta t (x_{loc}-d)}{d}} e^{-\frac{y_{loc}^2}{2 \sigma^2}} (\text{erf}(\frac{d x_{loc}+ f \Delta t \sigma^2}{\sqrt{2} d \sigma})-\text{erf}(\frac{f \Delta t \sigma^2+d (x_{loc}-d)}{\sqrt{2} d \sigma}))
+I(\vec{p}_{scr}) = \int_{T}^{T+\Delta T} i(t) dt\\
+S_{j+1}(\vec{p}_{scr})=S_{j}(\vec{p}_{scr})e^{-f \Delta T} + I(\vec{p}_{scr})
 $$
+
+
+![example](https://drive.google.com/uc?id=106uizvMSI3K5duplAgYUSyJwmAeVXSBi "example")
+
+[figure]
+**Fig. 1** - Render of square wave with exponential intensity in Shadertoy
+[/figure]
+
+The brightness of a line segment depends on a speed of the moving point. The differences between simplified and full formulas at certain speeds are unnoticable.
+
+# Intensity distributions
+
+## Exponential distribution
+
+Point intensity:
+
+$
+i(t)=\frac{1}{\sigma \sqrt{2\pi}}e^{-\frac{r(t,\vec{p}_{loc})^2}{2\sigma^2}}
+$
+
+Parameter $\sigma$ (dispersion) changes size of a spot.
+
+![gaussian](https://drive.google.com/uc?id=1WlhUhLsVh0TmKWuZEL6V8XtXvFXu8QHB "gaussian")
+
+[figure]
+**Fig. 2** - Gaussian distribution with different values of parameter
+[/figure]
+
+Formula with fading:
+
+$
+I(\vec{p}_{scr}) = \frac{1}{2d} e^{\frac{(f \Delta t \sigma)^2}{2d^2}} e^{\frac{f \Delta t (x_{loc}-d)}{d}} e^{-\frac{y_{loc}^2}{2 \sigma^2}} (\text{erf}(\frac{d x_{loc}+ f \Delta t \sigma^2}{\sqrt{2} d \sigma})-\text{erf}(\frac{f \Delta t \sigma^2+d (x_{loc}-d)}{\sqrt{2} d \sigma}))
+$
 
 $\text{erf}(x)$ - error function, could be approximated with really good precision.
 
-![errorfunc](https://drive.google.com/uc?id=1oTHhVXYVBDweXrQM0zz9cfy8cXQYagqt "error function")
+![error function](https://drive.google.com/uc?id=1oTHhVXYVBDweXrQM0zz9cfy8cXQYagqt "error function")
 
 [figure]
-**Fig. 2** - Error function
+**Fig. 3** - Error function
 [/figure]
 
-We could use simplified formula that doesn't consider fading of lines produced during last frame:
+Simplified formula:
 
-$$
-I_{simple}(\vec{p}_{scr}) = \int_{T}^{T+\Delta T} i(t) dt\\
-S_{j+1}(\vec{p}_{scr})=S_{j}(\vec{p}_{scr})e^{-f \Delta T} + I_{simple}(\vec{p}_{scr})
-$$
+$
+I(\vec{p}_{scr}) = \frac{1}{2d} e^{-\frac{y_{loc}^2}{2 \sigma^2}} (\text{erf}(\frac{x_{loc}}{\sqrt{2}\sigma})-\text{erf}(\frac{x_{loc}-d}{\sqrt{2}\sigma})
+$
 
-Analytical solution of integral:
+![chua's circuit](https://drive.google.com/uc?id=1kWLQ5kbfnAwU8UMJVAdSrOJgwr-J7Xse "chua's circuit")
 
-$$
-I_{simple}(\vec{p}_{scr}) = \frac{1}{2d} e^{-\frac{y_{loc}^2}{2 \sigma^2}} (erf(\frac{x_{loc}}{\sqrt{2}\sigma})-erf(\frac{x_{loc}-d}{\sqrt{2}\sigma})
-$$
+[figure]
+**Fig. 4** - Render of chua's circuit dif. equation with exponential intensity
+[/figure]
 
 Code in *glsl*:
 
@@ -110,39 +128,55 @@ float erf(float x)
 float intensity(float d,vec2 p,float sigma)
 {
     float f = 1.0/(sqrt(2.)*sigma);
-	return (erf(p.x*f)-erf((p.x-d)*f))
-	*exp(-p.y*p.y/(2.*sigma*sigma))/(2.*d);
+    return (erf(p.x*f)-erf((p.x-d)*f))
+    *exp(-p.y*p.y/(2.*sigma*sigma))/(2.*d);
 }
 //Full formula with fading
 float intensityFading(float d,vec2 p,float sigma,float dt,float fadeRate)
 {
     float f = 1.0/(sqrt(2.)*d*sigma);
     float fd = fadeRate*dt;
-	return (erf((p.x*d+fd*sigma*sigma)*f)-erf(((p.x-d)*d+fd*sigma*sigma)*f))
+    return (erf((p.x*d+fd*sigma*sigma)*f)-erf(((p.x-d)*d+fd*sigma*sigma)*f))
 	*exp(-p.y*p.y/(2.*sigma*sigma))
         *exp(fd*(fd*sigma*sigma*0.5/d+(p.x-d))/d)/(2.*d);
 }
 ```
-![example](https://drive.google.com/uc?id=106uizvMSI3K5duplAgYUSyJwmAeVXSBi "example")
+
+## Inverse square
+
+Point intensity:
+
+$
+i(t)=\frac{k}{\pi (k^2\cdot r(t,\vec{p}_{loc})^2+1)}
+$
+
+Parameter $k$ changes shape of a spot.
+
+![inverse square](https://drive.google.com/uc?id=1FLMOEhV3otUAeyYj6FUprhZhD0GzAob_ "inverse square")
 
 [figure]
-**Fig. 3** - Example in Shadertoy
+**Fig. 5** - Inverse square distribution with different values of parameter
 [/figure]
 
-The brightness of a line segment depends on a speed of the moving point. The differences between simplified and full formulas at certain speeds are unnoticable.
+Simplified formula:
 
-# Intensity distributions
+$
+I(\vec{p}_{scr}) = \frac{1}{d\cdot\pi \sqrt{y_{loc}^2\cdot k^2 + 1}}(\text{atan}(\frac{k\cdot x_{loc}}{\sqrt{y_{loc}^2\cdot k^2 + 1}})-\text{atan}(\frac{k\cdot (x_{loc}-d)}{\sqrt{y_{loc}^2\cdot k^2 + 1}}))
+$
 
-## Exponential distribution
+![chua's circuit](https://drive.google.com/uc?id=1FmPlAdFkaPXtuBebJpo2KykUb1HgQD9k "chua's circuit")
 
-$$
-i(t)=\frac{1}{\sigma \sqrt{2\pi}}e^{-\frac{r(t,\vec{p}_{loc})^2}{2\sigma^2}}
-$$
+[figure]
+**Fig. 6** - Render of chua's circuit dif. equation with inv. square intensity
+[/figure]
 
+Code in *glsl*:
 
-## Inverted square
-
-$$
-i(t)=\frac{k}{\pi (k^2\cdot r(t,\vec{p}_{loc})^2+1)}\\
-I_{simple}(\vec{p}_{scr}) = \frac{1}{d\cdot\pi \sqrt{y_{loc}^2\cdot k^2 + 1}}(\text{atan}(\frac{k\cdot x_{loc}}{\sqrt{y_{loc}^2\cdot k^2 + 1}})-\text{atan}(\frac{k\cdot (x_{loc}-d)}{\sqrt{y_{loc}^2\cdot k^2 + 1}}))
-$$
+```glsl
+//Simplified formula
+float intensity(float d,vec2 p,float k)
+{
+    float s = 1./sqrt(pow(p.y*k,2.)+1.);
+    return s*(atan(k*p.x*s)-atan(k*(p.x-d)*s))/(PI * d);
+}
+```

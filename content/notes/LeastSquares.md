@@ -188,9 +188,9 @@ Derivatives:
 
 $$
 \begin{align}
-\frac{\partial E}{\partial a0} &= \sum_{i=0}^{N} (f(x_i,a,b) - y_i) = 0\\
-\frac{\partial E}{\partial ak} &= \sum_{i=0}^{N} cos(\frac{2 \pi k  x_i}{T}) (f(x_i,a,b) - y_i) = 0\\
-\frac{\partial E}{\partial bk} &= \sum_{i=0}^{N} sin(\frac{2 \pi k  x_i}{T}) (f(x_i,a,b) - y_i) = 0
+\frac{\partial E}{\partial a_0} &= \sum_{i=0}^{N} (f(x_i,a,b) - y_i) = 0\\
+\frac{\partial E}{\partial a_k} &= \sum_{i=0}^{N} cos(\frac{2 \pi k  x_i}{T}) (f(x_i,a,b) - y_i) = 0\\
+\frac{\partial E}{\partial b_k} &= \sum_{i=0}^{N} sin(\frac{2 \pi k  x_i}{T}) (f(x_i,a,b) - y_i) = 0
 \end{align}
 $$
 

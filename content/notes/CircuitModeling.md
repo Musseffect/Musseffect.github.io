@@ -103,7 +103,7 @@ $
 
 ## Inductor
 
-![Inductor](https://drive.google.com/uc?id=13FUwOT5N1RP-OA76a6b5Y3-lYJKdmjtQ "Inductor")
+![Inductor](https://drive.google.com/uc?id=1PjFgY9Vh4R9PYIFhfKy8GFguKqRXKtDB "Inductor")
 
 Parameters: $L$ - inductance
 
@@ -121,7 +121,7 @@ $
 
 $
 \begin{align}
-- \omega L\cdot im(I_L)  &= re(V_1) - re(V_2)\\
+\omega L\cdot im(I_L)  &= re(V_1) - re(V_2)\\
 \omega L \cdot re(I_L) &= im(V_1) - im(V_2)\\
 re(I_1) &= - re(I_L)\\
 im(I_1) &= - im(I_L)\\

@@ -1,0 +1,27 @@
+{
+    "postTemplate":{
+        "name":"Name",
+        "link":"Post link: post-link",
+        "description":{
+            "ru":"RuDescription",
+            "en":"EnDescription"
+        },
+        "thumbnail":"Thumbnail image link",
+        "mainImg":"Main image link",
+        "images":[
+            {
+                "thumbnail":"thumbnail image link",
+                "full":"big image link",
+                "original":"original image link"
+            }
+        ]
+    },
+    "noteTemplate":{
+        "name":"Note name",
+        "datetime":"1995-12-17T03:24:00",
+        "file":"Note filename: NoteName.md",
+        "link":"Note link name: note-link"
+    }
+
+
+}

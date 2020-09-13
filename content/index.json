@@ -17,13 +17,13 @@
                 "link":"dof-thin-lens-projections"
               },
               {
-                "name":"Root finding",
-                "datetime":"1996-10-14T13:12:20",
+                "name":"Root finding[Planned]",
+                "datetime":"1993-10-14T13:12:20",
                 "file":"RootFinding.md",
                 "link":"root-finding"
               },
               {
-                "name":"QAEB techinque",
+                "name":"QAEB techinque[Planned]",
                 "datetime":"1915-06-04T03:03:02",
                 "file":"UnderConstruction.md",
                 "link":"quaeb"
@@ -53,8 +53,8 @@
                 "link":"differential-algebraic-equations"
 		      },
 		      {
-                "name":"Optimization methods",
-                "datetime":"2001-12-17T03:24:00",
+                "name":"Optimization methods[Planned]",
+                "datetime":"1901-12-17T03:24:00",
                 "file":"OptimizationMethods.md",
                 "link":"optimization-methods"
 		      },
@@ -71,8 +71,8 @@
                 "link":"general-relativity"
 		      },
 		      {
-                "name":"Fractals",
-                "datetime":"2004-02-05T03:24:00",
+                "name":"Fractals[Planned]",
+                "datetime":"1904-02-05T03:24:00",
                 "file":"UnderConstruction.md",
                 "link":"fractals"
 		      },
@@ -89,32 +89,32 @@
                 "link":"fog"
 		      },
 		      {
-                "name":"3D Graphics pt.1: Light and Color",
-                "datetime":"2011-11-11T11:11:11",
+                "name":"3D Graphics pt.1: Light and Color[Planned]",
+                "datetime":"1911-11-11T11:11:11",
                 "file":"UnderConstruction.md",
                 "link":"3d-graphics-part-1"
 		      },
 		      {
-                "name":"3D Graphics pt.2: Scene",
-                "datetime":"2012-12-12T12:12:12",
+                "name":"3D Graphics pt.2: Scene[Planned]",
+                "datetime":"1912-12-12T12:12:12",
                 "file":"UnderConstruction.md",
                 "link":"3d-graphics-part-2"
 		      },
 		      {
-                "name":"3D Graphics pt.3: Camera and Projection",
-                "datetime":"2012-12-12T12:12:13",
+                "name":"3D Graphics pt.3: Camera and Projection[Planned]",
+                "datetime":"1912-12-12T12:12:13",
                 "file":"UnderConstruction.md",
                 "link":"3d-graphics-part-3"
 		      },
 		      {
-                "name":"3D Graphics pt.4: Ray tracing",
-                "datetime":"2012-12-12T12:12:14",
+                "name":"3D Graphics pt.4: Ray tracing[Planned]",
+                "datetime":"1912-12-12T12:12:14",
                 "file":"UnderConstruction.md",
                 "link":"3d-graphics-part-4"
 		      },
 		      {
-                "name":"3D Graphics pt.5: Distance fields",
-                "datetime":"2012-12-12T12:12:15",
+                "name":"3D Graphics pt.5: Distance fields[Planned]",
+                "datetime":"1912-12-12T12:12:15",
                 "file":"UnderConstruction.md",
                 "link":"3d-graphics-part-5"
 		      },
@@ -497,9 +497,9 @@
 					"original":"https://live.staticflickr.com/65535/49883181346_1c94da6932_o.png"
 				},
 				{
-					"thumbnail":"https://live.staticflickr.com/65535/49882650698_ce3f143267_n.jpg",
-					"full":"https://live.staticflickr.com/65535/49882650698_ce3f143267_b.jpg",
-					"original":"https://live.staticflickr.com/65535/49882650698_871fa860b2_o.png"
+					"thumbnail":"https://live.staticflickr.com/65535/49564176816_f2fe461f2e_n.jpg",
+					"full":"https://live.staticflickr.com/65535/49564176816_f2fe461f2e_n.jpg",
+					"original":"https://live.staticflickr.com/65535/49564176816_526e450ac3_o.jpg"
 					
 				},
 				{
@@ -552,6 +552,54 @@
 				}
 			],
 			"tags":["3d","procedural","planet","graphics","opengl"]
+		},
+		{
+			"name":"Chaos",
+			"link":"planets",
+			"description":{
+				"ru":"Аттракторы в glsl с эмуляцией аналоговой векторной графики",
+				"en":"Chaotic attractors with oscilloscope-like rendering"
+			},
+			"thumbnail":"https://live.staticflickr.com/65535/50326609541_31a894a972_m.jpg",
+			"mainImg":"https://live.staticflickr.com/65535/50326609541_31a894a972_b.jpg",
+			"images":[
+				{
+					"thumbnail":"https://live.staticflickr.com/65535/50326609541_31a894a972_n.jpg",
+					"full":"https://live.staticflickr.com/65535/50326609541_31a894a972_b.jpg",
+					"original":"https://live.staticflickr.com/65535/50326609541_da41e57511_o.png"
+				},
+				{
+					"thumbnail":"https://live.staticflickr.com/65535/50326609461_564235a64d_n.jpg",
+					"full":"https://live.staticflickr.com/65535/50326609461_564235a64d_b.jpg",
+					"original":"https://live.staticflickr.com/65535/50326609461_caea8ca566_o.png"
+				},
+				{
+					"thumbnail":"https://live.staticflickr.com/65535/50325945523_aa1526c0e9_n.jpg",
+					"full":"https://live.staticflickr.com/65535/50325945523_aa1526c0e9_b.jpg",
+					"original":"https://live.staticflickr.com/65535/50325945523_a9cc50d61f_o.png"
+				},
+				{
+					"thumbnail":"https://live.staticflickr.com/65535/50326609516_09349aba50_n.jpg",
+					"full":"https://live.staticflickr.com/65535/50326609516_09349aba50_b.jpg",
+					"original":"https://live.staticflickr.com/65535/50326609516_311160935d_o.png"
+				},
+				{
+					"thumbnail":"https://live.staticflickr.com/65535/50326787502_de85319cdd_n.jpg",
+					"full":"https://live.staticflickr.com/65535/50326787502_de85319cdd_b.jpg",
+					"original":"https://live.staticflickr.com/65535/50326787502_8a3b013946_o.png"
+				},
+				{
+					"thumbnail":"https://live.staticflickr.com/65535/50311413448_c73e7b0859_n.jpg",
+					"full":"https://live.staticflickr.com/65535/50311413448_c73e7b0859_b.jpg",
+					"original":"https://live.staticflickr.com/65535/50311413448_1081eeb928_o.png"
+				},
+				{
+					"thumbnail":"https://live.staticflickr.com/65535/50326609581_409ef288b3_n.jpg",
+					"full":"https://live.staticflickr.com/65535/50326609581_409ef288b3_b.jpg",
+					"original":"https://live.staticflickr.com/65535/50326609581_815bd6d29d_o.png"
+				}
+			],
+			"tags":["2d","graphics","glsl"]
 		}
 	]
 }

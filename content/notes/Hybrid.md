@@ -120,7 +120,7 @@ $$
 **Fig. 7** - Jumping ball position and velocity
 [/figure]
 
-Event function: $max(-x,-v)$
+Event function: $\vec{max}(-x,-v)$
 
 ![Jumping ball event function](https://drive.google.com/uc?id=1QVKMzVYXG-kVuq16fKjDUFFd-GuM4I0w "Jumping ball event function")
 
