@@ -1,7 +1,6 @@
 
 import {
 	CHANGE_OPTION,
-	SET_TITLE,
 	SWITCH_TAG_STATE,
 	SWITCH_LINKTAG_STATE,
 	REQUEST_CONTENT,
@@ -24,9 +23,6 @@ var rootReducer=function(state, action)
 			}
 			state.options = Object.assign({},state.options);
 			return Object.assign({},state);
-		case SET_TITLE:
-			document.title = action.title;
-			return Object.assign({},state,{title:action.title});
 		case SWITCH_TAG_STATE:
 			if(state.posts.tags[action.tag]!==undefined)
 			{
@@ -54,7 +50,7 @@ var rootReducer=function(state, action)
 		case REQUEST_CONTENT:
 			return Object.assign({},state,{isFetching:true});
 		case ERROR_RECEIVING_CONTENT:
-			window.alert(action.error);
+			//window.alert(action.error);
 			console.error(action.error);
 			return Object.assign({},state,{hasError:true,isFetching:false});
 		case RECEIVE_CONTENT:
@@ -140,18 +136,19 @@ var rootReducer=function(state, action)
 			});
 			let sortedNotes = {};
 			let notesDictionary = {};
-			Object.keys(action.notes).forEach(function(key)
+			Object.keys(action.notes).forEach(function(lang)
 			{
-				sortedNotes[key] = action.notes[key].map(function(value)
+				sortedNotes[lang] = action.notes[lang].map(function(value)
 					{
 						return Object.assign({date:new Date(value.datetime)},value);
 					}).sort(function(a,b)
 					{
 						return +b.date - +a.date;
 					});
-				sortedNotes[key].forEach(function(value,index)
+					notesDictionary[lang] = {};
+				sortedNotes[lang].forEach(function(value,index)
 				{
-					notesDictionary[value.link] = {index:index,lang:key};
+					notesDictionary[lang][value.link] = {index:index,lang:lang};
 				})
 			});
 			return Object.assign({},state,{posts:posts,links:links,notes:sortedNotes,isFetching:false,notesDictionary});

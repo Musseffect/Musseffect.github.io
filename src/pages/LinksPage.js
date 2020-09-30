@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
 import { withRouter } from 'react-router';
-import { setTitle, clickOnLinkTag} from "../actions/actions.js";
+import { setTitle, setDescription, clickOnLinkTag} from "../actions/actions.js";
 import {tr} from "../localization.js";
 import Link from "../components/link.jsx";
 
@@ -17,8 +17,7 @@ const mapStateToProps=function(state)
 const mapDispatchToProps=function(dispatch)
 {
   return ({
-    clickOnTag:function(tag){dispatch(clickOnLinkTag(tag));},
-    setTitle:function(title){dispatch(setTitle(title));}
+    clickOnTag:function(tag){dispatch(clickOnLinkTag(tag));}
   });
 };
 
@@ -30,7 +29,8 @@ class LinksPage extends Component {
   }
   componentDidMount()
   {
-    this.props.setTitle(tr("menuLinks",this.props.lang));
+    setTitle(tr("links-menu",this.props.lang));
+    setDescription(tr("links-description",this.props.lang));
   }
   render() {
     let {groups,clickOnTag,tagEntries,lang} = this.props;
@@ -40,7 +40,7 @@ class LinksPage extends Component {
       <div className='linksContainer pageContainer'>
         <div className="linkSearch">
             <i className="searchIcon fa fa-search fa-lg"></i>
-            <input type="text" className="searchInput" placeholder={tr("searchPrompt",lang)} value={searchText} onChange={(e)=>this.setState({searchText:e.target.value})}/>
+            <input type="text" className="searchInput" placeholder={tr("search-prompt",lang)} value={searchText} onChange={(e)=>this.setState({searchText:e.target.value})}/>
         </div>
         <div className="linksFilter" onClick={()=>this.setState({andFilter:!andFilter})}>
           {`${tr("filter",lang)}: ${andFilter?"&&":"||"}`} 

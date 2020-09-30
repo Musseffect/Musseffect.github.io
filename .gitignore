@@ -1,11 +1,5 @@
-dist/*
-!dist/index.html
-!dist/404.html
-!dist/fonts.css
-!dist/fonts/
-!dist/favicon.ico
-!dist/robots.txt
-!dist/sitemap.xml
+dist/bundle.js
+dist/style.css
 
 # Logs
 logs

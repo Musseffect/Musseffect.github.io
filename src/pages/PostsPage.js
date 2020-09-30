@@ -3,22 +3,20 @@ import { connect } from "react-redux";
 import { withRouter } from 'react-router';
 import PostPreview from '../components/postPreview.jsx';
 import Tag from "../components/tag.jsx";
-import {setTitle,clickOnTag} from "../actions/actions.js";
+import {setTitle,clickOnTag, setDescription} from "../actions/actions.js";
 import {tr} from "../localization.js";
 
 const mapStateToProps=function(state)
 {
   return {
     posts:state.posts.items,
-    tagEntries:state.posts.tagEntries,
-    lang:state.options.language
+    tagEntries:state.posts.tagEntries
   };
 };
 
 const mapDispatchToProps=function(dispatch)
 {
   return ({
-    setTitle:function(title){dispatch(setTitle(title));},
     clickOnTag:function(value){dispatch(clickOnTag(value));}
   });
 };
@@ -30,10 +28,11 @@ class PostsPage extends Component {
   }
   componentDidMount()
   {
-    this.props.setTitle(tr("menuProjects",this.props.lang));
+    setTitle(tr("projects-menu",this.props.lang));
+    setDescription(tr("main-description",this.props.lang));
   }
   render() {
-    const {posts,clickOnTag,tagEntries} = this.props;
+    const {posts,lang,clickOnTag,tagEntries} = this.props;
     let activeTags=[];
     return (
       <div className='postsContainer pageContainer'>
@@ -66,7 +65,7 @@ class PostsPage extends Component {
             active = false;
             if(activeCount==activeTags.length)
               active = true;
-            return (<PostPreview key={index} name={value.name} link={value.link} thumbnail={value.thumbnail} tags={tags} active={active} clickOnTag={clickOnTag}/>);
+            return (<PostPreview key={index} name={value.name} lang={lang} link={value.link} thumbnail={value.thumbnail} tags={tags} active={active} clickOnTag={clickOnTag}/>);
           })
         }
         </div>

@@ -4,9 +4,17 @@ export const CHANGE_OPTION = "CHANGE_OPTION";
 export var changeOption = function(option,value){
     return {type:CHANGE_OPTION,option:option,value:value};
 }
-export const SET_TITLE = "SET_TITLE";
 export var setTitle =  function(title){
-    return {type:SET_TITLE,title:title};
+    document.title = title;
+}
+export var setDescription = function(content){
+    let description = document.getElementsByTagName("Meta").description;
+    if(!description){
+        let description = document.createElement("meta");
+        description.name = "descrtiption";
+        document.head.appendChild(description);
+    }
+    description.content = content;
 }
 export const SWITCH_TAG_STATE = "SWITCH_TAG_STATE";
 export var clickOnTag = function(tagName){
@@ -59,9 +67,9 @@ function shouldFetchNote(state, noteURL) {
     }
     return true;
   }
-export var fetchNoteIfNeeded = function(noteURL){
+export var fetchNoteIfNeeded = function(noteURL,noteLang){
     return (dispatch,getState)=>{
-        if(shouldFetchNote(getState(),noteURL))
+        if(shouldFetchNote(getState(),noteURL,noteLang))
             return dispatch(fetchNote(noteURL));
     }
 }

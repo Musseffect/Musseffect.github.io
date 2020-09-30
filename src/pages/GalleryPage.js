@@ -3,8 +3,9 @@ import { connect } from "react-redux";
 import { withRouter} from 'react-router';
 import {Link} from 'react-router-dom';
 import Tag from "../components/tag.jsx";
-import {setTitle,clickOnTag} from "../actions/actions.js";
+import {setTitle,setDescription,clickOnTag} from "../actions/actions.js";
 import ImageViewer from '../components/imageViewer.jsx';
+import { tr } from '../localization.js';
 
 const mapStateToProps=function(state)
 {
@@ -17,7 +18,6 @@ const mapStateToProps=function(state)
 const mapDispatchToProps=function(dispatch)
 {
   return ({
-    setTitle:function(title){dispatch(setTitle(title));},
     clickOnTag:function(value){dispatch(clickOnTag(value));}
   });
 };
@@ -34,12 +34,14 @@ class GalleryPage extends Component {
   }
   componentDidMount()
   {
-    this.props.setTitle("Musseffect");
+    setTitle("Musseffect");
+    setDescription(tr("main-description",this.props.lang));
   }
   render() {
     const {
       posts,
       tagEntries,
+      lang,
       clickOnTag
     } = this.props;
     let activeTags=[];
@@ -85,7 +87,7 @@ class GalleryPage extends Component {
             if(activeCount==activeTags.length)
               active = true;
             return (<div className={"galleryPost"+(active?" active":"")} key={postIndex}>
-                    <Link key={postIndex +"link"} to={'/posts/'+value.link} className="galleryPostName">{value.name}</Link>
+                    <Link key={postIndex +"link"} to={`/${lang}/posts/${value.link}`} className="galleryPostName">{value.name}</Link>
                     <hr className="galleryLine"/>
                     <div className="postImages">{
                       value.images.map(function(value,index)

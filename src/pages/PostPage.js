@@ -3,19 +3,18 @@ import { connect } from "react-redux";
 import Tag from "../components/tag.jsx";
 import { withRouter,Redirect} from 'react-router';
 import ReactMarkdown from "react-markdown";
-import {setTitle} from "../actions/actions.js";
+import {setDescription, setTitle} from "../actions/actions.js";
 import ImageViewer from '../components/imageViewer.jsx';
 const mapStateToProps=function(state,ownProps)
 {
   const { link } = ownProps.match.params;
   let id = state.posts.dictionary[link];
-  return {post:state.posts.items[id],lang:state.options.language};
+  return {post:state.posts.items[id],lang:ownProps.lang};
 };
 
 const mapDispatchToProps=function(dispatch)
 {
   return ({
-    setTitle:function(title){dispatch(setTitle(title));}
   });
 };
 
@@ -31,7 +30,10 @@ class PostPage extends Component {
   componentDidMount()
   {
     if(this.props.post!==undefined)
-      this.props.setTitle(this.props.post.name);
+    {
+      setTitle(this.props.post.name);
+      setDescription(this.props.post.metaDescription[this.props.lang]);
+    }
   }
   render() {
     const {

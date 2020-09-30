@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
 import { NavLink, Route, Switch } from 'react-router-dom';
-import { withRouter } from 'react-router';
+import { Redirect, withRouter } from 'react-router';
 import MediaQuery from 'react-responsive';
 import AboutPage from '../pages/AboutPage.js';
 import LinksPage from '../pages/LinksPage.js';
@@ -42,19 +42,25 @@ class App extends Component {
     const {
       changeOption,
       theme,
-      lang,
       isFetching,
       hasError
     }=this.props;
 
+    let lang = this.props.match.params.lang;
+    if(!lang){
+      return (<Redirect to="/en/"/>);
+    }
+    if(lang!="en"&&lang!="ru")
+      return (<Redirect to="/en/not-found"/>);
+
     let links=[];
-    links.push(<NavLink key="link_1" exact to='/posts' className="link" activeClassName="active" onClick={this.closeMenu}>{tr("menuProjects", lang)}</NavLink>); 
+    links.push(<NavLink key="link_1" exact to={`/${lang}/posts`} className="link" activeClassName="active">{tr("projects-menu", lang)}</NavLink>); 
     links.push(<hr key="hr1" className="menuSeparator"/>);
-    links.push(<NavLink key="link_2" exact to='/notes' className="link" activeClassName="active" onClick={this.closeMenu}>{tr("menuNotes", lang)}</NavLink>);  
+    links.push(<NavLink key="link_2" exact to={`/${lang}/notes`} className="link" activeClassName="active">{tr("notes-menu", lang)}</NavLink>);  
     links.push(<hr key="hr2" className="menuSeparator"/>);
-    links.push(<NavLink key="link_3" exact to='/links' className="link" activeClassName="active" onClick={this.closeMenu}>{tr("menuLinks",lang)}</NavLink>); 
+    links.push(<NavLink key="link_3" exact to={`/${lang}/links`} className="link" activeClassName="active">{tr("links-menu",lang)}</NavLink>); 
     links.push(<hr key="hr3" className="menuSeparator"/>);
-    links.push(<NavLink key="link_4" exact to='/about' className="link" activeClassName="active" onClick={this.closeMenu}>{tr("menuAbout", lang)}</NavLink>);  
+    links.push(<NavLink key="link_4" exact to={`/${lang}/about`} className="link" activeClassName="active">{tr("about-menu", lang)}</NavLink>);  
 
     return (
     <div className={'containerMain'+(theme=="light"?" theme-light":" theme-dark")}>
@@ -67,7 +73,7 @@ class App extends Component {
           </div>
         </MediaQuery>
         <div className="headerPageTitle">
-          <NavLink  key="link_1" exact to='/' className="headerTitleText" activeClassName="active" onClick={this.closeMenu}>
+          <NavLink  key="link_1" exact to={`/${lang}/`} className="headerTitleText" activeClassName="active" onClick={this.closeMenu}>
           {'MUSSEFFECT'}
           </NavLink>
         </div>
@@ -127,32 +133,32 @@ class App extends Component {
           <Loader isLoading={isFetching}>
             {hasError?
             (<div id="errorMessage" className="pageContainer">
-              <div>{tr("errorFirstPart",lang)}</div>
-              <div>{tr("errorSecondPart",lang)}</div>
+              <div>{tr("error-first-part",lang)}</div>
+              <div>{tr("error-second-part",lang)}</div>
             </div>):(<div id="routeContent">
                 <Switch>
-                  <Route exact path='/' render={(props)=><GalleryPage {...props}/>} />
-                  <Route path='/about' render={(props)=><AboutPage {...props}/>} />
-                  <Route exact path='/posts' render={(props)=><PostsPage {...props}/>} />
-                  <Route exact path='/notes' render={(props)=><NotesPage {...props}/>} />
-                  <Route path='/links' render={(props)=><LinksPage {...props}/>} />
-                  <Route path='/notes/:link' component={NotePage} />
-                  <Route path="/posts/:link" component={PostPage} />
-                  <Route path="*" component={NoMatchPage} />
+                  <Route exact path={`/${lang}/`} render={(props)=><GalleryPage {...props} lang={lang}/>} />
+                  <Route path={`/${lang}/about`} render={(props)=><AboutPage {...props} lang={lang}/>} />
+                  <Route exact path={`/${lang}/posts`} render={(props)=><PostsPage {...props} lang={lang}/>} />
+                  <Route exact path={`/${lang}/notes`} render={(props)=><NotesPage {...props} lang={lang}/>} />
+                  <Route path={`/${lang}/links`} render={(props)=><LinksPage {...props}/>} lang={lang} />
+                  <Route path={`/${lang}/notes/:link`} component={(props)=><NotePage {...props} lang={lang}/>} />
+                  <Route path={`/${lang}/posts/:link`} component={(props)=><PostPage {...props} lang={lang}/>} />
+                  <Route path="*" component={(props)=><NoMatchPage {...props} lang={lang}/>} />
                 </Switch>
               </div>)}
           </Loader>
       </div>
       <footer id='footer'>
         <div className="footerButton" onClick={()=>changeOption("theme",theme=="light"?"dark":"light")}>
-          {theme=="light"?tr("darkThemeButton",lang):tr("lightThemeButton",lang)}
+          {tr(theme=="light"?"dark-theme-button":"light-theme-button",lang)}
         </div>
         <div className="languageSwitchContainer">
           <div className="languageButtonContainer">
-            <div className={"footerButton leftLanguageButton"+(lang=="ru"?" active":"")} onClick={()=>changeOption("language","ru")}>ru</div>
+            <NavLink exact to="/ru" className={"footerButton leftLanguageButton"+(lang=="ru"?" active":"")} activeClassName="active">ru</NavLink>
           </div>
           <div className="languageButtonContainer">
-            <div className={"footerButton"+(lang=="en"?" active":"")} onClick={()=>changeOption("language","en")}>en</div>
+            <NavLink exact to="/en" className={"footerButton"+(lang=="en"?" active":"")} activeClassName="active">en</NavLink>
           </div>
         </div>
       </footer>

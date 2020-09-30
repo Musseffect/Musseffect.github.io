@@ -8,16 +8,16 @@ class PostPreview extends Component {
       super(props);
   }
   render() {
-    let {name,tags,link,thumbnail,active,clickOnTag} = this.props;
+    let {name,tags,lang,link,thumbnail,active,clickOnTag} = this.props;
     return (
       <div className={'postPreviewContainer'+(active?'':' disabled')}>
         <div className='postThumbnail'>
           
-        <Link key="link_1" to={'/posts/'+link} className="postThumbnailLink">
+        <Link key="link_1" to={`/${lang}/posts/${link}`} className="postThumbnailLink">
           <img className='postThumbnailImage' src={thumbnail}/>
         </Link>
         </div>
-        <Link key="link_1" to={'/posts/'+link} className="postHeaderLink">{name}</Link>
+        <Link key="link_1" to={`/${lang}/posts/${link}`} className="postHeaderLink">{name}</Link>
         <div className='postPreviewTags'>
             {
             tags.map(function(value,index)

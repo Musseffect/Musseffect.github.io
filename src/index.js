@@ -1,6 +1,6 @@
 import React from "react";
 import { render } from 'react-dom';
-import {BrowserRouter,HashRouter} from 'react-router-dom';
+import {BrowserRouter, Route} from 'react-router-dom';
 import { Provider } from "react-redux";
 import App from './containers/app.jsx';
 import ScrollToTop from './containers/scrollToTop.jsx';
@@ -10,7 +10,7 @@ import style from "./scss/main.scss";
 render(	  <Provider store={store}>
 				<BrowserRouter basename={process.env.PUBLIC_URL}>
 					<ScrollToTop>
-				      <App/>
+				      <Route path="/:lang?" component={App}/>
 					</ScrollToTop>
 				</BrowserRouter>
 			</Provider>,

@@ -622,7 +622,10 @@ html,body
 	padding:10px;
 	font-size:large;
 	font-weight:bold;
-	color:black;
+	@include themify($themes)
+	{
+		color:themed('textColor')
+	}
 }
 
 #errorMessage
@@ -650,6 +653,7 @@ html,body
 }
 .footerButton
 {
+	display:block;
 	cursor: pointer;
 	user-select:none;
 	padding: 3px 7px;

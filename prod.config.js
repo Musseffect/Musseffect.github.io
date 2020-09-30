@@ -3,8 +3,6 @@ const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const {BundleAnalyzerPlugin} = require('webpack-bundle-analyzer');
 /*https://tproger.ru/translations/webpack-basics/*/
-const MinifyPlugin = require("babel-minify-webpack-plugin");
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
   entry: {app: './src/index.js'},
@@ -15,7 +13,6 @@ module.exports = {
   mode: 'production',
   plugins:
   [
-    //new MinifyPlugin({mangle:true,evaluate:false}, {exclude:'/node_modules/'}),
   new webpack.HotModuleReplacementPlugin(),
   new ExtractTextPlugin('style.css'),
   new webpack.DefinePlugin({

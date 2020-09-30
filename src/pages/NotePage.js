@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from "react-redux";
 import { withRouter,Redirect} from 'react-router';
 import NoteMarkdown from "../components/noteMarkdown.jsx";
-import {setTitle, fetchNoteIfNeeded} from "../actions/actions.js";
+import {setTitle, setDescription, fetchNoteIfNeeded} from "../actions/actions.js";
 import { dateToString } from '../utils.js';
 import {tr} from "../localization.js";
 import ImageViewer from '../components/imageViewer.jsx';
@@ -11,21 +11,21 @@ import Loader from '../containers/loader.jsx';
 const mapStateToProps=function(state,ownProps)
 {
   const {link} = ownProps.match.params;
-  const {index,lang} = state.notesDictionary[link];
+  const {lang} = ownProps;
+  const {index} = state.notesDictionary[lang][link];
   return {
     note:state.notes[lang][index],
     content:state.note.content,
     isFetching:state.note.isFetching,
     err:state.note.err,
-    lang:state.options.language
+    lang:lang
   };
 };
 
 const mapDispatchToProps=function(dispatch)
 {
   return ({
-    fetchNoteIfNeeded:function(file){dispatch(fetchNoteIfNeeded(file));},
-    setTitle:function(title){dispatch(setTitle(title));}
+    fetchNoteIfNeeded:function(file){dispatch(fetchNoteIfNeeded(file));}
   });
 };
 
@@ -42,8 +42,9 @@ class NotePage extends Component {
   {
     if(this.props.note!==undefined)
     {
-      this.props.setTitle(this.props.note.name);
-      this.props.fetchNoteIfNeeded(this.props.note.file);
+      setTitle(this.props.note.name);
+      setDescription(this.props.note.metaDescription);
+      this.props.fetchNoteIfNeeded(window.location.origin+"/content/notes/"+this.props.note.file);
     }
   }
   onImageClick(id){
@@ -63,7 +64,7 @@ class NotePage extends Component {
     } = this.props;
     if(note == undefined)
     {
-      return <Redirect to='/' />
+      return <Redirect to={`/${lang}/not-found`} />
     }
     let {date, name} = note;
     let {showImage, currentImage} = this.state;
@@ -72,7 +73,7 @@ class NotePage extends Component {
     return (
       <div className='noteContainer pageContainer'>
         <Loader isLoading={isFetching}>
-          {err!=null?(<div>{tr("noteLoadingError",lang)})</div>):(<div>
+          {err!=null?(<div>{tr("note-loading-error",lang)})</div>):(<div>
             <div className='noteHeader'>
               <div className="noteDate">
                 {dateToString(date)}

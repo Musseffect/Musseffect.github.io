@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
 import { withRouter,Redirect} from 'react-router';
-import {setTitle} from "../actions/actions.js";
+import {setDescription, setTitle} from "../actions/actions.js";
 import { Link } from 'react-router-dom';
 import { dateToString } from '../utils.js';
 import {tr} from "../localization.js";
@@ -9,15 +9,14 @@ import {tr} from "../localization.js";
 const mapStateToProps=function(state,ownProps)
 {
     return {
-      notes:state.notes[state.options.language],
-      lang:state.options.language
+      notes:state.notes[ownProps.lang],
+      lang:ownProps.lang
     };
 };
 
 const mapDispatchToProps=function(dispatch)
 {
   return ({
-    setTitle:function(title){dispatch(setTitle(title));}
   });
 };
 
@@ -29,11 +28,12 @@ class NotesPage extends Component
     }
     componentDidMount()
     {
-        this.props.setTitle(tr("menuNotes",this.props.lang));
+        setTitle(tr("notes-menu",this.props.lang));
+        setDescription(tr("main-description",this.props.lang));
     }
     render()
     {
-        let {notes} = this.props;
+        let {notes,lang} = this.props;
         return (
             <div className='notesContainer pageContainer'>
             {
@@ -46,7 +46,7 @@ class NotesPage extends Component
                         {dateToString(date)}
                         </div>
                         <div className="notePreviewName">
-                            <Link to={'/notes/'+value.link} className="noteHeaderLink">{value.name}</Link>
+                            <Link to={`/${lang}/notes/${value.link}`} className="noteHeaderLink">{value.name}</Link>
                         </div>
                     </div>);
                 })

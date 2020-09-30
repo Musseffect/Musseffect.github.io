@@ -1,21 +1,27 @@
 
 
 let localization = {
-	//Main conainer
-	switchLang:{ru:"English",en:"Русский"},
-	menuProjects:{ru:"Проекты",en:"Projects"},
-	menuNotes:{ru:"Заметки",en:"Notes"},
-	menuLinks:{ru:"Ссылки",en:"Links"},
-	menuAbout:{ru:"О мне",en:"About"},
-	errorFirstPart:{ru:"Ошибочка вышла",en:"Oh shit i'm sorry"},
-	errorSecondPart:{ru:"Хьюстон, у нас проблема",en:"I'm sorry, you've got an error, man. Deal with it"},
+	["projects-menu"]:{ru:"Проекты",en:"Projects"},
+	["notes-menu"]:{ru:"Заметки",en:"Notes"},
+	["links-menu"]:{ru:"Ссылки",en:"Links"},
+	["about-menu"]:{ru:"Обо мне",en:"About"},
+	["error-first-part"]:{ru:"Ошибочка вышла",en:"Oh shit i'm sorry"},
+	["error-second-part"]:{ru:"Хьюстон, у нас проблема",en:"I'm sorry, you've got an error, man. Deal with it"},
 	//Links
 	filter:{ru:"Фильтр",en:"Filter"},
-	searchPrompt:{ru:"Поиск",en:"Search"},
-	aboutTitle:{ru:"О мне. О чём?",en:"About. About what?"},
-	noteLoadingError:{ru:"Чёртова страница не грузится. Many such cases. Sad!",en:"Couldn't load damn page"},
-	darkThemeButton:{ru:"Включить тёмную тему",en:"Switch to dark theme"},
-	lightThemeButton:{ru:"Включить светлую тему",en:"Switch to light theme"}
+	["search-prompt"]:{ru:"Поиск",en:"Search"},
+	["about-title"]:{ru:"Обо мне. But why?",en:"About. About what?"},
+	["main-description"]:{
+		ru:"Математика, программирования, компьютерная графика & knuckles.",
+		en:"Random stuff for my own amusement. Math, programming, computer graphics."
+	},
+	["links-description"]:{
+		ru:"Huh?",
+		en:"Huh?"
+	},
+	["note-loading-error"]:{ru:"Чёртова страница не грузится. Many such cases. Sad!",en:"Couldn't load damn page"},
+	["dark-theme-button"]:{ru:"Включить тёмную тему",en:"Switch to dark theme"},
+	["light-theme-button"]:{ru:"Включить светлую тему",en:"Switch to light theme"}
 
 };
 export function trs(string,lang)
