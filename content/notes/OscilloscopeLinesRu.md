@@ -140,7 +140,7 @@ float intensityFading(float d,vec2 p,float sigma,float dt,float fadeRate)
 }
 ```
 
-## Обратный квадрат
+## Распределение Коши
 
 Интенсивность точки:
 

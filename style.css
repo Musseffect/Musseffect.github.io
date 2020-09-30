@@ -1363,8 +1363,11 @@ html, body {
 .page404 {
   padding: 10px;
   font-size: large;
-  font-weight: bold;
-  color: black; }
+  font-weight: bold; }
+  .theme-light .page404 {
+    color: #444444; }
+  .theme-dark .page404 {
+    color: #dcdcdc; }
 
 #errorMessage {
   justify-content: center;
@@ -1387,6 +1390,7 @@ html, body {
   margin-top: 6px; }
 
 .footerButton {
+  display: block;
   cursor: pointer;
   user-select: none;
   padding: 3px 7px;

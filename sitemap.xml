@@ -5,95 +5,99 @@
     <lastmod>2020-08-21</lastmod>
   </url>
   <url>
-    <loc>https://musseffect.github.io/?p=/notes</loc>
+    <loc>https://musseffect.github.io/?p=en/notes</loc>
     <lastmod>2020-08-21</lastmod>
   </url>
   <url>
-    <loc>https://musseffect.github.io/?p=/posts/light2d</loc>
+    <loc>https://musseffect.github.io/?p=en/posts</loc>
+    <lastmod>2020-09-30</lastmod>
+  </url>
+  <url>
+    <loc>https://musseffect.github.io/?p=en/about</loc>
+    <lastmod>2020-09-30</lastmod>
+  </url>
+  <url>
+    <loc>https://musseffect.github.io/?p=ru/about</loc>
+    <lastmod>2020-09-30</lastmod>
+  </url>
+  <url>
+    <loc>https://musseffect.github.io/?p=en/posts/light2d</loc>
     <lastmod>2020-08-21</lastmod>
   </url>
   <url>
-    <loc>https://musseffect.github.io/?p=/posts/balls</loc>
+    <loc>https://musseffect.github.io/?p=en/posts/balls</loc>
     <lastmod>2020-08-21</lastmod>
   </url>
   <url>
-    <loc>https://musseffect.github.io/?p=/posts/fractals2d</loc>
+    <loc>https://musseffect.github.io/?p=en/posts/fractals2d</loc>
     <lastmod>2020-08-21</lastmod>
   </url>
   <url>
-    <loc>https://musseffect.github.io/?p=/posts/fractals3d</loc>
+    <loc>https://musseffect.github.io/?p=en/posts/fractals3d</loc>
     <lastmod>2020-08-21</lastmod>
   </url>
   <url>
-    <loc>https://musseffect.github.io/?p=/posts/bokeh</loc>
+    <loc>https://musseffect.github.io/?p=en/posts/bokeh</loc>
     <lastmod>2020-08-21</lastmod>
   </url>
   <url>
-    <loc>https://musseffect.github.io/?p=/posts/lines</loc>
+    <loc>https://musseffect.github.io/?p=en/posts/lines</loc>
+    <lastmod>2020-09-30</lastmod>
+  </url>
+  <url>
+    <loc>https://musseffect.github.io/?p=en/posts/shadertoy-glsl</loc>
+    <lastmod>2020-09-30</lastmod>
+  </url>
+  <url>
+    <loc>https://musseffect.github.io/?p=en/posts/generative</loc>
+    <lastmod>2020-09-30</lastmod>
+  </url>
+  <url>
+    <loc>https://musseffect.github.io/?p=en/posts/planets</loc>
+    <lastmod>2020-09-30</lastmod>
+  </url>
+  <url>
+    <loc>https://musseffect.github.io/?p=en/posts/chaos</loc>
+    <lastmod>2020-09-30</lastmod>
+  </url>
+  <url>
+    <loc>https://musseffect.github.io/?p=en/notes/oscilloscope-lines</loc>
+    <lastmod>2020-09-30</lastmod>
+  </url>
+  <url>
+    <loc>https://musseffect.github.io/?p=en/notes/circuit-modelling</loc>
+    <lastmod>2020-09-30</lastmod>
+  </url>
+  <url>
+    <loc>https://musseffect.github.io/?p=en/notes/fog</loc>
+    <lastmod>2020-09-30</lastmod>
+  </url>
+  <url>
+    <loc>https://musseffect.github.io/?p=ru/notes/oscilloscope-lines</loc>
+    <lastmod>2020-09-30</lastmod>
+  </url>
+  <url>
+    <loc>https://musseffect.github.io/?p=en/notes/general-relativity</loc>
+    <lastmod>2020-09-30</lastmod>
+  </url>
+  <url>
+    <loc>https://musseffect.github.io/?p=en/notes/hybrid-systems</loc>
     <lastmod>2020-08-21</lastmod>
   </url>
   <url>
-    <loc>https://musseffect.github.io/?p=/posts/shadertoy-glsl</loc>
+    <loc>https://musseffect.github.io/?p=en/notes/differential-algebraic-equations</loc>
     <lastmod>2020-08-21</lastmod>
   </url>
   <url>
-    <loc>https://musseffect.github.io/?p=/posts/generative</loc>
+    <loc>https://musseffect.github.io/?p=en/notes/differential-equations</loc>
     <lastmod>2020-08-21</lastmod>
   </url>
   <url>
-    <loc>https://musseffect.github.io/?p=/posts/planets</loc>
+    <loc>https://musseffect.github.io/?p=en/notes/least-squares</loc>
     <lastmod>2020-08-21</lastmod>
   </url>
   <url>
-    <loc>https://musseffect.github.io/?p=/posts</loc>
-    <lastmod>2020-08-21</lastmod>
-  </url>
-  <url>
-    <loc>https://musseffect.github.io/?p=/about</loc>
-    <lastmod>2020-08-21</lastmod>
-  </url>
-  <url>
-    <loc>https://musseffect.github.io/?p=/notes/oscilloscope-lines</loc>
-    <lastmod>2020-08-21</lastmod>
-  </url>
-  <url>
-    <loc>https://musseffect.github.io/?p=/notes/circuit-modelling</loc>
-    <lastmod>2020-08-21</lastmod>
-  </url>
-  <url>
-    <loc>https://musseffect.github.io/?p=/notes/fog</loc>
-    <lastmod>2020-08-21</lastmod>
-  </url>
-  <url>
-    <loc>https://musseffect.github.io/?p=/notes/oscilloscope-lines-ru</loc>
-    <lastmod>2020-08-21</lastmod>
-  </url>
-  <url>
-    <loc>https://musseffect.github.io/?p=/notes/general-relativity</loc>
-    <lastmod>2020-08-21</lastmod>
-  </url>
-  <url>
-    <loc>https://musseffect.github.io/?p=/notes/hybrid-systems</loc>
-    <lastmod>2020-08-21</lastmod>
-  </url>
-  <url>
-    <loc>https://musseffect.github.io/?p=/notes/optimization-methods</loc>
-    <lastmod>2020-08-21</lastmod>
-  </url>
-  <url>
-    <loc>https://musseffect.github.io/?p=/notes/differential-algebraic-equations</loc>
-    <lastmod>2020-08-21</lastmod>
-  </url>
-  <url>
-    <loc>https://musseffect.github.io/?p=/notes/differential-equations</loc>
-    <lastmod>2020-08-21</lastmod>
-  </url>
-  <url>
-    <loc>https://musseffect.github.io/?p=/notes/least-squares</loc>
-    <lastmod>2020-08-21</lastmod>
-  </url>
-  <url>
-    <loc>https://musseffect.github.io/?p=/notes/dof-thin-lens-projections</loc>
+    <loc>https://musseffect.github.io/?p=en/notes/dof-thin-lens-projections</loc>
     <lastmod>2020-08-21</lastmod>
   </url>
 </urlset>

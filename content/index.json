@@ -8,121 +8,148 @@
                 "name":"Note example",
                 "datetime":"1995-12-17T03:24:00",
                 "file":"NoteExample.md",
-                "link":"note-example"
-		      },
+				"link":"note-example",
+				"metaDescription":"Nothing special"
+			  },
+			  {
+				  "name":"Spaceship control system[Planned]",
+				  "datetime":"1917-11-11T05:01:13",
+				  "file":"SpaceShipControls.md",
+				  "link":"spaceship-control-system",
+				  "metaDescription":"Real time simulation of spaceship control system in 2d"
+			  },
 		      {
                 "name":"DOF, thin lens and projections",
                 "datetime":"1996-12-17T03:24:00",
                 "file":"ThinLensProjection.md",
-                "link":"dof-thin-lens-projections"
+                "link":"dof-thin-lens-projections",
+				"metaDescription":"Depth of field and thin lens approximation for rendering"
               },
               {
                 "name":"Root finding[Planned]",
                 "datetime":"1993-10-14T13:12:20",
                 "file":"RootFinding.md",
-                "link":"root-finding"
+                "link":"root-finding",
+				"metaDescription":"Root finding algorithms"
               },
               {
                 "name":"QAEB techinque[Planned]",
                 "datetime":"1915-06-04T03:03:02",
                 "file":"UnderConstruction.md",
-                "link":"quaeb"
+                "link":"qaeb",
+				"metaDescription":"QAEB terrain rending techinque"
               },
 		      {
                 "name":"Symbolic differentiation",
                 "datetime":"1997-12-17T03:24:00",
                 "file":"SymbolicDifferentiation.md",
-                "link":"symbolic-differentiation"
+                "link":"symbolic-differentiation",
+				"metaDescription":"Symbolic differentiation is super easy"
 		      },
 		      {
                 "name":"Least squares",
                 "datetime":"1998-12-17T03:24:00",
                 "file":"LeastSquares.md",
-                "link":"least-squares"
+                "link":"least-squares",
+				"metaDescription":"Least squares algorithms"
 		      },
 		      {
                 "name":"Ordinary differential equations",
                 "datetime":"1999-12-17T03:24:00",
                 "file":"ODE.md",
-                "link":"differential-equations"
+                "link":"differential-equations",
+				"metaDescription":"Ordinary differential equations and numerical methods"
 		      },
 		      {
                 "name":"Differential algebraic equations",
                 "datetime":"2000-12-17T03:24:00",
                 "file":"DAE.md",
-                "link":"differential-algebraic-equations"
+                "link":"differential-algebraic-equations",
+				"metaDescription":"Basic numerical methods for differential algebraic equations with 0 and 1 index"
 		      },
 		      {
                 "name":"Optimization methods[Planned]",
                 "datetime":"1901-12-17T03:24:00",
                 "file":"OptimizationMethods.md",
-                "link":"optimization-methods"
+				"link":"optimization-methods",
+				"metaDescription":"Basic optimization methods for continuous/discrete optimization problems"
 		      },
 		      {
                 "name":"Hybrid systems",
                 "datetime":"2002-09-11T03:24:00",
                 "file":"Hybrid.md",
-                "link":"hybrid-systems"
+                "link":"hybrid-systems",
+				"metaDescription":"Numerical solution of hybrid dynamical systems"
 		      },
 		      {
                 "name":"Geodesics in general relativity and black hole naive rendering",
                 "datetime":"2003-04-02T03:24:00",
                 "file":"GeneralRelativity.md",
-                "link":"general-relativity"
+				"link":"general-relativity",
+				"metaDescription":"Ray tracing in curved space-time with geodesics and general relativity"
 		      },
 		      {
                 "name":"Fractals[Planned]",
                 "datetime":"1904-02-05T03:24:00",
                 "file":"UnderConstruction.md",
-                "link":"fractals"
+                "link":"fractals",
+				"metaDescription":"FRACTALS OH MY GAAHD"
 		      },
 		      {
                 "name":"Circuit modelling",
                 "datetime":"2005-03-17T05:12:00",
                 "file":"CircuitModeling.md",
-                "link":"circuit-modelling"
+                "link":"circuit-modelling",
+				"metaDescription":"Circuit modelling with differential-algebraic equations"
 		      },
 		      {
                 "name":"Fog",
                 "datetime":"2006-11-21T11:04:10",
                 "file":"Fog.md",
-                "link":"fog"
+                "link":"fog",
+				"metaDescription":"Real time analytical fog rendering"
 		      },
 		      {
                 "name":"3D Graphics pt.1: Light and Color[Planned]",
                 "datetime":"1911-11-11T11:11:11",
                 "file":"UnderConstruction.md",
-                "link":"3d-graphics-part-1"
+                "link":"3d-graphics-part-1",
+				"metaDescription":"3D graphics something-something"
 		      },
 		      {
                 "name":"3D Graphics pt.2: Scene[Planned]",
                 "datetime":"1912-12-12T12:12:12",
                 "file":"UnderConstruction.md",
-                "link":"3d-graphics-part-2"
+                "link":"3d-graphics-part-2",
+				"metaDescription":"3D graphics something-something"
 		      },
 		      {
                 "name":"3D Graphics pt.3: Camera and Projection[Planned]",
                 "datetime":"1912-12-12T12:12:13",
                 "file":"UnderConstruction.md",
-                "link":"3d-graphics-part-3"
+                "link":"3d-graphics-part-3",
+				"metaDescription":"3D graphics something-something"
 		      },
 		      {
                 "name":"3D Graphics pt.4: Ray tracing[Planned]",
                 "datetime":"1912-12-12T12:12:14",
                 "file":"UnderConstruction.md",
-                "link":"3d-graphics-part-4"
+                "link":"3d-graphics-part-4",
+				"metaDescription":"3D graphics something-something"
 		      },
 		      {
                 "name":"3D Graphics pt.5: Distance fields[Planned]",
                 "datetime":"1912-12-12T12:12:15",
                 "file":"UnderConstruction.md",
-                "link":"3d-graphics-part-5"
+                "link":"3d-graphics-part-5",
+				"metaDescription":"3D graphics something-something"
 		      },
 		      {
                 "name":"Oscilloscope lines",
                 "datetime":"2025-02-06T20:08:00",
                 "file":"OscilloscopeLines.md",
-                "link":"oscilloscope-lines"
+                "link":"oscilloscope-lines",
+				"metaDescription":"Somewhat realistic simulation of analogue vector graphics with pixel shader"
 		      }
     		],
 		 "ru":[
@@ -130,13 +157,15 @@
                 "name":"Note example",
                 "datetime":"1995-12-17T03:24:00",
                 "file":"NoteExample.md",
-                "link":"note-example"
+                "link":"note-example",
+				"metaDescription":"U shall not pass, okay?"
 		      },
 		      {
                 "name":"Oscilloscope lines",
                 "datetime":"2025-02-06T20:08:00",
                 "file":"OscilloscopeLinesRu.md",
-                "link":"oscilloscope-lines-ru"
+				"link":"oscilloscope-lines",
+				"metaDescription":"Симуляция аналоговой векторной графики"
 		      }
 		 ]
 	},
@@ -147,6 +176,10 @@
 			"description":{
 				"ru":"[Свет в 2D с WEBGL](https://musseffect.github.io/Light-Tracer-2D-WEBGL/)",
 				"en":"[Light in 2D with WEBGL](https://musseffect.github.io/Light-Tracer-2D-WEBGL/)"
+			},
+			"metaDescription":{
+				"ru":"Спектральный рей трейсинг в 2D",
+				"en":"Specral ray tracing in 2D"
 			},
 			"thumbnail":"https://live.staticflickr.com/65535/48852471061_a3930b5f77_m.jpg",
 			"mainImg":"https://live.staticflickr.com/65535/48852471061_a3930b5f77_z.jpg",
@@ -206,6 +239,10 @@
 				"ru":"Рейтресинг с нелинейными проекциями в пиксельном шейдере в [Synthclipse](http://synthclipse.sourceforge.net/index.html) и [Shadertoy](http://shadertoy.com/)",
 				"en":"Ray tracing with nonlinear projections in glsl shaders with [Synthclipse](http://synthclipse.sourceforge.net/index.html) and [Shadertoy](http://shadertoy.com/)"
 			},
+			"metaDescription":{
+				"ru":"Рейтресинг с нелинейными проекциями в glsl",
+				"en":"Ray tracing with nonlinear projections in glsl"
+			},
 			"thumbnail":"https://live.staticflickr.com/65535/48511339892_c39091b57d_o.jpg",
 			"mainImg":"https://live.staticflickr.com/65535/48511339892_c39091b57d_o.jpg",
 			"images":
@@ -245,6 +282,10 @@
 				"ru":"Двухмерные фракталы",
 				"en":"2D distance estimated and escape-time fractals"
 			},
+			"metaDescription":{
+				"ru":"Двухмерные фракталы",
+				"en":"2D distance estimated and escape-time fractals"
+			},
 			"thumbnail":"https://live.staticflickr.com/65535/48511333112_aa0cbecb8a_m.jpg",
 			"mainImg":"https://live.staticflickr.com/65535/48511333112_c4813c0b49_o.png",
 			"images":
@@ -278,6 +319,10 @@
 			"description":{
 				"ru":"Рендеры трёхмерных фракталов в фрагментном шейдере GLSL с использованием техники sphere tracing\n\nСделано в [Synthclipse](http://synthclipse.sourceforge.net/index.html)",
 				"en":"Renders of 3d fractals made in GLSL fragment shader with sphere tracing technique\n\nProduced in [Synthclipse](http://synthclipse.sourceforge.net/index.html)"
+			},
+			"metaDescription":{
+				"ru":"Рендеры трёхмерных фракталов",
+				"en":"Renders of 3d fractals"
 			},
 			"thumbnail":"https://live.staticflickr.com/65535/49715790047_5d01edc106_o.png",
 			"mainImg":"https://live.staticflickr.com/65535/49715790047_5d01edc106_o.png",
@@ -327,6 +372,10 @@
 			"description":{
 				"ru":"Самописный рендеринг боке с использованием модели тонкой линзы для бесконечно тонких точек и линий. Абстрактная геометрия с использованием distance fields и tilt-shift в линейной и нелинейной проекции.",
 				"en":"Self made bokeh renderings with thin lens model and infinitely thin points and lines. Abstract geometry with sphere tracing of distance fields. Depth of field with linear projection, fisheye projection and simulation of tilt-shift photography."
+			},
+			"metaDescription":{
+				"ru":"Симуляция боке",
+				"en":"Bokeh rendering"
 			},
 			"thumbnail":"https://live.staticflickr.com/65535/49564397922_197845d3d5_m.jpg",
 			"mainImg":"https://live.staticflickr.com/65535/49564397922_197845d3d5_b.jpg",
@@ -386,6 +435,10 @@
 				"ru":"Картинки в стиле \"Generative\", произведённые программами, написаными с использованием [Processing](https://processing.org/) and [Openframeworks](https://openframeworks.cc/)",
 				"en":"Generative stuff made with [Processing](https://processing.org/) and [Openframeworks](https://openframeworks.cc/)"
 			},
+			"metaDescription":{
+				"ru":"Generative lines",
+				"en":"Generative lines"
+			},
 			"thumbnail":"https://live.staticflickr.com/65535/49741678678_9597c57a82_m.jpg",
 			"mainImg":"https://live.staticflickr.com/65535/49741678678_9597c57a82_b.jpg",
 			"images":[
@@ -434,6 +487,10 @@
 				"ru":"Рандомные штуки с [Shadertoy](https://www.shadertoy.com/user/DamnBirds)",
 				"en":"Glsl and [Shadertoy](https://www.shadertoy.com/user/DamnBirds) stuff"
 			},
+			"metaDescription":{
+				"ru":"Shadertoy",
+				"en":"Shadertoy stuff"
+			},
 			"thumbnail":"https://live.staticflickr.com/65535/49870420481_90125d7199_m.jpg",
 			"mainImg":"https://live.staticflickr.com/65535/49870420481_90125d7199_b.jpg",
 			"images":[
@@ -470,8 +527,12 @@
 			"name":"Generative",
 			"link":"generative",
 			"description":{
-				"ru":"Картинки в стиле \"Generative\", произведённые программами, написаными с использованием [Processing](https://processing.org/) and [Openframeworks](https://openframeworks.cc/)",
+				"ru":"Картинки в стиле \"Generative\", произведённые программами, написаными с использованием [Processing](https://processing.org/) и [Openframeworks](https://openframeworks.cc/)",
 				"en":"Generative stuff made with [Processing](https://processing.org/) and [Openframeworks](https://openframeworks.cc/)"
+			},
+			"metaDescription":{
+				"ru":"Generative images",
+				"en":"Generative images"
 			},
 			"thumbnail":"https://live.staticflickr.com/65535/49882652073_428f547302_m.jpg",
 			"mainImg":"https://live.staticflickr.com/65535/49882652073_428f547302_b.jpg",
@@ -555,10 +616,14 @@
 		},
 		{
 			"name":"Chaos",
-			"link":"planets",
+			"link":"chaos",
 			"description":{
 				"ru":"Аттракторы в glsl с эмуляцией аналоговой векторной графики",
 				"en":"Chaotic attractors with oscilloscope-like rendering"
+			},
+			"metaDescription":{
+				"ru":"Аттракторы в glsl",
+				"en":"Renderings of chaotic attractors"
 			},
 			"thumbnail":"https://live.staticflickr.com/65535/50326609541_31a894a972_m.jpg",
 			"mainImg":"https://live.staticflickr.com/65535/50326609541_31a894a972_b.jpg",

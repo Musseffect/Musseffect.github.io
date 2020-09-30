@@ -142,7 +142,7 @@ float intensityFading(float d,vec2 p,float sigma,float dt,float fadeRate)
 }
 ```
 
-## Inverse square
+## Cauchy distribution
 
 Point intensity:
 
@@ -155,7 +155,7 @@ Parameter $k$ changes shape of a spot.
 ![inverse square](https://drive.google.com/uc?id=1FLMOEhV3otUAeyYj6FUprhZhD0GzAob_ "inverse square")
 
 [figure]
-**Fig. 5** - Inverse square distribution with different values of parameter
+**Fig. 5** - Cauchy distribution with different values of parameter
 [/figure]
 
 Simplified formula:
@@ -167,7 +167,7 @@ $
 ![chua's circuit](https://drive.google.com/uc?id=1FmPlAdFkaPXtuBebJpo2KykUb1HgQD9k "chua's circuit")
 
 [figure]
-**Fig. 6** - Render of chua's circuit dif. equation with inv. square intensity
+**Fig. 6** - Render of chua's circuit dif. equation with Cauchy distribution intensity
 [/figure]
 
 Code in *glsl*:
