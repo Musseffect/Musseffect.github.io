@@ -1,9 +1,3 @@
-
-
-
-
-
-
 # Control System
 
 Equation of motion of rigid body in 2d for fixed body point in global coordinates $\vec{r_c} = (p_x,p_y)$:
@@ -25,7 +19,7 @@ Reference Input:
 
 Desired position $x_{sp},y_{sp}$.
 
-Desired velocity $$[0,0]$$
+Desired velocity $[0,0]$
 
 Desired angle $\theta_{sp}$
 
@@ -55,7 +49,7 @@ They can be tuned manually or with lqr method.
 
 ## Velocity control
 
-
+$x = []^T$
 
 
 # Thrust control

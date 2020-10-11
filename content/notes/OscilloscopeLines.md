@@ -180,3 +180,95 @@ float intensity(float d,vec2 p,float k)
     return s*(atan(k*p.x*s)-atan(k*(p.x-d)*s))/(PI * d);
 }
 ```
+
+
+# Fading functions
+
+$$
+x_i = f(x_{i-1},\Delta t_i) = f(x_{i-2},\Delta t_i + \Delta t_{i-1}) = f(x_{i-j},\sum_{k=0}{j-1}\Delta t_{i-k})
+$$
+
+$$
+\begin{align}
+&\frac{dx}{dt} = f(x)\\
+&\int{\frac{dx}{f(x)}} = \int{dt}\\
+&F(x) = t + C\\
+&x = F^{-1}(t+C)\\
+&C = F(x_0)\\
+&x = F^{-1}(t + F(x_0))
+\end{align}
+$$
+
+## Exponential
+
+$$
+\begin{align}
+&f(x) = a\cdot x, a<0\\
+&F(x) = \frac{1}{a}\text{ln}(x)\\
+&x = x_0\cdot e^{a\cdot t}
+\end{align}
+$$
+
+## Reciprocal
+
+$$
+\begin{align}
+&f(x) = a\cdot x^2, a<0\\
+&F(x) = -\frac{1}{a\cdot x}\\
+&x = \frac{x_0}{1 - a\cdot t\cdot x_0}
+\end{align}
+$$
+
+## Square root of reciprocal
+
+$$
+\begin{align}
+&f(x) = a\cdot x^3\\
+&F(x) = -\frac{1}{2a\cdot x^2}\\
+&x = \sqrt{\frac{x_0}{1-2a \cdot t\cdot x_0^2}}
+\end{align}
+$$
+
+
+## Square function
+
+$$
+\begin{align}
+&f(x) = a\sqrt(x)\\
+&F(x) = \frac{2}{a}\sqrt(x)\\
+&x = 
+\begin{cases}\frac{(a\cdot t + 2 \sqrt(x_0))^2}{4}, x\le-\frac{2}{a}\sqrt{x_0})\\
+0
+\end{cases}
+\end{align}
+$$
+
+## Exponential squared
+
+$$
+\begin{align}
+&f(x) = a\cdot x \sqrt{-\text{ln}(x)},a<0,x\le1\\
+&F(x) = -\frac{2}{a}\sqrt{-\text{ln}(x)}\\
+&x = e^{-(\frac{a\cdot t}{2} - \sqrt{-\text{ln}(x_0)})^2}
+\end{align}
+$$
+
+## Log-exponential
+
+$$
+\begin{align}
+&f(x) = e^{-a\cdot x} - 1\\
+&F(x) = -\frac{1}{a}\text{ln}(1-e^{a\cdot x})\\
+&x = \frac{1}{a}\text{ln}(1 - e^{-a\cdot t}\cdot(1-e^{a\cdot x_0}))
+\end{align}
+$$
+
+## Linear and square root
+
+$$
+\begin{align}
+&f(x) = a \frac{x^2}{x^2 + 1}\\
+&F(x) = \frac{x^2 - 1}{a\cdot x}\\
+&x = \frac{1}{2}((a\cdot t + \frac{x_0^2 - 1}{x_0}) - \sqrt{(a\cdot t + \frac{x_0^2 - 1}{x_0})^2 + 4})
+\end{align}
+$$
