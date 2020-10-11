@@ -65,6 +65,10 @@
     <lastmod>2020-09-30</lastmod>
   </url>
   <url>
+    <loc>https://musseffect.github.io/?p=en/notes/spaceship-control-system</loc>
+    <lastmod>2020-10-11</lastmod>
+  </url>
+  <url>
     <loc>https://musseffect.github.io/?p=en/notes/circuit-modelling</loc>
     <lastmod>2020-09-30</lastmod>
   </url>
@@ -99,5 +103,13 @@
   <url>
     <loc>https://musseffect.github.io/?p=en/notes/dof-thin-lens-projections</loc>
     <lastmod>2020-09-30</lastmod>
+  </url>
+  <url>
+    <loc>https://musseffect.github.io/nonlinear-least-squares/</loc>
+    <lastmod>2020-10-04</lastmod>
+  </url>
+  <url>
+    <loc>https://musseffect.github.io/hybrid-systems-js/</loc>
+    <lastmod>2020-10-04</lastmod>
   </url>
 </urlset>

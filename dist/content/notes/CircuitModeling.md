@@ -16,15 +16,15 @@ $\omega$ - AC source frequency
 
 For circuit with AC sources of different frequencies full voltages and currents are:
 
-$v(t) = |V_{\omega_1}|(\omega_1 t + arg(V_{\omega_1})) + |V_{\omega_2}|(\omega_2 t + arg(V_{\omega_2})) + \cdots$
+$v(t) = |V_{\omega_1}|e^{\omega_1 t + arg(V_{\omega_1})} + |V_{\omega_2}|e^{\omega_2 t + arg(V_{\omega_2})} + \cdots$
 
-$i(t) = |I_{\omega_1}|(\omega_1 t + arg(I_{\omega_1})) + |I_{\omega_2}|(\omega_2 t + arg(I_{\omega_2})) + \cdots$
+$i(t) = |I_{\omega_1}|e^{\omega_1 t + arg(I_{\omega_1})} + |I_{\omega_2}|e^{\omega_2 t + arg(I_{\omega_2})} + \cdots$
 
 # Elements
 
 ## Resistor
 
-![Resistor](https://drive.google.com/uc?id=1JuVpfd5q7ml4o1wB5cYCFzGkBr4Mucmt "Resistor")
+![Resistor](https://drive.google.com/uc?id=1FliKI1E-oGInJxL_5IWvtafyIldcvzUY "Resistor")
 
 Parameters: $R$ - resistance
 
@@ -76,7 +76,7 @@ $
 
 ## Short circuit
 
-![Short circuit](https://drive.google.com/uc?id=1DFTPoeITyvdNTxGsWsOS-CpFDgVs3DSv "Short circuit")
+![Short circuit](https://drive.google.com/uc?id=1Kw0snBWtzhs-i7rHzLD5l0nkHuxqGBuV "Short circuit")
 
 ### Transient model
 
@@ -132,7 +132,7 @@ $
 
 ## Capacitor
 
-![Capacitor](https://drive.google.com/uc?id=1iQRthDOp9Ff2AZe8H5MGeLy2LSUToaE6 "Capacitor")
+![Capacitor](https://drive.google.com/uc?id=11_iUTLcQRmbDXa4bwsZ1wMAfaQtQ0exc "Capacitor")
 
 Parameters: $C$ - capacitance
 
@@ -161,7 +161,7 @@ $
 
 ## Real transformer with 2 windings
 
-![Real transformer](https://drive.google.com/uc?id=1lewJQpJ-clwzbrmKWJfwAWrvbAP3LfkH "Real transformer")
+![Real transformer](https://drive.google.com/uc?id=1J-prFmJ80cbVJY7r9w0Nt000mMgPIL0g "Real transformer")
 
 Parameters: $R_p$ - primary winding resistance, $L_p$ - primary winding inductance, $R_c$ - core resistance, $L_m$ - magnetizing inductance, $R_s$ - secondary winding resistance, $L_s$ - secondary winding inductance, $K$ - transformation ratio.
 
@@ -205,7 +205,7 @@ $
 
 ## Ideal transformer with 2 windings
 
-![Ideal transformer with 2 windings](https://drive.google.com/uc?id=1loc-i1ET1Y9lERt_6rZm5nnXwXiFZ87g "Ideal transformer with 2 windings")
+![Ideal transformer with 2 windings](https://drive.google.com/uc?id=1Eh2jxFfy1ShOJW5hIBJlC2e97uu3IV4E "Ideal transformer with 2 windings")
 
 Parameters: $K$ - transformation ratio
 
@@ -244,7 +244,7 @@ $
 
 ## Ideal autotransformer
 
-![Ideal autotransformer](https://drive.google.com/uc?id=1WSo3kgBhmPkSR0LOCm-qiejVwfPg2j2E "Ideal autotransformer")
+![Ideal autotransformer](https://drive.google.com/uc?id=1tuMhhZDapS2G1KzaNCgO1GwMG67aFRwb "Ideal autotransformer")
 
 Parameters: $K$ - transformation ratio
 
@@ -279,7 +279,7 @@ $
 
 ## Ideal transformer with 3 windings
 
-![Ideal transformer with 3 windings](https://drive.google.com/uc?id=1m2xD6yl74rRipcHW24tEpOKyV-oIGeeS "Ideal transformer with 3 windings")
+![Ideal transformer with 3 windings](https://drive.google.com/uc?id=1ioG5JiSWuykSUqPZx4z1OMlRIfX8DEMw "Ideal transformer with 3 windings")
 
 Parameters: $K1$, $K2$ - transformation ratios
 
@@ -326,7 +326,7 @@ $
 
 ## Current Source
 
-![Current Source](https://drive.google.com/uc?id=1BI9CrD252yHVu5_CRO9onkywyvhzfxCx "Current Source")
+![Current Source](https://drive.google.com/uc?id=1Z8Rod--1Gdd8HSLyYC8dSzK1FJtwEdSP "Current Source")
 
 Parameters: $j(t)$ - current
 
@@ -354,7 +354,7 @@ $
 
 ## Voltage Source
 
-![Voltage Source](https://drive.google.com/uc?id=1muMe7n9LYBRNSgxyWRHV69EL2P0VTbnK "Voltage Source")
+![Voltage Source](https://drive.google.com/uc?id=1k7Rpn-YP7Fw7-UVI108QOW9_zc5Iwykp "Voltage Source")
 
 Parameters: $e(t)$ - emf
 
@@ -385,7 +385,7 @@ $
 
 ## On-off switch
 
-![On-off switch](https://drive.google.com/uc?id=1_dmfaazkzMnLVFIMgKsVdptCYhweQT5B "On-off switch")
+![On-off switch](https://drive.google.com/uc?id=1DBReRfovVsNdB68zYnOA5RLcEBb5JJKI "On-off switch")
 
 Parameters: $p$ - state, $p \in {0,1}$
 
@@ -414,7 +414,7 @@ $
 
 ## Two way switch
 
-![Two way switch](https://drive.google.com/uc?id=1fVLx7l-OWQKm_4-6K-0BXU-fhSZlZQ5o "Two way switch")
+![Two way switch](https://drive.google.com/uc?id=1ZWyFjEGrxuNdHVMJ-O0b6OVkeTtYaSzT "Two way switch")
 
 Parameters: $p$ - state, $p \in {0,1}$
 
@@ -482,7 +482,7 @@ $
 
 ## Ground
 
-![Ground](https://drive.google.com/uc?id=1hxl8LL9u-pGmBDIcovoDAD4pLyIaNX8N "Ground")
+![Ground](https://drive.google.com/uc?id=1MfBIrO8WQvSRwlPqOuYDj1pF-8x6qYG6 "Ground")
 
 ### Transient model
 

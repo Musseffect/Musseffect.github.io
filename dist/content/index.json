@@ -12,8 +12,8 @@
 				"metaDescription":"Nothing special"
 			  },
 			  {
-				  "name":"Spaceship control system[Planned]",
-				  "datetime":"1917-11-11T05:01:13",
+				  "name":"Spaceship control system",
+				  "datetime":"2008-11-11T05:01:13",
 				  "file":"SpaceShipControls.md",
 				  "link":"spaceship-control-system",
 				  "metaDescription":"Real time simulation of spaceship control system in 2d"
@@ -48,7 +48,7 @@
 		      },
 		      {
                 "name":"Least squares",
-                "datetime":"1998-12-17T03:24:00",
+                "datetime":"2007-12-17T03:24:00",
                 "file":"LeastSquares.md",
                 "link":"least-squares",
 				"metaDescription":"Least squares algorithms"
