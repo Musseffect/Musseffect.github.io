@@ -585,8 +585,12 @@
 			"name":"Planets",
 			"link":"planets",
 			"description":{
-				"ru":"Процедурные планеты",
-				"en":"Procedural planets"
+				"ru":"Процедурная генерация планет",
+				"en":"Procedural generation of planet textures"
+			},
+			"metaDescription":{
+				"ru":"Процедурная генерация планет",
+				"en":"Procedural generation of planet textures"
 			},
 			"thumbnail":"https://live.staticflickr.com/65535/49929143166_47943bc612_m.jpg",
 			"mainImg":"https://live.staticflickr.com/65535/49929143166_47943bc612_b.jpg",

@@ -1,7 +1,6 @@
 .tagCircle
 {
 	align-self: center;
-    /*margin-right:5px;*/
 	border-radius:5px;
 	flex-shrink:0;
 }
@@ -65,7 +64,6 @@
 	word-break:break-word;
 	text-align:center;
 	font-family:Arial, Helvetica, sans-serif;
-	/*margin-bottom:0.5rem;*/
 	@include themify($themes)
 	{
 		color:themed('postNameColor')
@@ -125,7 +123,6 @@
 	opacity:1.0;
 	flex-grow:0;
 	flex-shrink:0;
-	/*height:100%;*/
 	position:relative;
 	overflow:hidden;
 }
@@ -135,13 +132,12 @@
 }
 .postThumbnail
 {
-	//max-width:400px;
 	width:100%;
 	height:0;
 	padding-bottom:100%;
 	position:relative;
 	@include respond-to(handhelds) {
-		height:100%;
+		height:auto;
 		padding-bottom:0;
 		max-width:300px;
 	}
@@ -149,6 +145,7 @@
 }
 .postThumbnailLink
 {
+	display:block;
 	position:absolute;
 	left:0;
 	top:0;
@@ -157,21 +154,16 @@
 	@include respond-to(handhelds) {
 		position:relative;
 		width:100%;
-		height:100%;
+		height:auto;
 	}
 }
 .postThumbnailImage
 {
-	/*height:200px;
-	width:200px;
-	margin:10px;*/
 	position:absolute;
 	left:0;
 	top:0;
 	width:100%;
 	height:100%;
-	//padding:10px;
-	//border:1px solid black;
 	object-fit:contain;
 	object-position:center;
 	@include respond-to(handhelds) {
