@@ -177,7 +177,7 @@ Error:
 
 $$
 \begin{align}
-f(x,a,b) &= a0 + \sum_{k=1}^{M} a_j cos(\frac{2 \pi k  x_i}{T}) + b_j sin(\frac{2 \pi k  x_i}{T})\\
+f(x,a,b) &= a_0 + \sum_{k=1}^{M} a_j cos(\frac{2 \pi k  x}{T}) + b_j sin(\frac{2 \pi k  x}{T})\\
 E(a,b) &= \frac{1}{2} \sum_{i=0}^{N} (f(x_i,a,b) - y_i)^2
 \end{align}
 $$

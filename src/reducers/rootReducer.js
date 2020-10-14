@@ -27,24 +27,16 @@ var rootReducer=function(state, action)
 			if(state.posts.tags[action.tag]!==undefined)
 			{
 				let index = state.posts.tags[action.tag];
-				let tagValue = state.posts.tagEntries[index][1]=(!state.posts.tagEntries[index][1]);
-				if (localStorage) {
-					localStorage.setItem("tags", JSON.stringify(state.posts.tagEntries));
-				}
+				state.posts.tagEntries[index][1] = (!state.posts.tagEntries[index][1]);
 				state.posts.tagEntries = state.posts.tagEntries.slice();
-				//state.posts.tagEntries = Object.assign({},state.posts.tagEntries);
 			}
 			return Object.assign({},state);
 		case SWITCH_LINKTAG_STATE:
 			if(state.links.tags[action.tag]!==undefined)
 			{
 				let index = state.links.tags[action.tag];
-				let tagValue = state.links.tagEntries[index][1]=(!state.links.tagEntries[index][1]);
-				if (localStorage) {
-					localStorage.setItem("linktags", JSON.stringify(state.links.tagEntries));
-				}
+				state.links.tagEntries[index][1] = (!state.links.tagEntries[index][1]);
 				state.links.tagEntries = state.links.tagEntries.slice();
-				//state.links.tagEntries = Object.assign({},state.links.tagEntries);
 			}
 			return Object.assign({},state);
 		case REQUEST_CONTENT:
@@ -84,48 +76,8 @@ var rootReducer=function(state, action)
 						value.name = value.href;
 				});	
 			});
-			/*links.groups.forEach(function(value)
-			{
-				value.items.sort((a,b)=>a.name.localeCompare(b.name));
-			});*/
-			if(localStorage)
-			{
-				if (localStorage.getItem("tags") !== null) {
-					let storageTags = JSON.parse(localStorage.getItem("tags"));
-					if(Array.isArray(storageTags)){
-						storageTags.forEach(function([key,value])
-						{
-							if(posts.tags[key]!==undefined)
-							{
-								posts.tags[key] = value;
-							}
-						})
-					}
-					posts.tagEntries = Object.entries(posts.tags).sort((a,b)=>a[0].localeCompare(b[0]));
-				}else
-				{
-					posts.tagEntries = Object.entries(posts.tags).sort((a,b)=>a[0].localeCompare(b[0]));
-					localStorage.setItem("tags", JSON.stringify(posts.tagEntries));
-				}
-
-				if (localStorage.getItem("linktags") !== null) {
-					let storageTags = JSON.parse(localStorage.getItem("linktags"));
-					if(Array.isArray(storageTags)){
-					storageTags.forEach(function([key,value])
-					{
-						if(links.tags[key]!==undefined)
-						{
-							links.tags[key] = value;
-						}
-					})
-					links.tagEntries = Object.entries(links.tags).sort((a,b)=>a[0].localeCompare(b[0]));
-					}
-				}else
-				{
-					links.tagEntries = Object.entries(links.tags).sort((a,b)=>a[0].localeCompare(b[0]));
-					localStorage.setItem("linktags", JSON.stringify(links.tagEntries));
-				}
-			}
+			posts.tagEntries = Object.entries(posts.tags).sort((a,b)=>a[0].localeCompare(b[0]));
+			links.tagEntries = Object.entries(links.tags).sort((a,b)=>a[0].localeCompare(b[0]));
 			posts.tagEntries.forEach(([key,value],index)=>
 			{
 				posts.tags[key] = index;

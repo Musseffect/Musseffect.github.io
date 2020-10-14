@@ -185,7 +185,7 @@ float intensity(float d,vec2 p,float k)
 # Fading functions
 
 $$
-x_i = f(x_{i-1},\Delta t_i) = f(x_{i-2},\Delta t_i + \Delta t_{i-1}) = f(x_{i-j},\sum_{k=0}{j-1}\Delta t_{i-k})
+x_i = f(x_{i-1},\Delta t_i) = f(x_{i-2},\Delta t_i + \Delta t_{i-1}) = f(x_{i-j},\sum_{k=0}^{j-1}\Delta t_{i-k})
 $$
 
 $$
@@ -195,7 +195,8 @@ $$
 &F(x) = t + C\\
 &x = F^{-1}(t+C)\\
 &C = F(x_0)\\
-&x = F^{-1}(t + F(x_0))
+&x = F^{-1}(t + F(x_0))\\
+&x_i = F^{-1}(\Delta t_i + F(x_{i-1}))
 \end{align}
 $$
 
@@ -205,7 +206,8 @@ $$
 \begin{align}
 &f(x) = a\cdot x, a<0\\
 &F(x) = \frac{1}{a}\text{ln}(x)\\
-&x = x_0\cdot e^{a\cdot t}
+&x = x_0\cdot e^{a\cdot t}\\
+&x_i = x_{i-1}\cdot e^{a\cdot \Delta t_i}
 \end{align}
 $$
 
@@ -215,7 +217,8 @@ $$
 \begin{align}
 &f(x) = a\cdot x^2, a<0\\
 &F(x) = -\frac{1}{a\cdot x}\\
-&x = \frac{x_0}{1 - a\cdot t\cdot x_0}
+&x = \frac{x_0}{1 - a\cdot t\cdot x_0}\\
+&x_i = \frac{x_{i-1}}{1 - a\cdot \Delta t_i\cdot x_{i-1}}\\
 \end{align}
 $$
 
@@ -225,7 +228,8 @@ $$
 \begin{align}
 &f(x) = a\cdot x^3\\
 &F(x) = -\frac{1}{2a\cdot x^2}\\
-&x = \sqrt{\frac{x_0}{1-2a \cdot t\cdot x_0^2}}
+&x = \sqrt{\frac{x_0}{1-2a \cdot t\cdot x_0^2}}\\
+&x_i = \sqrt{\frac{x_{i-1}}{1-2a \cdot \Delta t_i\cdot x_{i-1}^2}}
 \end{align}
 $$
 
@@ -234,10 +238,14 @@ $$
 
 $$
 \begin{align}
-&f(x) = a\sqrt(x)\\
-&F(x) = \frac{2}{a}\sqrt(x)\\
+&f(x) = a\sqrt{x}, a<0\\
+&F(x) = \frac{2}{a}\sqrt{x}\\
 &x = 
-\begin{cases}\frac{(a\cdot t + 2 \sqrt(x_0))^2}{4}, x\le-\frac{2}{a}\sqrt{x_0})\\
+\begin{cases}\frac{(a\cdot t + 2 \sqrt{x_0})^2}{4}, t\le-\frac{2}{a}\sqrt{x_0})\\
+0
+\end{cases}\\
+&x_i = 
+\begin{cases}\frac{(a\cdot \Delta t_i + 2 \sqrt{x_{i-1}})^2}{4}, \Delta t_i\le-\frac{2}{a}\sqrt{x_{i-1}})\\
 0
 \end{cases}
 \end{align}
@@ -249,7 +257,8 @@ $$
 \begin{align}
 &f(x) = a\cdot x \sqrt{-\text{ln}(x)},a<0,x\le1\\
 &F(x) = -\frac{2}{a}\sqrt{-\text{ln}(x)}\\
-&x = e^{-(\frac{a\cdot t}{2} - \sqrt{-\text{ln}(x_0)})^2}
+&x = e^{-(\frac{a\cdot t}{2} - \sqrt{-\text{ln}(x_0)})^2}\\
+&x_i = e^{-(\frac{a\cdot \Delta t_i}{2} - \sqrt{-\text{ln}(x_{i-1})})^2}
 \end{align}
 $$
 
@@ -259,7 +268,8 @@ $$
 \begin{align}
 &f(x) = e^{-a\cdot x} - 1\\
 &F(x) = -\frac{1}{a}\text{ln}(1-e^{a\cdot x})\\
-&x = \frac{1}{a}\text{ln}(1 - e^{-a\cdot t}\cdot(1-e^{a\cdot x_0}))
+&x = \frac{1}{a}\text{ln}(1 - e^{-a\cdot t}\cdot(1-e^{a\cdot x_0}))\\
+&x_i = \frac{1}{a}\text{ln}(1 - e^{-a\cdot \Delta t_i}\cdot(1-e^{a\cdot x_{i-1}}))
 \end{align}
 $$
 
@@ -269,6 +279,7 @@ $$
 \begin{align}
 &f(x) = a \frac{x^2}{x^2 + 1}\\
 &F(x) = \frac{x^2 - 1}{a\cdot x}\\
-&x = \frac{1}{2}((a\cdot t + \frac{x_0^2 - 1}{x_0}) - \sqrt{(a\cdot t + \frac{x_0^2 - 1}{x_0})^2 + 4})
+&x = \frac{1}{2}((a\cdot t + \frac{x_0^2 - 1}{x_0}) - \sqrt{(a\cdot t + \frac{x_0^2 - 1}{x_0})^2 + 4})\\
+&x_i = \frac{1}{2}((a\cdot \Delta t_i + \frac{x_{i-1}^2 - 1}{x_{i-1}}) - \sqrt{(a\cdot t_i + \frac{x_{i-1}^2 - 1}{x_{i-1}})^2 + 4})
 \end{align}
 $$
