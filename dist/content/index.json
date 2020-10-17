@@ -669,6 +669,42 @@
 				}
 			],
 			"tags":["2d","graphics","glsl"]
+		},{
+			"name":"Osci",
+			"link":"osci",
+			"description":{
+				"ru":"Имитация фотографии осциллографа с длинной выдержкой. [Попробовать](https://musseffect.github.io/oscilloscope-js/).",
+				"en":"Imitation of long exposure photo of oscilloscope. [Try it](https://musseffect.github.io/oscilloscope-js/)."
+			},
+			"metaDescription":{
+				"ru":"Имитация фотографии осциллографа с длинной выдержкой.",
+				"en":"Imitation of long exposure photo of oscilloscope."
+			},
+			"thumbnail":"https://live.staticflickr.com/65535/50496933706_6b4704cf6a_m.jpg",
+			"mainImg":"https://live.staticflickr.com/65535/50496933706_6b4704cf6a_b.jpg",
+			"images":[
+				{
+					"thumbnail":"https://live.staticflickr.com/65535/50496933706_6b4704cf6a_n.jpg",
+					"full":"https://live.staticflickr.com/65535/50496933706_6b4704cf6a_b.jpg",
+					"original":"https://live.staticflickr.com/65535/50496933706_3dbbf4d400_o.png"
+				},
+				{
+					"thumbnail":"https://live.staticflickr.com/65535/50496225323_1319b73b67_n.jpg",
+					"full":"https://live.staticflickr.com/65535/50496225323_1319b73b67_b.jpg",
+					"original":"https://live.staticflickr.com/65535/50496225323_049c49efee_o.png"
+				},
+				{
+					"thumbnail":"https://live.staticflickr.com/65535/50496225253_c5f3c1c67a_n.jpg",
+					"full":"https://live.staticflickr.com/65535/50496225253_c5f3c1c67a_b.jpg",
+					"original":"https://live.staticflickr.com/65535/50496225253_64f8880990_o.png"
+				},
+				{
+					"thumbnail":"https://live.staticflickr.com/65535/50497089122_132f33b03f_n.jpg",
+					"full":"https://live.staticflickr.com/65535/50497089122_132f33b03f_b.jpg",
+					"original":"https://live.staticflickr.com/65535/50497089122_cdcfd2a659_o.png"
+				}
+			],
+			"tags":["2d","graphics","glsl"]
 		}
 	]
 }
