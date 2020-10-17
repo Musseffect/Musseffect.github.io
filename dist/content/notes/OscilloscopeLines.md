@@ -33,27 +33,27 @@ $$
 
 Image should gradually fade with time.
 
-The simplest way to model it - exponential fading.
+The simplest way to model it - exponential fade.
 
-Intensity of image $S$ at time $T + \Delta T$ with fading:
+Intensity of image $S$ at time $T + \Delta T$ with fade:
 
 $$
 S(T+\Delta T) = S(T)e^{-f\Delta T},
 $$
 
-  where $f$ - fading coefficient. Big value of $f$ makes image fade faster.
+  where $f$ - fade coefficient. Big value of $f$ makes image fade faster.
 
-This model of fading is very good and it can be used easily for values of $S$ available only at descrete moments of time.
+This model of fade is very good and it can be used easily for values of $S$ available only at descrete moments of time.
 
 Let say that we have image $S_j(\vec{p}_{scr})$ and we want to compute image $S_{j+1}(\vec{p}_{scr})$. We work with raster image, so we only will calculate values for descrete point in 2d space of the screen.
-Formula for image at next frame $j+1$ that also considers fading:
+Formula for image at next frame $j+1$ that also considers fade:
 
 $$
 I(\vec{p}_{scr}) = \int_{T}^{T+\Delta T} i(t) e^{-f (T + \Delta T - t)} dt\\
 S_{j+1}(\vec{p}_{scr})=S_{j}(\vec{p}_{scr})e^{-f \Delta T}+I(\vec{p}_{scr})
 $$
 
-We could also use simplified formula that doesn't consider fading of lines produced during last frame:
+We could also use simplified formula that doesn't consider fade of lines produced during last frame:
 
 $$
 I(\vec{p}_{scr}) = \int_{T}^{T+\Delta T} i(t) dt\\
@@ -87,7 +87,7 @@ Parameter $\sigma$ (dispersion) changes size of a spot.
 **Fig. 2** - Gaussian distribution with different values of parameter
 [/figure]
 
-Formula with fading:
+Formula with fade:
 
 $
 I(\vec{p}_{scr}) = \frac{1}{2d} e^{\frac{(f \Delta t \sigma)^2}{2d^2}} e^{\frac{f \Delta t (x_{loc}-d)}{d}} e^{-\frac{y_{loc}^2}{2 \sigma^2}} (\text{erf}(\frac{d x_{loc}+ f \Delta t \sigma^2}{\sqrt{2} d \sigma})-\text{erf}(\frac{f \Delta t \sigma^2+d (x_{loc}-d)}{\sqrt{2} d \sigma}))
@@ -131,8 +131,8 @@ float intensity(float d,vec2 p,float sigma)
     return (erf(p.x*f)-erf((p.x-d)*f))
     *exp(-p.y*p.y/(2.*sigma*sigma))/(2.*d);
 }
-//Full formula with fading
-float intensityFading(float d,vec2 p,float sigma,float dt,float fadeRate)
+//Full formula with fade
+float intensityFade(float d,vec2 p,float sigma,float dt,float fadeRate)
 {
     float f = 1.0/(sqrt(2.)*d*sigma);
     float fd = fadeRate*dt;
@@ -182,7 +182,7 @@ float intensity(float d,vec2 p,float k)
 ```
 
 
-# Fading functions
+# Fade functions
 
 $$
 x_i = f(x_{i-1},\Delta t_i) = f(x_{i-2},\Delta t_i + \Delta t_{i-1}) = f(x_{i-j},\sum_{k=0}^{j-1}\Delta t_{i-k})
