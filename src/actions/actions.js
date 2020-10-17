@@ -73,25 +73,6 @@ export var fetchNoteIfNeeded = function(noteURL,noteLang){
             return dispatch(fetchNote(noteURL));
     }
 }
-export var fetchContentGist = function(contentGistLink){
-    return function(dispatch){
-        dispatch(requestContent());
-        return fetch(contentGistLink).then(value=>value.json())
-            .then((gist) =>{
-                try{
-                    dispatch(receiveContent(
-                        JSON.parse(gist.files["content.json"].content),
-                        JSON.parse(gist.files["links.json"].content)));
-                }catch(error)
-                {
-                    dispatch(handleError(error));
-                }
-            }
-        ).catch((error)=>{
-            dispatch(handleError(error));
-        })
-    };
-}
 export var fetchContent = function(contentLink,linksLink){
     return function(dispatch){
         dispatch(requestContent());
@@ -122,15 +103,8 @@ export var receiveNote = function(content,noteURL){
 }
 export const RECEIVE_CONTENT = "RECEIVE_CONTENT";
 export var receiveContent = function(content,links){
-    /*const posts = JSON.parse(files["posts.json"].content).posts;//TODO remove .posts
-    const notesDescription = JSON.parse(files["notes.json"].content);*/
     const posts = content.posts;
     const notes = content.notes;
-    /*const notes = notesDescription.notes.map((value)=>{return {
-        content:files[value.file].content,
-        name:value.name,
-        datetime:value.datetime
-    }});*/
     return {
         type:RECEIVE_CONTENT,
         posts:posts,

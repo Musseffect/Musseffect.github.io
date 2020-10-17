@@ -1,7 +1,7 @@
 import { createStore, applyMiddleware } from "redux"; 
 import rootReducer from "../reducers/rootReducer.js";
 import thunkMiddleware from 'redux-thunk';
-import {fetchContent, fetchContentGist} from '../actions/actions.js';
+import {fetchContent} from '../actions/actions.js';
 
 const initialState=(function(){
 		let state={};
@@ -45,11 +45,10 @@ const initialState=(function(){
 
 const contentBaseLink = window.location.origin+"/content/index.json";//"https://gist.githubusercontent.com/Musseffect/546725186d756cd780efe1455e60eead/raw/content.json";
 const linksBaseLink = window.location.origin+"/content/links.json";//"https://gist.githubusercontent.com/Musseffect/546725186d756cd780efe1455e60eead/raw/links.json";
-const contentGist = `https://api.github.com/gists/546725186d756cd780efe1455e60eead`;
+
 
 const store = createStore(rootReducer,initialState,applyMiddleware(thunkMiddleware)
 	/*,window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()*/);  
 
 store.dispatch(fetchContent(contentBaseLink,linksBaseLink));
-//store.dispatch(fetchContentGist(contentGist));
 export default store;
