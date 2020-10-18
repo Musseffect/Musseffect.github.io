@@ -75,7 +75,7 @@
     text-decoration: none;
 	@include themify($themes)
 	{
-		color:themed('noteTitleColor')
+		color:themed('noteTitleColor');
 	}
     font-size:1.4rem;
     font-weight:400;
@@ -95,7 +95,7 @@
     text-decoration:none;
 	@include themify($themes)
 	{
-		color:themed('noteTitleHoverColor')
+		color:themed('noteTitleHoverColor');
 	}
     width:100%;
 }
@@ -108,7 +108,7 @@
 {
 	@include themify($themes)
 	{
-		color:themed('noteDateColor')
+		color:themed('noteDateColor');
 	}
 }
 .caption {
@@ -125,7 +125,7 @@
     border-bottom:2px solid;
 	@include themify($themes)
 	{
-		border-color:themed('noteDateColor')
+		border-color:themed('noteDateColor');
     }
 }
 .noteName
@@ -135,19 +135,26 @@
 	font-family:Arial, Helvetica, sans-serif;
 	@include themify($themes)
 	{
-		color:themed('noteTitleColor')
+		color:themed('noteTitleColor');
 	}
 }
 .noteTable thead{
 	@include themify($themes)
 	{
-		background-color:themed('noteTableHeadColor')
+		background-color:themed('noteTableHeadColor');
 	}
 }
 .noteTable th,.noteTable td
 {
     padding:5px 10px;
     border:1px solid gray;
+}
+.noteTable table
+{
+	@include themify($themes)
+	{
+        color:textColor;
+    }
 }
 .noteTable
 {
