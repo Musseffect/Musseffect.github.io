@@ -51,7 +51,7 @@ $$
 
 # Linear piecewise 1D
 
-Lets consider a bunch of values in interval $[x_min,x_max]$. We want to create a grid that will optimally represent those values with smallest possible error. For $x$ values between grid cells we will use linear interpolation. Illustration of such representation:
+Lets consider an array of values in an interval $[x_{min},x_{max}]$. We want to create a one dimensional grid that will optimally represent those values with smallest possible error. For $x$ values between grid cells we will use linear interpolation. Illustration:
 
 ![piecewise1D](https://drive.google.com/uc?id=1ZCXS04bCe6oZLdOTILOg6yUFZhZ5CObN "piecewise 1D")
 
@@ -59,7 +59,7 @@ Lets consider a bunch of values in interval $[x_min,x_max]$. We want to create a
 **Fig. 1** Illustration of idea
 [/figure]
 
-Linear interpolation for point inside of i-th interval:
+Linear interpolation for point in i-th grid cell:
 
 $$
 f_i(x) = b_i \frac{a_{i+1}-x}{a_{i+1}-a_i} + b_{i+1} \frac{x - a_i}{a_{i+1} - a_i} 
@@ -114,7 +114,7 @@ $$
 [figure]
 **Fig. 2** Illustration of idea
 [/figure]
-Same idea, but for 3 dimensional function. For example, RGB look up table can be written like:
+Same idea, but for 3 dimensional function. For example, RGB look up table can be written like three functions:
 
 $$
 \begin{align}
@@ -170,8 +170,12 @@ w_{l} \frac{\partial f_{prs}}{\partial d_{ijk}}(x_{l},y_{l},z_{l}))
 \end{align}
 $$
 
+It should result in a linear system and i'm too lazy to write it down. Just solve it.
+
 
 # Fourier series
+
+Approximate series of points with sum of cosines with unknown phases and amplitudes.
 
 Error:
 
@@ -198,7 +202,7 @@ Matrix form:
 
 $$
 \begin{align}
-&M \begin{bmatrix}a \\b \end{bmatrix} = f \\
+&\text{solve }M \begin{bmatrix}a \\b \end{bmatrix} = f\\
 &M = A^T A\\
 &f = A^T y\\
 &A = \begin{bmatrix} 1 & cos(\omega_1 x_1) & \dots & cos(\omega_M x_1) & sin(\omega_1 x_1) & \dots & sin(\omega_M x_1)\\
