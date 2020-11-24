@@ -7,7 +7,7 @@ export class Modal extends Component {
       super(props);
   }
   render() {
-    let {show,windowStyle,containerStyle,backgroundStyle} = this.props;
+    const {show, windowStyle, containerStyle, backgroundStyle} = this.props;
     let children = this.props.children;
     /*let children = this.props.children.map(function(child)
     {

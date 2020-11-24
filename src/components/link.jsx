@@ -8,7 +8,7 @@ class Link extends Component {
       super(props);
   }
   render() {
-    let {active,name,href,tags,clickOnTag} = this.props;
+    const {active, name, href, tags, clickOnTag} = this.props;
 
     return (<div className={'linkItem'+(active?'':' disabled')}>
           <a target="_blank" className="linkName" href={href}>{name}</a>

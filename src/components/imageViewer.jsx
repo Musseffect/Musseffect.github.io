@@ -8,7 +8,7 @@ class ImageViewer extends Component {
     }
     render()
     {
-        let {show,imageSrc,originalHref,onLeft,onRight,onClose} = this.props;
+      const {show, imageSrc, originalHref, onLeft, onRight, onClose} = this.props;
         return <Modal show={show} containerStyle="modalImageViewerContainer" windowStyle="modalImageViewerWindow" backgroundStyle="modalImageViewerBackground">
           <ModalHeader headerStyle="modalImageViewerHeader">
               <div className="modalImageViewerCloseButton" style={{justifySelf:"flex-end"}}
