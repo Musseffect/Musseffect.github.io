@@ -54,13 +54,13 @@ class App extends Component {
       return (<Redirect to="/en/not-found"/>);
 
     let links=[];
-    links.push(<NavLink key="link_1" exact to={`/${lang}/posts`} className="link" activeClassName="active">{tr("projects-menu", lang)}</NavLink>); 
-    links.push(<hr key="hr1" className="menuSeparator"/>);
-    links.push(<NavLink key="link_2" exact to={`/${lang}/notes`} className="link" activeClassName="active">{tr("notes-menu", lang)}</NavLink>);  
+    links.push(<NavLink key="link_2" exact to={`/${lang}/posts`} className="link" activeClassName="active">{tr("images-menu", lang)}</NavLink>); 
     links.push(<hr key="hr2" className="menuSeparator"/>);
-    links.push(<NavLink key="link_3" exact to={`/${lang}/links`} className="link" activeClassName="active">{tr("links-menu",lang)}</NavLink>); 
+    links.push(<NavLink key="link_3" exact to={`/${lang}/notes`} className="link" activeClassName="active">{tr("notes-menu", lang)}</NavLink>);  
     links.push(<hr key="hr3" className="menuSeparator"/>);
-    links.push(<NavLink key="link_4" exact to={`/${lang}/about`} className="link" activeClassName="active">{tr("about-menu", lang)}</NavLink>);  
+    links.push(<NavLink key="link_4" exact to={`/${lang}/links`} className="link" activeClassName="active">{tr("links-menu",lang)}</NavLink>); 
+    links.push(<hr key="hr4" className="menuSeparator"/>);
+    links.push(<NavLink key="link_5" exact to={`/${lang}/about`} className="link" activeClassName="active">{tr("about-menu", lang)}</NavLink>);  
 
     return (
     <div className={'containerMain'+(theme=="light"?" theme-light":" theme-dark")}>

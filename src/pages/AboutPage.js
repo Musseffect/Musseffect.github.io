@@ -114,7 +114,7 @@ class AboutPage extends Component {
             <a target="_blank" className="aboutLink" href="https://github.com/Musseffect/3D-container-packing">Упаковка контейнеров в 3D</a> с использованием жадных эвристик и генетического алгоритма - C++/QT
           </p>
           <p className="aboutParagraph">
-            <a target="_blank" className="aboutLink" href="https://github.com/Musseffect/SolversHost">SolversHost</a> - проект для бакалавриата, <a className="aboutLink" target="_blank" href="https://musseffect.github.io/SolversHost/">GitHub Pages</a> - React/JS
+            <a target="_blank" className="aboutLink" href="https://github.com/Musseffect/solvers">SolversHost</a> - проект для бакалавриата, <a className="aboutLink" target="_blank" href="https://musseffect.github.io/solvers/">GitHub Pages</a> - React/JS
           </p>
 
           <div className="aboutSection">Дополнительные интересы</div>
@@ -226,7 +226,7 @@ class AboutPage extends Component {
               <a target="_blank" className="aboutLink" href="https://github.com/Musseffect/3D-container-packing">Container packing in 3D</a> with genetic algorithm - C++/QT
             </p>
             <p className="aboutParagraph">
-              <a target="_blank" className="aboutLink" href="https://github.com/Musseffect/SolversHost">SolversHost</a> - bachelor's degree project, <a target="_blank" className="aboutLink" href="https://musseffect.github.io/SolversHost/">hosted on GitHub Pages</a> - React/JS
+              <a target="_blank" className="aboutLink" href="https://github.com/Musseffect/solvers">SolversHost</a> - bachelor's degree project, <a target="_blank" className="aboutLink" href="https://musseffect.github.io/solvers/">hosted on GitHub Pages</a> - React/JS
             </p>
 
             <div className="aboutSection">Hobbies</div>
