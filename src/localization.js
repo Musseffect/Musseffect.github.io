@@ -2,6 +2,7 @@
 
 let localization = {
 	["projects-menu"]:{ru:"Проекты",en:"Projects"},
+	["images-menu"]:{ru:"Картинки",en:"Images"},
 	["notes-menu"]:{ru:"Заметки",en:"Notes"},
 	["links-menu"]:{ru:"Ссылки",en:"Links"},
 	["about-menu"]:{ru:"Обо мне",en:"About"},
