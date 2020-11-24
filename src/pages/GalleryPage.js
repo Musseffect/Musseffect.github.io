@@ -18,7 +18,7 @@ const mapStateToProps=function(state)
 const mapDispatchToProps=function(dispatch)
 {
   return ({
-    clickOnTag:function(value){dispatch(clickOnTag(value));}
+    clickOnTag:function(tag){dispatch(clickOnTag('posts', tag));}
   });
 };
 //<div className="postGalleryName">{value.name}</div>
@@ -132,30 +132,5 @@ class GalleryPage extends Component {
     )
   }
 }
-/*
-<Modal show={this.state.showModal} containerStyle="modalImageViewerContainer" windowStyle="modalImageViewerWindow" backgroundStyle="modalImageViewerBackground">
-          <div className="modalImageViewerCloseButton"
-            onClick={()=>this.setState({showImage:false})}
-          ></div>
-          <ModalHeader headerStyle="modalImageViewerHeader">
-          </ModalHeader>
-          <ModalBody bodyStyle="modalImageViewerBody">                
-            <div className="modalImageViewerButtons">
-              <div 
-                className="modalImageViewerLeftButton active"
-                onClick={()=>this.setState({currentImage:(currentImage+images.length-1)%posts[currentPost].images.length})}
-              ></div>
-              <div 
-                className="modalImageViewerRightButton active"
-                onClick={()=>this.setState({currentImage:(currentImage+1)%posts[currentPost].images.length})}
-              ></div>
-            </div>
-            <img className="postModalImg" src={posts[currentPost].images[currentImage].full}></img>
-          </ModalBody>
-          <ModalFooter footerStyle="modalImageViewerFooter">
-            <a className="modalImageViewerOpenOriginal" target="_blank" href={posts[currentPost].images[currentImage].original}>Open original</a>
-          </ModalFooter>
-        </Modal>
-*/
 
 export default withRouter(connect(mapStateToProps,mapDispatchToProps)(GalleryPage));

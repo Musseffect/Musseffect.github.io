@@ -17,7 +17,7 @@ const mapStateToProps=function(state)
 const mapDispatchToProps=function(dispatch)
 {
   return ({
-    clickOnTag:function(value){dispatch(clickOnTag(value));}
+    clickOnTag:function(tag){dispatch(clickOnTag('posts', tag));}
   });
 };
 
@@ -28,29 +28,29 @@ class PostsPage extends Component {
   }
   componentDidMount()
   {
-    setTitle(tr("projects-menu",this.props.lang));
-    setDescription(tr("main-description",this.props.lang));
+    setTitle(tr("images-menu", this.props.lang));
+    setDescription(tr("main-description", this.props.lang));
   }
   render() {
-    const {posts,lang,clickOnTag,tagEntries} = this.props;
+    const {posts, lang, clickOnTag, tagEntries} = this.props;
     let activeTags=[];
     return (
       <div className='postsContainer pageContainer'>
         <div className='globalTagsContainer'>
           {
-            tagEntries.map(function([key, value],index)
+            tagEntries.map(function([key, value], index)
             {
               if(value==true)
               {
                 activeTags.push(key);
               }
-              return (<Tag key={key} name={key} active={value} click={()=>clickOnTag(key)}/>);
+              return (<Tag key={key} name={key} active={value} click={clickOnTag}/>);
             })
           }
         </div>
         <div className='posts'>
         {
-          posts.map(function(value,index)
+          posts.map(function(value, index)
           {
             let active = false;
             let activeCount = 0;
@@ -60,7 +60,7 @@ class PostsPage extends Component {
               active|=tagActive;
               activeCount +=tagActive?1:0;
               activeTags.length==0?active=true:null;
-              return {active:tagActive,name:value};
+              return {active:tagActive, name:value};
             });
             active = false;
             if(activeCount==activeTags.length)
