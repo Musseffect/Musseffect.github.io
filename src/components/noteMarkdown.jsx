@@ -23,7 +23,7 @@ class MarkdownImage extends Component{
       this.state = {show:false};
   }
   render(){
-    let {show} = this.state;
+    const {show} = this.state;
     return <div>
       <img {...this.props} onClick={()=>{this.setState({show:!show})}}
     style={show?{maxWidth:"90%"}:{}} className="noteImage"/>
