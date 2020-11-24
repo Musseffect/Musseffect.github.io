@@ -30,6 +30,12 @@ $large: 1008px;
 @import "./_modal.scss";
 @import "./_notes.scss";
 @import "./_posts.scss";
+@import "./_projects.scss";
+
+.clicable
+{
+	cursor:pointer;
+}
 
 #content
 {
@@ -64,32 +70,32 @@ $large: 1008px;
 
 #menuButtons
 {
-  @include respond-to(handhelds) {
-  flex-direction:column;
-}
-  @include respond-to(medium-screens) { 
-    flex-direction:row;
- }
-  @include respond-to(wide-screens) { 
-    flex-direction:row;
-}
+	@include respond-to(handhelds) {
+		flex-direction:column;
+	}
+	@include respond-to(medium-screens) { 
+		flex-direction:row;
+	}
+	@include respond-to(wide-screens) { 
+		flex-direction:row;
+	}
 }
 
 
 .pageContainer, .page404
 {
-  display:flex;
-  margin:auto;
-  @include respond-to(handhelds) {
-    width:100%;
-}
-  @include respond-to(medium-screens) { 
-    width:100%;
- }
-  @include respond-to(wide-screens) {
-    width:1000px;
-}
-overflow-x:hidden;
+	display:flex;
+	margin:auto;
+	@include respond-to(handhelds) {
+		width:100%;
+	}
+	@include respond-to(medium-screens) { 
+		width:100%;
+	}
+	@include respond-to(wide-screens) {
+		width:1000px;
+	}
+	overflow-x:hidden;
 }
 #routeContent
 {
@@ -108,7 +114,7 @@ overflow-x:hidden;
   	}
 	@include respond-to(medium-screens) { 
 		height:50px;
-		padding:0px 5%;
+		padding:0px 1%;
 		@include themify($themes)
 		{
 			box-shadow:themed('headerBoxShadow')
@@ -156,18 +162,12 @@ overflow-x:hidden;
 	@include respond-to(handhelds) {
 		flex-basis:100%;
   	}
-	@include respond-to(medium-screens) { 
-		flex-basis:33%;
-   	}
-	@include respond-to(wide-screens) {
-		flex-basis:33%;
-  	}
 }
 .headerButtonBlock
 {
 	display:flex;
 	flex-direction:row;
-	flex-shrink:0;
+	flex-grow:1;
 	@include respond-to(handhelds) {
 		justify-content: space-evenly;
 		border-top:2px solid;
@@ -180,11 +180,10 @@ overflow-x:hidden;
   	}
 	@include respond-to(medium-screens) { 
 		justify-content: center;
-		flex-basis:33%;
    	}
-   @include respond-to(wide-screens) {
+   	@include respond-to(wide-screens) {
 		justify-content: center;
-	    flex-basis:33%;
+		flex-basis:33%;
  	}
 	//padding:0px 10px;
 }
@@ -203,7 +202,10 @@ overflow-x:hidden;
 	flex-direction:row;
 	align-items:center;
 	justify-content:center;
-	flex-basis:33%;
+	flex-grow:1;
+	@include respond-to(wide-screens) {
+		flex-basis:33%;
+  	}
 	//cursor:pointer;
 }
 .link.active

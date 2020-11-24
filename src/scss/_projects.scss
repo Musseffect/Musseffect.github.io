@@ -1,0 +1,144 @@
+.projects, .projectsContainer
+{
+    display:flex;
+    flex-direction:column;
+}
+.projectPreview.disabled
+{
+    display:none;
+}
+.projectInfo
+{
+    display:flex;
+	@include respond-to(handhelds) {
+		flex-direction:column;
+	}
+	@include respond-to(medium-screens) { 
+		flex-direction:row;
+	}
+	@include respond-to(wide-screens) { 
+		flex-direction:row;
+	}
+}
+.projectPreviewImage
+{
+    display:block;
+    flex-grow:0;
+    flex-shrink:0;
+    object-fit:contain;
+	@include respond-to(handhelds) { 
+        max-width:200px;
+        max-height:200px;
+        margin:auto;
+	}
+	@include respond-to(medium-screens) { 
+        width:200px;
+        height:200px;
+	}
+	@include respond-to(wide-screens) { 
+        width:200px;
+        height:200px;
+	}
+}
+.projectRightColumn
+{
+    display:block;
+    flex-grow:1;
+    flex-shrink:1;
+}
+.projectName
+{
+    display:block;
+    font-size:1.5rem;
+}
+.projectDescription
+{
+    display:block;
+}
+.projectLink
+{
+    display:block;
+}
+.projectLink a
+{
+    margin-left:5px;
+}
+.projectImages
+{
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+	width:100%;
+	position: relative;
+}
+.projectImageContainer
+{
+    @include respond-to(handhelds) {
+		@include imageContainer(3,2px);
+		margin-top:2px;
+	}
+	@include respond-to(medium-screens) { 
+		@include imageContainer(4,10px);
+		margin-top:10px;
+	}
+	@include respond-to(wide-screens) { 
+		@include imageContainer(5,25px);
+		margin-top:25px;
+	}
+    display:block;
+    flex-grow:0;
+    flex-shrink:0;
+    position:relative;
+}
+.projectImageFrame
+{
+    padding-bottom:100%;
+    position:relative;
+}
+@include respond-to(handhelds) {
+	.projectImageContainer:nth-child(3n)
+	{
+		margin-right:0px;
+	}
+	.projectImageContainer:nth-child(-n+3)
+	{
+		margin-top:0px;
+	}
+}
+@include respond-to(medium-screens) { 
+	.projectImageContainer:nth-child(4n)
+	{
+		margin-right:0px;
+	}
+	.projectImageContainer:nth-child(-n+4)
+	{
+		margin-top:0px;
+	}
+}
+@include respond-to(wide-screens) { 
+	.projectImageContainer:nth-child(5n)
+	{
+		margin-right:0px;
+	}
+	.projectImageContainer:nth-child(-n+5)
+	{
+		margin-top:0px;
+	}
+}
+.projectImage
+{
+	cursor:pointer;
+    position:absolute;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    object-position:center;
+}
+.projectTags
+{
+    display:flex;
+    flex-direction:row;
+	flex-wrap:wrap;
+}
