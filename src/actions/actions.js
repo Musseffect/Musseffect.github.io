@@ -1,8 +1,8 @@
 
 
 export const CHANGE_OPTION = "CHANGE_OPTION";
-export var changeOption = function(option,value){
-    return {type:CHANGE_OPTION,option:option,value:value};
+export var changeOption = function(option, value){
+    return {type:CHANGE_OPTION,option,value};
 }
 export var setTitle =  function(title){
     document.title = title;
@@ -17,12 +17,8 @@ export var setDescription = function(content){
     description.content = content;
 }
 export const SWITCH_TAG_STATE = "SWITCH_TAG_STATE";
-export var clickOnTag = function(tagName){
-    return {type:SWITCH_TAG_STATE,tag:tagName};
-}
-export const SWITCH_LINKTAG_STATE = "SWITCH_LINKTAG_STATE";
-export var clickOnLinkTag = function(tagName){
-    return {type:SWITCH_LINKTAG_STATE,tag:tagName};
+export var clickOnTag = function(context, tag){
+    return {type:SWITCH_TAG_STATE,tag,context};
 }
 export const REQUEST_CONTENT = "REQUEST_POSTS";
 export var requestContent=function(){
@@ -30,11 +26,11 @@ export var requestContent=function(){
 }
 export const ERROR_RECEIVING_CONTENT = "ERROR_RECEIVING_CONTENT";
 export var handleError = function(error){
-    return {type:ERROR_RECEIVING_CONTENT,error:error};
+    return {type:ERROR_RECEIVING_CONTENT,error};
 }
 export const ERROR_RECEIVING_NOTE = "ERROR_RECEIVING_NOTE";
 export var handleNoteError = function(error){
-    return {type:ERROR_RECEIVING_NOTE,error:error};
+    return {type:ERROR_RECEIVING_NOTE,error};
 }
 export const REQUEST_NOTE = "REQUEST_NOTES";
 export var requestNote = function(){
@@ -58,7 +54,7 @@ var fetchNote = function(noteURL){
     )
     };
 }
-function shouldFetchNote(state, noteURL) {
+function shouldFetchNote(state,noteURL) {
     if(state.note.url == noteURL){
         const CACHE_TIME_MS = 1000*60*5;
         const item = state.note;
@@ -67,19 +63,19 @@ function shouldFetchNote(state, noteURL) {
     }
     return true;
   }
-export var fetchNoteIfNeeded = function(noteURL,noteLang){
+export var fetchNoteIfNeeded = function(url,language){
     return (dispatch,getState)=>{
-        if(shouldFetchNote(getState(),noteURL,noteLang))
-            return dispatch(fetchNote(noteURL));
+        if(shouldFetchNote(getState(),url,language))
+            return dispatch(fetchNote(url));
     }
 }
-export var fetchContent = function(contentLink,linksLink){
+export var fetchContent = function(contentLink,linkListLink){
     return function(dispatch){
         dispatch(requestContent());
         return Promise.all([
             fetch(contentLink).then(value=>value.json()),
-            fetch(linksLink).then(value=>value.json())
-        ]).then(([jsonContent,jsonLinks]) =>{
+            fetch(linkListLink).then(value=>value.json())
+        ]).then(([jsonContent, jsonLinks]) =>{
                 try{
                     dispatch(receiveContent(jsonContent,jsonLinks))
                 }catch(error)
@@ -93,22 +89,24 @@ export var fetchContent = function(contentLink,linksLink){
     };
 }
 export const RECEIVE_NOTE = "RECEIVE_NOTE";
-export var receiveNote = function(content,noteURL){
+export var receiveNote = function(content,url){
     return {
         type:RECEIVE_NOTE,
-        content:content,
-        url:noteURL,
+        content,
+        url,
         receivedAt: Date.now()
     };
 }
 export const RECEIVE_CONTENT = "RECEIVE_CONTENT";
 export var receiveContent = function(content,links){
     const posts = content.posts;
+    const projects = content.projects;
     const notes = content.notes;
     return {
         type:RECEIVE_CONTENT,
-        posts:posts,
-        notes:notes,
-        links:links
+        posts,
+        projects,
+        notes,
+        links
     }
 }
