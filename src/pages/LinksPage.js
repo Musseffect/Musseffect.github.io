@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
 import { withRouter } from 'react-router';
-import { setTitle, setDescription, clickOnLinkTag} from "../actions/actions.js";
+import { setTitle, setDescription, clickOnTag} from "../actions/actions.js";
 import {tr} from "../localization.js";
 import Link from "../components/link.jsx";
+import LinkTag from '../components/linkTag.jsx';
+import LinkGroup from '../components/linkGroup.jsx';
 
 const mapStateToProps=function(state)
 {
@@ -17,7 +19,7 @@ const mapStateToProps=function(state)
 const mapDispatchToProps=function(dispatch)
 {
   return ({
-    clickOnTag:function(tag){dispatch(clickOnLinkTag(tag));}
+    clickOnTag:function(tag){dispatch(clickOnTag('links', tag));}
   });
 };
 
@@ -53,80 +55,15 @@ class LinksPage extends Component {
               {
                 activeTags.push(key);
               }
-              return (<div key={key} className={"linkTag"+(value?" active":"")} onClick={()=>clickOnTag(key)}>
-                  {key}
-              </div>);
+              return <LinkTag key={key} name={key} click={clickOnTag}/>;
             })
           }
         </div>
         <div className='linksList'>
-          {
-            groups.map(function(group,index)
-            {
-              let activeLinks = false;
-              let links = group.items.map(function(link,index)
-              {
-                let active = false;
-                let tags;
-                if(andFilter)
-                {
-                  let activeCount = 0;
-                  tags = link.tags.map(function(value)
-                  {
-                    let tagActive = activeTags.includes(value);
-                    active|=tagActive;
-                    activeCount +=tagActive?1:0;
-                    activeTags.length==0?active=true:null;
-                    return {active:tagActive,name:value};
-                  });
-                  active = false;
-                  if(activeCount==activeTags.length)
-                    active = true;
-                }else
-                {
-                  tags = link.tags.map(function(value)
-                  {
-                    let tagActive = activeTags.includes(value);
-                    active|=tagActive;
-                    activeTags.length==0?active=true:null;
-                    return {active:tagActive,name:value};
-                  });
-                }
-                if(searchText.length!=0)
-                {
-                  active &= link.name.includes(searchText);
-                }
-                activeLinks |= active; 
-                return (<Link key={index} active={active} name={link.name} href={link.href} tags={tags} clickOnTag={clickOnTag}></Link>);
-                /*return (
-                  <div key={index} className={"linkItem"+(active?'':' disabled')}>
-                    <a target="_blank" className="linkName">{link.name}</a>
-                    <div className="linkFull">
-                      <a target="_blank" className="linkFullHref" href={link.href}>{link.href}</a>
-                      <div className='linkTags'>
-                          {
-                            tags.map(function(value,index)
-                            {
-                              return (<div key={index} className={"linkTag"+(value.active?" active":"")}  onClick={()=>clickOnTag(value.name)}>
-                                  {value.name}
-                              </div>);
-                            })
-                          }
-                      </div>
-                    </div>
-                  </div>);*/
-              }); 
-              return (<div className = {"linkGroup"+(activeLinks?" active":"")} key={index}>
-                <div className = "linkGroupName">
-                  {group.name}
-                </div>
-                <div className = "linkGroupItems">
-                  {links}
-                </div>
-               </div>);
-            })
-          }
-          </div>
+          {groups.map(function(group,index){
+            return <LinkGroup searchText={searchText} clickOnTag={clickOnTag} activeTags={activeTags} andFilter={andFilter} key={index} {...group}/>
+          })}
+        </div>
       </div>
     )
   }
