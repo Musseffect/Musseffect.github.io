@@ -120,10 +120,18 @@ $$
 **Fig. 7** - Jumping ball position and velocity
 [/figure]
 
-Event function: $\vec{max}(-x,-v)$
+Event function: $\text{max}(-x,-v)$
 
-![Jumping ball event function](https://drive.google.com/uc?id=1QVKMzVYXG-kVuq16fKjDUFFd-GuM4I0w "Jumping ball event function")
+![Jumping ball event function](https://drive.google.com/uc?id=1QVKMzVYXG-kVuq16fKjDUFFd-GuM4I0w "Event function for jumping ball")
 
 [figure]
 **Fig. 8** - Jumping ball event function
 [/figure]
+
+![Jumping ball linear event function](https://drive.google.com/uc?id=1rQ4aqaNycETLU_TobDNk9TWDFdCINuwK "Linear event function for jumping ball")
+
+[figure]
+**Fig. 9** - Jumping ball linear event function
+[/figure]
+
+Ideal linear event function (basically expression for time until next event): $- \frac{v + \sqrt{v^2 + 2\cdot x\cdot g}}{g}$

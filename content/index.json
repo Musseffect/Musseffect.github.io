@@ -629,9 +629,19 @@
 				"ru":"Аттракторы в glsl",
 				"en":"Renderings of chaotic attractors"
 			},
-			"thumbnail":"https://live.staticflickr.com/65535/50326609541_31a894a972_m.jpg",
-			"mainImg":"https://live.staticflickr.com/65535/50326609541_31a894a972_b.jpg",
+			"thumbnail":"https://live.staticflickr.com/65535/50505018073_67f8ae9052_m.jpg",
+			"mainImg":"https://live.staticflickr.com/65535/50505018073_67f8ae9052_b.jpg",
 			"images":[
+				{
+					"thumbnail":"https://live.staticflickr.com/65535/50505018073_67f8ae9052_n.jpg",
+					"full":"https://live.staticflickr.com/65535/50505018073_67f8ae9052_b.jpg",
+					"original":"https://live.staticflickr.com/65535/50505018073_f69b17bced_o.png"
+				},
+				{
+					"thumbnail":"https://live.staticflickr.com/65535/50505018028_8e91fe1cb9_n.jpg",
+					"full":"https://live.staticflickr.com/65535/50505018028_8e91fe1cb9_b.jpg",
+					"original":"https://live.staticflickr.com/65535/50505018028_4b074aa6a0_o.png"
+				},
 				{
 					"thumbnail":"https://live.staticflickr.com/65535/50326609541_31a894a972_n.jpg",
 					"full":"https://live.staticflickr.com/65535/50326609541_31a894a972_b.jpg",
@@ -702,9 +712,102 @@
 					"thumbnail":"https://live.staticflickr.com/65535/50497089122_132f33b03f_n.jpg",
 					"full":"https://live.staticflickr.com/65535/50497089122_132f33b03f_b.jpg",
 					"original":"https://live.staticflickr.com/65535/50497089122_cdcfd2a659_o.png"
+				},
+				{
+					"thumbnail":"https://live.staticflickr.com/65535/50505028193_6df85c2943_n.jpg",
+					"full":"https://live.staticflickr.com/65535/50505028193_6df85c2943_b.jpg",
+					"original":"https://live.staticflickr.com/65535/50505028193_24551bf2aa_o.png"
+				},
+				{
+					"thumbnail":"https://live.staticflickr.com/65535/50505901202_b60163d818_n.jpg",
+					"full":"https://live.staticflickr.com/65535/50505901202_b60163d818_b.jpg",
+					"original":"https://live.staticflickr.com/65535/50505901202_58939af143_o.png"
+				},
+				{
+					"thumbnail":"https://live.staticflickr.com/65535/50505028278_06133f71b8_n.jpg",
+					"full":"https://live.staticflickr.com/65535/50505028278_06133f71b8_b.jpg",
+					"original":"https://live.staticflickr.com/65535/50505028278_f2b9b5590c_o.png"
+				},
+				{
+					"thumbnail":"https://live.staticflickr.com/65535/50573408866_6f887fe115_n.jpg",
+					"full":"https://live.staticflickr.com/65535/50573408866_6f887fe115_b.jpg",
+					"original":"https://live.staticflickr.com/65535/50573408866_5668e293cb_o.png"
 				}
 			],
 			"tags":["2d","graphics","glsl"]
 		}
+	],
+	"projects":[
+		{
+			"name":"Hybrid system modelling tool",
+			"description":{
+				"ru":"Моделирование гибридных динамических систем с использованием систем ДАУ в неявном виде",
+				"en":"Modeling of hybrid dynamical systems in js with custom modeling language, implicit dae systems and some fancy zero-crossing detection methods"
+			},
+			"link":"https://github.com/Musseffect/hybrid-systems-js",
+			"thumbnail":"https://github.com/Musseffect/hybrid-systems-js/raw/master/images/mainScreen.jpg",
+			"tags":["javascript","typescript","math","numerical methods"]
+		},
+		{
+			"name":"Nonlinear least squares",
+			"description":{
+				"ru":"Нелинейный метод наименьших квадратов на джаваскрипте с численными методами оптимизации",
+				"en":"Nonlinear least squares in js with some numerical methods for optimization problem"
+			},
+			"link":"https://github.com/Musseffect/nonlinear-least-squares",
+			"thumbnail":"https://github.com/Musseffect/nonlinear-least-squares/raw/master/images/curve-fitting.jpg",
+			"tags":["javascript","typescript","math","numerical methods"]
+		},
+		{
+			"name":"Oscilloscope",
+			"description":{
+				"ru":"Имитация осциллографа",
+				"en":"Imitation of oscilloscope"
+			},
+			"link":"https://github.com/Musseffect/oscilloscope-js",
+			"thumbnail":"https://github.com/Musseffect/oscilloscope-js/raw/master/docs/screenshot4.jpg",
+			"tags":["javascript","webgl"]
+		},
+		{
+			"name":"CUDA forward tracing in 2d",
+			"description":{
+				"ru":"Трассировка пути в 2д на cuda и opengl с растеризацией лучей",
+				"en":"Forward path tracing in 2d with cuda and opengl"
+			},
+			"link":"https://github.com/Musseffect/cuda-ray-tracing-stuff",
+			"thumbnail":"",
+			"tags":["c++","cuda","opengl"]
+		},
+		{
+			"name":"Gas giant and curl noise",
+			"description":{
+				"ru":"Реализация (чужой) идеи по генерации более-менее реалистичных текстур поверхности газовых гигантов с использованием множества частиц и transform feedback в Webgl",
+				"en":"GPU accelerated curl noise advection on a sphere surface with multiple particles and transform feedback in Webgl"
+			},
+			"link":"https://github.com/Musseffect/procedural-gas-giant-js",
+			"thumbnail":"",
+			"tags":["javascript","typescript","webgl"]
+		},
+		{
+			"name":"Power system simulator",
+			"description":{
+				"ru":"Программа, предназначенная для расчётов установившихся режимов и переходных процессов в электрических сетях с умными выключателями",
+				"en":"Modeling tool for analysis of steady state and transients in power systems"
+			},
+			"link":"https://github.com/Musseffect/electrical-power-systems",
+			"thumbnail":"",
+			"tags":["c#","math","numerical methods"]
+		},
+		{
+			"name":"3d container packing",
+			"description":{
+				"ru":"Реализация алгоритмов упаковки ящиков в контейнер",
+				"en":"Implementation of algorithms for box packing problem in 3d"
+			},
+			"link":"https://github.com/Musseffect/3D-container-packing",
+			"thumbnail":"https://github.com/Musseffect/3D-container-packing/raw/master/docs/images/screen3.png",
+			"tags":["c++","qt","math","numerical methods"]
+		}
+
 	]
 }

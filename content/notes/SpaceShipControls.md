@@ -137,7 +137,7 @@ F_r = AT\\
 G(T) \rightarrow min
 $$
 
-where $G(T)$ some function of $T$.
+where $G(T)$ - cost function.
 
 It would be really great to choose $G(T) = \sum |T_i|$, value of this function should be proportional to fuel consumption, so optimization problem would include minimization of fuel consumption which actually would be logical and useful. Unfortunately it isn't easy to solve such problem, so we will use $G(T) = \sum T_i^2$.
 
