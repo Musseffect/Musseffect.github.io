@@ -168,6 +168,7 @@ $large: 1008px;
 	display:flex;
 	flex-direction:row;
 	flex-grow:1;
+	flex-shrink:0;
 	@include respond-to(handhelds) {
 		justify-content: space-evenly;
 		border-top:2px solid;
@@ -196,6 +197,7 @@ $large: 1008px;
 }
 .headerMainLinks
 {
+	overflow-x:hidden;
 	height:auto;
 	width:auto;
 	display:flex;
