@@ -1092,7 +1092,8 @@
 .headerButtonBlock {
   display: flex;
   flex-direction: row;
-  flex-grow: 1; }
+  flex-grow: 1;
+  flex-shrink: 0; }
   @media only screen and (max-width: 640px) {
     .headerButtonBlock {
       justify-content: space-evenly;
@@ -1119,6 +1120,7 @@
   justify-content: center; }
 
 .headerMainLinks {
+  overflow-x: hidden;
   height: auto;
   width: auto;
   display: flex;
